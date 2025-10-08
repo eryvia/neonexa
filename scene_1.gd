@@ -8,9 +8,16 @@ var cursor2
 
 func _on_area_2d_mouse_entered() -> void:
 	hovering = true 
-	pass # Replace with function body.
+	Input.set_custom_mouse_cursor(cursor1)
 
 
-func _on_area_2d_mouse_exited() -> void:
+
+func _on_area_2d_mouse_exited() -> void: 
+	Input.set_custom_mouse_cursor(cursor2)
 	hovering = false
-	pass # Replace with function body.
+
+
+
+func _input(event: InputEvent) -> void:
+	if hovering and Input.is_action_just_pressed("click"):	
+		pass
