@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7iyplxg46qnk"]
+
+[ext_resource type="Texture2D" uid="uid://dmjfblxmbvrg4" path="res://Assests/Sprites/burningBackground.png" id="1_pq8q7"]
+[ext_resource type="PackedScene" uid="uid://dgjnq4xjbu8wq" path="res://block.tscn" id="2_vvh5c"]
+[ext_resource type="PackedScene" uid="uid://b4481qldww3pq" path="res://player.tscn" id="3_28aoi"]
+
+[node name="root" type="Node2D"]
+
+[node name="backGround" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("1_pq8q7")
+
+[node name="block" parent="." instance=ExtResource("2_vvh5c")]
+gravity_scale = 0.0
+
+[node name="Player" parent="." instance=ExtResource("3_28aoi")]
+position = Vector2(107, 104)
