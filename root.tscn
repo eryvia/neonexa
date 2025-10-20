@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7iyplxg46qnk"]
+[gd_scene load_steps=6 format=4 uid="uid://c7iyplxg46qnk"]
 
 [ext_resource type="Texture2D" uid="uid://dmjfblxmbvrg4" path="res://Assests/Sprites/burningBackground.png" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://oa3x54wvct3u" path="res://Scenes/player.tscn" id="3_vvh5c"]
@@ -18,13 +18,18 @@ sources/0 = SubResource("TileSetAtlasSource_jnlp7")
 [node name="root" type="Node2D"]
 
 [node name="backGround" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(160, 90)
 texture = ExtResource("1_pq8q7")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
 position = Vector2(1, 0)
-tile_map_data = PackedByteArray(0, 0, 6, 0, 8, 0, 0, 0, 1, 0, 0, 0, 0, 0, 7, 0, 8, 0, 0, 0, 1, 0, 0, 0, 0, 0, 8, 0, 8, 0, 0, 0, 1, 0, 0, 0, 0, 0, 5, 0, 8, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAGAAgAAAABAAAAAAAHAAgAAAABAAAAAAAIAAgAAAABAAAAAAAFAAgAAAABAAAAAAAJAAgAAAABAAAAAAAAAAgAAAABAAAAAAABAAgAAAABAAAAAAACAAgAAAABAAAAAAADAAgAAAABAAAAAAAEAAgAAAABAAAAAAAKAAgAAAABAAAAAAALAAgAAAABAAAAAAAMAAgAAAABAAAAAAANAAgAAAABAAAAAAAOAAgAAAABAAAAAAAPAAgAAAABAAAAAAAQAAgAAAABAAAAAAARAAgAAAABAAAAAAASAAgAAAABAAAAAAATAAgAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_l8v81")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_vvh5c")]
+[node name="Player" parent="." instance=ExtResource("3_vvh5c")]
 position = Vector2(109, 95)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(155, 101)
