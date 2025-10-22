@@ -18,12 +18,10 @@ sources/0 = SubResource("TileSetAtlasSource_jnlp7")
 [node name="root" type="Node2D"]
 
 [node name="backGround" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(160, 90)
 texture = ExtResource("1_pq8q7")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-visible = false
 position = Vector2(1, 0)
 tile_map_data = PackedByteArray("AAAGAAgAAAABAAAAAAAHAAgAAAABAAAAAAAIAAgAAAABAAAAAAAFAAgAAAABAAAAAAAJAAgAAAABAAAAAAAAAAgAAAABAAAAAAABAAgAAAABAAAAAAACAAgAAAABAAAAAAADAAgAAAABAAAAAAAEAAgAAAABAAAAAAAKAAgAAAABAAAAAAALAAgAAAABAAAAAAAMAAgAAAABAAAAAAANAAgAAAABAAAAAAAOAAgAAAABAAAAAAAPAAgAAAABAAAAAAAQAAgAAAABAAAAAAARAAgAAAABAAAAAAASAAgAAAABAAAAAAATAAgAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_l8v81")
