@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://cyvixke6d5ic2"]
+
+[ext_resource type="Script" uid="uid://dt5xk2d6j76h7" path="res://Scenes/soul_currency.gd" id="1_jwh5k"]
+[ext_resource type="Texture2D" uid="uid://drofo41n20h0q" path="res://Assests/Sprites/soulCurrency.png" id="1_tfp4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwh5k"]
+atlas = ExtResource("1_tfp4n")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms0o0"]
+atlas = ExtResource("1_tfp4n")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooimo"]
+atlas = ExtResource("1_tfp4n")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmyuu"]
+atlas = ExtResource("1_tfp4n")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx2hn"]
+atlas = ExtResource("1_tfp4n")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xd4j"]
+atlas = ExtResource("1_tfp4n")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5wta"]
+atlas = ExtResource("1_tfp4n")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bumr5"]
+atlas = ExtResource("1_tfp4n")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnrbg"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idleAir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwh5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms0o0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ooimo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmyuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx2hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xd4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5wta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bumr5")
+}],
+"loop": true,
+"name": &"idleGround",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3npcd"]
+radius = 5.3851647
+
+[node name="soul" type="Area2D"]
+script = ExtResource("1_jwh5k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lnrbg")
+animation = &"idleGround"
+autoplay = "idleGround"
+frame_progress = 0.042465106
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_3npcd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
