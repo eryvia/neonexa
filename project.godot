@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="neonexa"
-run/main_scene="uid://c7iyplxg46qnk"
+run/main_scene="uid://dn0d1brp825vr"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=180
+window/size/viewport_width=384
+window/size/viewport_height=216
 window/size/mode=3
 window/stretch/mode="viewport"
 

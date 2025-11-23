@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drofo41n20h0q"
-path="res://.godot/imported/soulCurrency.png-1b36bd0d76bab619f49b2210a50b8926.ctex"
+uid="uid://bvdl0nula5mu7"
+path="res://.godot/imported/Prologue.png-759a543b74b4cb90e62627fcdb413590.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Sprites/soulCurrency.png"
-dest_files=["res://.godot/imported/soulCurrency.png-1b36bd0d76bab619f49b2210a50b8926.ctex"]
+source_file="res://Stages/Tilemaps/Prologue.png"
+dest_files=["res://.godot/imported/Prologue.png-759a543b74b4cb90e62627fcdb413590.ctex"]
 
 [params]
 

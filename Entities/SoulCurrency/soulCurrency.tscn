@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cyvixke6d5ic2"]
 
-[ext_resource type="Script" uid="uid://dt5xk2d6j76h7" path="res://Scenes/soul_currency.gd" id="1_jwh5k"]
-[ext_resource type="Texture2D" uid="uid://drofo41n20h0q" path="res://Assests/Sprites/soulCurrency.png" id="1_tfp4n"]
+[ext_resource type="Script" uid="uid://dt5xk2d6j76h7" path="res://Entities/SoulCurrency/soul_currency.gd" id="1_jwh5k"]
+[ext_resource type="Texture2D" uid="uid://drofo41n20h0q" path="res://Entities/SoulCurrency/Art/soulCurrency.png" id="1_tfp4n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwh5k"]
 atlas = ExtResource("1_tfp4n")

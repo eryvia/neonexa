@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvdl0nula5mu7"
-path="res://.godot/imported/Prologue.png-3d6d52dc018f5adb7cf21c478440e7a8.ctex"
+uid="uid://dyrjs42i4uk7t"
+path="res://.godot/imported/background.png-0ac58f78acb78c5c9f30dfdc59cbaff2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Tilemaps/Prologue.png"
-dest_files=["res://.godot/imported/Prologue.png-3d6d52dc018f5adb7cf21c478440e7a8.ctex"]
+source_file="res://Stages/MainScene/Art/background.png"
+dest_files=["res://.godot/imported/background.png-0ac58f78acb78c5c9f30dfdc59cbaff2.ctex"]
 
 [params]
 
