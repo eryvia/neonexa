@@ -17,18 +17,17 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("jump") and jumps != 0:
 		velocity.y = jumpVelocity
-		jumps -= 1
+		jumps -= 1    
 
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * speed
-		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.flip_h = direction < 0
-		$AnimatedSprite2D.play()
+		#$AnimatedSprite2D.animation = "walk"
+		#$AnimatedSprite2D.flip_h = direction < 0
+		#$AnimatedSprite2D.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-		$AnimatedSprite2D.animation = "idle"
-		$AnimatedSprite2D.play()
-		
-
+		#$AnimatedSprite2D.animation = "idle"
+		#$AnimatedSprite2D.play()
+	
 	move_and_slide()
