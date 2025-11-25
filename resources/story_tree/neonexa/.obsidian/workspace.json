@@ -11,10 +11,14 @@
             "id": "0de3c8ccde3dc7f5",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "The player.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "The player"
             }
           }
         ]
@@ -167,10 +171,12 @@
   },
   "active": "0de3c8ccde3dc7f5",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "The player.md",
     "The Prologue/Player (early stage).md",
     "Pasted image 20251124181847.png",
-    "The Prologue",
     "Root.md",
-    "The player.md"
+    "create a link.md",
+    "The Prologue"
   ]
 }
