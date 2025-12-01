@@ -15,12 +15,28 @@ run/main_scene="uid://dn0d1brp825vr"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*res://Utilities/SignalBus.gd"
+Global="*res://Utilities/Global.gd"
+
 [display]
 
 window/size/viewport_width=384
 window/size/viewport_height=216
 window/size/mode=3
-window/stretch/mode="viewport"
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://Entities/": "red",
+"res://Interface/": "green",
+"res://Resources/": "pink",
+"res://Stages/": "teal"
+}
 
 [input]
 

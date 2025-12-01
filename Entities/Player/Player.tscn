@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://brles2brqiwmx"]
+[gd_scene load_steps=5 format=3 uid="uid://brles2brqiwmx"]
 
 [ext_resource type="Script" uid="uid://byndxy24po04m" path="res://Entities/Player/player.gd" id="1_e5kic"]
+[ext_resource type="Texture2D" uid="uid://ba3rlchfecrap" path="res://Entities/Player/Art/player_spritesheet.png" id="2_vweq0"]
 [ext_resource type="Script" uid="uid://dhnkh2wp6u0y2" path="res://Entities/Player/idle.gd" id="4_1des2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vweq0"]
@@ -20,8 +21,11 @@ position = Vector2(0, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
 position = Vector2(-1, -1)
+texture = ExtResource("2_vweq0")
 region_enabled = true
 region_rect = Rect2(103.18364, 0, 26.572083, 26)
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="StateManager" type="Node" parent="."]
 
