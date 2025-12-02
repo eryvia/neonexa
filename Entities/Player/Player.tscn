@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://brles2brqiwmx"]
+[gd_scene load_steps=6 format=3 uid="uid://brles2brqiwmx"]
 
 [ext_resource type="Script" uid="uid://byndxy24po04m" path="res://Entities/Player/player.gd" id="1_e5kic"]
 [ext_resource type="Texture2D" uid="uid://ba3rlchfecrap" path="res://Entities/Player/Art/player_spritesheet.png" id="2_vweq0"]
+[ext_resource type="Script" uid="uid://dao4h7dnqot3s" path="res://Entities/Player/state_machine.gd" id="3_1des2"]
 [ext_resource type="Script" uid="uid://dhnkh2wp6u0y2" path="res://Entities/Player/idle.gd" id="4_1des2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vweq0"]
@@ -27,7 +28,11 @@ region_rect = Rect2(103.18364, 0, 26.572083, 26)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="StateManager" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_1des2")
+initial_state = NodePath("IdleState")
 
-[node name="idle" type="Node" parent="StateManager"]
+[node name="IdleState" type="Node" parent="StateMachine"]
 script = ExtResource("4_1des2")
+
+[node name="WalkState" type="Node" parent="StateMachine"]
