@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgdhee60h41x4"]
+[gd_scene load_steps=7 format=3 uid="uid://cgdhee60h41x4"]
 
 [ext_resource type="Script" uid="uid://dnbdyuj2wnbkm" path="res://Interface/OnAreaTitle/on_area_title.gd" id="1_shi2l"]
 [ext_resource type="FontFile" uid="uid://c6ual6wdh5cp1" path="res://Common/fonts/pixeloid-font/PixeloidMono-aYe1R.ttf" id="2_euhf1"]
@@ -33,10 +33,26 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_ykoih"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ykoih"]
 _data = {
 &"RESET": SubResource("Animation_8tbl7"),
-&"fade_in": SubResource("Animation_euhf1")
+&"fade_in": SubResource("Animation_euhf1"),
+&"fade_out": SubResource("Animation_ykoih")
 }
 
 [node name="AreaTitle" type="Control"]

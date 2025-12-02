@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://c80maj2vdho5i"]
+[gd_scene load_steps=9 format=4 uid="uid://c80maj2vdho5i"]
 
 [ext_resource type="Script" uid="uid://dmo677814xioj" path="res://Stages/SandBox/sand_box.gd" id="1_b73f1"]
 [ext_resource type="Texture2D" uid="uid://bvdl0nula5mu7" path="res://Stages/Tilemaps/Prologue.png" id="1_gc122"]
 [ext_resource type="PackedScene" uid="uid://brles2brqiwmx" path="res://Entities/Player/Player.tscn" id="3_6d07n"]
 [ext_resource type="PackedScene" uid="uid://cgdhee60h41x4" path="res://Interface/OnAreaTitle/OnAreaTitle.tscn" id="4_b73f1"]
 [ext_resource type="PackedScene" uid="uid://b67et8cy1d0kj" path="res://Utilities/Transitions/FadeTransition.tscn" id="5_7o460"]
+[ext_resource type="PackedScene" uid="uid://djdrsn0i7g7xx" path="res://Entities/Shire/shire.tscn" id="6_nlitk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2iie"]
 texture = ExtResource("1_gc122")
@@ -149,3 +150,7 @@ offset_bottom = 19.911999
 
 [node name="FadeTransition" parent="Utils" instance=ExtResource("5_7o460")]
 visible = false
+
+[node name="Shire" parent="." instance=ExtResource("6_nlitk")]
+position = Vector2(80.99999, 116.00001)
+scale = Vector2(2.1999993, 6.078312)

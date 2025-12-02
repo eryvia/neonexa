@@ -6,3 +6,4 @@ func _ready():
 func _on_show_area_title(text: String):
 	$Label.text = text
 	$AnimationPlayer.play("fade_in")
+	
