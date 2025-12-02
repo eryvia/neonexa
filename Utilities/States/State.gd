@@ -1,18 +1,17 @@
 extends Node
 class_name State
 
-signal transitioned(state: State, new_state_name: String)
+signal Transitioned(state, new_state_name)
+var player 
 
-var player
-
-func Enter():
+func enter():
 	pass
 	
-func Exit():
+func exit():
 	pass
 	
-func Update(_delta: float) -> void:
+func update(_delta: float) -> void:
 	pass
 	
-func _physics_process(delta: float) -> void:
+func physics_update(delta: float) -> void:
 	pass
