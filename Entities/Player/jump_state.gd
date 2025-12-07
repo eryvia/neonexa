@@ -3,12 +3,10 @@ class_name JumpState
 
 func enter() -> void:
 	Global.call_current_state(self)
-	player.get_node("AnimatedSprite2D").play("jump")
+	#player.get_node("AnimatedSprite2D").play("jump")
 	player.velocity.y = player.jump_velocity
 	player.current_jumps -= 1
 	
-
-
 func physics_update(delta: float) -> void:
 	player.velocity.y += player.gravity * delta
 
@@ -26,6 +24,8 @@ func physics_update(delta: float) -> void:
 		return
 
 	"""
+	if no frame idk
+	
 	if player.is_on_floor():
 		player.jumps = 2
 		if input == 0:

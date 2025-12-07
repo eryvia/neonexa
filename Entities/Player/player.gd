@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-@export var speed := 200.0
+@export var speed := 100.0
 @export var jump_velocity := -600.0
 @export var gravity := 900.0
 @export var max_jumps := 2

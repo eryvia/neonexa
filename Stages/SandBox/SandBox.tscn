@@ -138,13 +138,13 @@ tile_set = SubResource("TileSet_ypnmm")
 [node name="Player" parent="." instance=ExtResource("3_6d07n")]
 position = Vector2(130, 106)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
 
-[node name="AreaTitle" parent="CanvasLayer" instance=ExtResource("4_b73f1")]
-offset_left = -1.0
-offset_top = 20.0
-offset_right = -1.0
-offset_bottom = 19.911999
+[node name="AreaTitle" parent="Player/CanvasLayer" instance=ExtResource("4_b73f1")]
+offset_left = 3.0
+offset_top = 176.0
+offset_right = 3.0
+offset_bottom = 175.912
 
 [node name="Utils" type="Node" parent="."]
 
