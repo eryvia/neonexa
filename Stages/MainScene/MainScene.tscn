@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dn0d1brp825vr"]
 
 [ext_resource type="Script" uid="uid://c7q335b75nxgo" path="res://Stages/MainScene/mainScene.gd" id="1_gratp"]
-[ext_resource type="Texture2D" uid="uid://dyrjs42i4uk7t" path="res://Stages/MainScene/Art/background.png" id="2_xygk6"]
+[ext_resource type="Texture2D" uid="uid://ceuqli74c3r0o" path="res://Stages/MainScene/Art/main_bg_back1.jpg" id="2_gyvga"]
 [ext_resource type="FontFile" uid="uid://c6ual6wdh5cp1" path="res://Common/fonts/pixeloid-font/PixeloidMono-aYe1R.ttf" id="3_86d06"]
 [ext_resource type="PackedScene" uid="uid://b67et8cy1d0kj" path="res://Utilities/Transitions/FadeTransition.tscn" id="4_gyvga"]
 
@@ -15,9 +15,9 @@ grow_vertical = 2
 script = ExtResource("1_gratp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(191.5, 104.99999)
-scale = Vector2(1.246875, 1.2111111)
-texture = ExtResource("2_xygk6")
+position = Vector2(192.00002, 107)
+scale = Vector2(0.100508116, 0.10115739)
+texture = ExtResource("2_gyvga")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -40,7 +40,7 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.12628347, 0.99999994, 0.9602862, 1)
 theme_override_fonts/font = ExtResource("3_86d06")
 theme_override_font_sizes/font_size = 18
-text = "Start"
+text = "Pilgrimage"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2

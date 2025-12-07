@@ -6,3 +6,5 @@ const GAME_SCENES: Dictionary = {
 
 func call_current_state(current_state):
 	print(current_state)
+	
+	

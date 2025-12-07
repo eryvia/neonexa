@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dogc7thnt0gkb"
-path="res://.godot/imported/Pasted image 20251124181847.png-f0c260380a9ebcd98c26d6ae1a885dd6.ctex"
+uid="uid://ceuqli74c3r0o"
+path="res://.godot/imported/main_bg_back1.jpg-38261cf2a0d4602645968a7666dc1474.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/story_tree/neonexa/Pasted image 20251124181847.png"
-dest_files=["res://.godot/imported/Pasted image 20251124181847.png-f0c260380a9ebcd98c26d6ae1a885dd6.ctex"]
+source_file="res://Stages/MainScene/Art/main_bg_back1.jpg"
+dest_files=["res://.godot/imported/main_bg_back1.jpg-38261cf2a0d4602645968a7666dc1474.ctex"]
 
 [params]
 

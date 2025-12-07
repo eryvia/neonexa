@@ -11,18 +11,20 @@ func physics_update(delta: float) -> void:
 	var input := Input.get_axis("move_left", "move_right")
 	player.velocity.x = input * player.speed
 
+	player.update_facing(input)
+	
 	if player.is_on_floor():
-		player.jumps = 2 
+		player.current_jumps = player.max_jumps
 		if input == 0:
 			Transitioned.emit(self, "IdleState")
 		else:
-			Transitioned.emit(self, "MoveState")
+			Transitioned.emit(self, "WalkState")
 		return
 
-	# Allow mid-air jump
+		
 	if Input.is_action_just_pressed("jump"):
-		if player.jumps < 1:
+		if player.current_jumps < 1:
 			pass
 		else:
-			player.jumps -= 1
+			player.current_jumps -= 1
 			Transitioned.emit(self, "JumpState")
