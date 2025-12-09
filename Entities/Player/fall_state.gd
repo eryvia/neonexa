@@ -3,6 +3,7 @@ class_name FallState
 
 func enter() -> void:
 	Global.call_current_state(self)
+	player.get_node("AnimatedSprite2D").play("fall")
 
 
 func physics_update(delta: float) -> void:
