@@ -189,6 +189,7 @@ shape = SubResource("CapsuleShape2D_vweq0")
 position = Vector2(0, -1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -69)
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_1des2")
