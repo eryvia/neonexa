@@ -2,7 +2,7 @@ extends State
 class_name WalkState
 
 func enter() -> void:
-	Global.call_current_state(self)
+	#Global.call_current_state(self)
 	player.get_node("AnimatedSprite2D").play("walk")
 	
 func physics_update(delta):

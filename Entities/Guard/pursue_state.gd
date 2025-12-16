@@ -2,15 +2,21 @@ extends State
 class_name PursueState
 
 func enter():
-	var animation = enemy.get_node("AnimatedSprite2D")
+	Global.call_current_state(self)
+	var animation = parent.get_node("AnimatedSprite2D")
 	animation.play("attack")
 
 func physics_update(delta):
-	var direction = (owner.target.global_position - owner.global_position).normalized()
-	owner.velocity = direction * owner.speed
+	var direction = owner.target.global_position - owner.global_position
+	var animation = parent.get_node("AnimatedSprite2D")
+	if direction.x > 0:
+		animation.flip_h = 1
+		
+	print(direction)
+	owner.velocity = direction.normalized() * owner.speed * delta
 	owner.move_and_slide()
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
-	if body == enemy.target:
-		enemy.target = null
+	if body == parent.target:
+		parent.target = null
 		Transitioned.emit(self, "EnemyIdleState")

@@ -17,7 +17,7 @@ func _ready() -> void:
 			state.player = parent
 	else: 
 		for state in states.values():
-			state.enemy = parent
+			state.parent = parent
 			
 	if initial_state:
 		initial_state.enter()
@@ -37,6 +37,7 @@ func on_child_transform(state, new_state_name):
 	
 	var new_state = states.get(new_state_name.to_lower())
 	if !new_state:
+		print("coulnt find a new state")
 		return
 	
 	if current_state:

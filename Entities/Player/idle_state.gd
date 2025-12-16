@@ -3,7 +3,7 @@ class_name IdleState
 
 func enter() -> void:
 	player.velocity.x = 0
-	Global.call_current_state(self)
+	#Global.call_current_state(self)
 	var animation = player.get_node("AnimatedSprite2D")
 	animation.play("idle")
 	#animation.flip_h = player.facing_direction == -1

@@ -2,7 +2,7 @@ extends State
 class_name JumpState
 
 func enter() -> void:
-	Global.call_current_state(self)
+	#Global.call_current_state(self)
 	player.get_node("AnimatedSprite2D").play("jump")
 	player.velocity.y = player.jump_velocity
 	player.current_jumps -= 1
