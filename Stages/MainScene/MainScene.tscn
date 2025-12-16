@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dn0d1brp825vr"]
 
 [ext_resource type="Script" uid="uid://c7q335b75nxgo" path="res://Stages/MainScene/mainScene.gd" id="1_gratp"]
-[ext_resource type="Texture2D" uid="uid://dm1xq5phtvhdo" path="res://Stages/MainScene/Art/main_bg_d1.jpg" id="2_gyvga"]
+[ext_resource type="Texture2D" uid="uid://dexgj7gogphpi" path="res://Stages/MainScene/Art/bg1.jpg" id="2_gyvga"]
 [ext_resource type="FontFile" uid="uid://c6ual6wdh5cp1" path="res://Common/fonts/pixeloid-font/PixeloidMono-aYe1R.ttf" id="3_86d06"]
 [ext_resource type="PackedScene" uid="uid://b67et8cy1d0kj" path="res://Utilities/Transitions/FadeTransition.tscn" id="4_gyvga"]
 

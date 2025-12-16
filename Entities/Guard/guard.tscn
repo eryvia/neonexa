@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=3 uid="uid://gf45aov1wafw"]
+
+[ext_resource type="Script" uid="uid://be6qslidlc1c2" path="res://Entities/Guard/guard.gd" id="1_edth3"]
+[ext_resource type="Texture2D" uid="uid://fqtc4ix1cobi" path="res://Entities/Guard/Art/Guard-ase.png" id="1_gp63h"]
+[ext_resource type="Script" uid="uid://2wxnlutje28c" path="res://Entities/Guard/detection_area.gd" id="2_x3a6o"]
+[ext_resource type="Script" uid="uid://dao4h7dnqot3s" path="res://Entities/Player/state_machine.gd" id="3_kl3r6"]
+[ext_resource type="Script" uid="uid://cyjwpcldg5gam" path="res://Entities/Guard/pursue_state.gd" id="5_kl3r6"]
+[ext_resource type="Script" uid="uid://pxxth5e4hcdy" path="res://Entities/Guard/enemy_idle_state.gd" id="6_edth3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3a6o"]
+atlas = ExtResource("1_gp63h")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4qr0"]
+atlas = ExtResource("1_gp63h")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmkor"]
+atlas = ExtResource("1_gp63h")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kl3r6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3a6o")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4qr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmkor")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp63h"]
+size = Vector2(13, 27)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gp63h"]
+radius = 121.037186
+
+[node name="Guard" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_edth3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kl3r6")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 2)
+shape = SubResource("RectangleShape2D_gp63h")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+script = ExtResource("2_x3a6o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+modulate = Color(1, 0, 1, 0.49411765)
+shape = SubResource("CircleShape2D_gp63h")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_kl3r6")
+metadata/_custom_type_script = "uid://dao4h7dnqot3s"
+
+[node name="PursueState" type="Node" parent="StateMachine"]
+script = ExtResource("5_kl3r6")
+
+[node name="EnemyIdleState" type="Node" parent="StateMachine"]
+script = ExtResource("6_edth3")
+
+[connection signal="body_entered" from="DetectionArea" to="StateMachine/EnemyIdleState" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="StateMachine/PursueState" method="_on_detection_area_body_exited"]

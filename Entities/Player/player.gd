@@ -22,7 +22,6 @@ func update_facing(input):
 		facing_direction = 1 if input > 0 else -1
 		get_node("AnimatedSprite2D").flip_h = facing_direction == 1
 		
-		
 func facing_direction_fn(input):
 	if input > 0:
 		return true

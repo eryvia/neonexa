@@ -1,4 +1,5 @@
 extends Node
+class_name StateMachine
 
 @export var initial_state: State
 var current_state: State
@@ -14,6 +15,9 @@ func _ready() -> void:
 	if parent is Player:
 		for state in states.values():
 			state.player = parent
+	else: 
+		for state in states.values():
+			state.enemy = parent
 			
 	if initial_state:
 		initial_state.enter()
@@ -41,3 +45,5 @@ func on_child_transform(state, new_state_name):
 	new_state.enter()
 
 	current_state = new_state
+	
+	#hello

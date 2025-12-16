@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://w8r8su8uo8w0"]
+
+[ext_resource type="FontFile" uid="uid://c6ual6wdh5cp1" path="res://Common/fonts/pixeloid-font/PixeloidMono-aYe1R.ttf" id="1_s4tja"]
+[ext_resource type="Script" uid="uid://btw4lhsmo4vy6" path="res://Utilities/interactive_manager.gd" id="1_sxww1"]
+
+[node name="InteractiveManager" type="Node2D"]
+script = ExtResource("1_sxww1")
+
+[node name="Label" type="Label" parent="."]
+z_index = 20
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -160.0
+offset_right = 160.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_s4tja")
+theme_override_font_sizes/font_size = 9
+text = "[E] to interact"
+horizontal_alignment = 1
+vertical_alignment = 1

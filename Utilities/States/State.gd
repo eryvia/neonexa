@@ -3,6 +3,7 @@ class_name State
 
 signal Transitioned(state, new_state_name)
 var player 
+var enemy
 
 func enter():
 	pass
