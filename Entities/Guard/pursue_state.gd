@@ -14,9 +14,19 @@ func physics_update(delta):
 		
 	print(direction)
 	owner.velocity = direction.normalized() * owner.speed * delta
+
 	owner.move_and_slide()
+	
+	_choosing_next_state(direction)
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	if body == parent.target:
 		parent.target = null
 		Transitioned.emit(self, "EnemyIdleState")
+
+
+func _choosing_next_state(direction):
+	if direction.x < 3:
+		Transitioned.emit(self, "GroundEnemySlashState")
+	
+		

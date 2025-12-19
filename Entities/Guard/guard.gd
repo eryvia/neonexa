@@ -9,7 +9,6 @@ var facing_direction = 1
 @onready var animation = $AnimatedSprite2D
 
 func _physics_process(delta):
-	#_facing_direction()
 	state_machine._physics_process(delta)
 	
 	

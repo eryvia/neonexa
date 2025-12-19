@@ -8,7 +8,8 @@ const lines: Array[String] = [
 	"Wanna spar?",
 	"Wait...",
 	"I shouldn't waste my energy",
-	"Well, I'll see you at the buffet!"
+	"Well, I'll see you at the buffet!",
+	"Okay, u stupid fker"
 ]#max width dont work
 
 func _ready():
