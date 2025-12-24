@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dogc7thnt0gkb"
-path="res://.godot/imported/Pasted image 20251124181847.png-f0c260380a9ebcd98c26d6ae1a885dd6.ctex"
+uid="uid://ck0d32c3xgemy"
+path="res://.godot/imported/justenemynow.png-7946e5b498ddec3c229a3aab8595cb6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/story_tree/neonexa/Pasted image 20251124181847.png"
-dest_files=["res://.godot/imported/Pasted image 20251124181847.png-f0c260380a9ebcd98c26d6ae1a885dd6.ctex"]
+source_file="res://Entities/justenemynow.png"
+dest_files=["res://.godot/imported/justenemynow.png-7946e5b498ddec3c229a3aab8595cb6f.ctex"]
 
 [params]
 
