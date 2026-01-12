@@ -211,10 +211,12 @@ script = ExtResource("7_hj1c0")
 [node name="Attack" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+visible = false
 position = Vector2(-11.5, 4)
 shape = SubResource("RectangleShape2D_hj1c0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Attack"]
+visible = false
 position = Vector2(0, -4)
 texture = ExtResource("2_hj1c0")
 region_enabled = true
