@@ -7,14 +7,22 @@ class_name Player
 @export var max_jumps := 2
 var current_jumps := max_jumps
 var facing_direction := 1  # 1 = right, -1 = left
+@onready var Attack = $Attack_Projectile
+
+#matter
+
 
 @onready var state_machine = $StateMachine
 
 func _ready():
 	add_to_group("player")
-
+	$Attack_Projectile/Attack_Collider.disabled = false
+	$Attack_Projectile/Sprite2D.visible = false
+	
 func _physics_process(delta):
 	state_machine._physics_process(delta)
+	if Input.is_action_just_pressed("attack"):
+		
 	move_and_slide()
 	
 func update_facing(input):

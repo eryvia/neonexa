@@ -175,6 +175,10 @@ size = Vector2(11, 20)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_e5kic")
+speed = null
+jump_velocity = null
+gravity = null
+max_jumps = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -7)
@@ -208,14 +212,13 @@ script = ExtResource("6_t38ms")
 [node name="JumpState" type="Node" parent="StateMachine"]
 script = ExtResource("7_hj1c0")
 
-[node name="Attack" type="Area2D" parent="."]
+[node name="Attack_Projectile" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
-visible = false
+[node name="Attack_Collider" type="CollisionShape2D" parent="Attack_Projectile"]
 position = Vector2(-11.5, 4)
 shape = SubResource("RectangleShape2D_hj1c0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Attack"]
+[node name="Sprite2D" type="Sprite2D" parent="Attack_Projectile"]
 visible = false
 position = Vector2(0, -4)
 texture = ExtResource("2_hj1c0")
