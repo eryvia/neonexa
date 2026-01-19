@@ -8,6 +8,7 @@ class_name Player
 var current_jumps := max_jumps
 var facing_direction := 1  # 1 = right, -1 = left
 @onready var Attack = $Attack_Projectile
+@onready var AttackCd = 2
 
 #matter
 
@@ -21,7 +22,8 @@ func _ready():
 	
 func _physics_process(delta):
 	state_machine._physics_process(delta)
-	if Input.is_action_just_pressed("attack"):
+	
+	#if Input.is_action_just_pressed("attack"):
 		
 	move_and_slide()
 	

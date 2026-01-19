@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://brles2brqiwmx"]
+[gd_scene load_steps=31 format=3 uid="uid://brles2brqiwmx"]
 
 [ext_resource type="Script" uid="uid://byndxy24po04m" path="res://Entities/Player/player.gd" id="1_e5kic"]
 [ext_resource type="Texture2D" uid="uid://c3deil2ueqnqo" path="res://Entities/Player/Art/player_spritesheet_new.png" id="2_hj1c0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://rspxkkijpmhq" path="res://Entities/Player/walk_state.gd" id="5_an6q6"]
 [ext_resource type="Script" uid="uid://3m10cfw5gdug" path="res://Entities/Player/fall_state.gd" id="6_t38ms"]
 [ext_resource type="Script" uid="uid://34bafl4tjbh2" path="res://Entities/Player/jump_state.gd" id="7_hj1c0"]
+[ext_resource type="Texture2D" uid="uid://wd7irmyww0jp" path="res://Entities/Player/Art/player_attacks.png" id="8_x44r4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hj1c0"]
 atlas = ExtResource("2_hj1c0")
@@ -164,21 +165,16 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vweq0"]
-radius = 7.0
-height = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x44r4"]
+size = Vector2(11, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hj1c0"]
-size = Vector2(11, 20)
+size = Vector2(15.5, 22)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_e5kic")
-speed = null
-jump_velocity = null
-gravity = null
-max_jumps = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -7)
@@ -187,8 +183,9 @@ animation = &"fall"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 3)
-shape = SubResource("CapsuleShape2D_vweq0")
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_x44r4")
+debug_color = Color(0, 0.6229185, 0.5447775, 0.41960785)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -1)
@@ -215,14 +212,18 @@ script = ExtResource("7_hj1c0")
 [node name="Attack_Projectile" type="Area2D" parent="."]
 
 [node name="Attack_Collider" type="CollisionShape2D" parent="Attack_Projectile"]
-position = Vector2(-11.5, 4)
+position = Vector2(-13.75, 3)
 shape = SubResource("RectangleShape2D_hj1c0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Attack_Projectile"]
-visible = false
-position = Vector2(0, -4)
-texture = ExtResource("2_hj1c0")
+position = Vector2(-13.999999, 2)
+scale = Vector2(0.07925537, 0.07925537)
+texture = ExtResource("8_x44r4")
 region_enabled = true
-region_rect = Rect2(240.69348, 0, 40.217865, 40)
+region_rect = Rect2(1728, 288, 352, 416)
 
 [node name="anim" type="AnimationPlayer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
