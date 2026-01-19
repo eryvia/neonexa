@@ -17,9 +17,11 @@ func _physics_process(delta):
 func _facing_direction():	
 	animation.flip_h
 """
-
-
+"""
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area == is_in_group(player_attack):
 		pass
 	pass # Replace with function body.
+	
+	
+"""

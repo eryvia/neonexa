@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://brles2brqiwmx"]
+[gd_scene load_steps=36 format=3 uid="uid://brles2brqiwmx"]
 
 [ext_resource type="Script" uid="uid://byndxy24po04m" path="res://Entities/Player/player.gd" id="1_e5kic"]
 [ext_resource type="Texture2D" uid="uid://c3deil2ueqnqo" path="res://Entities/Player/Art/player_spritesheet_new.png" id="2_hj1c0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://rspxkkijpmhq" path="res://Entities/Player/walk_state.gd" id="5_an6q6"]
 [ext_resource type="Script" uid="uid://3m10cfw5gdug" path="res://Entities/Player/fall_state.gd" id="6_t38ms"]
 [ext_resource type="Script" uid="uid://34bafl4tjbh2" path="res://Entities/Player/jump_state.gd" id="7_hj1c0"]
+[ext_resource type="Script" uid="uid://cx3svmxq62ag" path="res://Entities/Player/attack_state.gd" id="8_761t5"]
 [ext_resource type="Texture2D" uid="uid://wd7irmyww0jp" path="res://Entities/Player/Art/player_attacks.png" id="8_x44r4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hj1c0"]
@@ -171,6 +172,45 @@ size = Vector2(11, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hj1c0"]
 size = Vector2(15.5, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_761t5"]
+size = Vector2(9, 15)
+
+[sub_resource type="Animation" id="Animation_hacra"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack_Projectile/Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_761t5"]
+resource_name = "basic_attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack_Projectile/Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.26666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jynvv"]
+_data = {
+&"RESET": SubResource("Animation_hacra"),
+&"basic_attack": SubResource("Animation_761t5")
+}
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
@@ -209,6 +249,9 @@ script = ExtResource("6_t38ms")
 [node name="JumpState" type="Node" parent="StateMachine"]
 script = ExtResource("7_hj1c0")
 
+[node name="AttackState" type="Node" parent="StateMachine"]
+script = ExtResource("8_761t5")
+
 [node name="Attack_Projectile" type="Area2D" parent="."]
 
 [node name="Attack_Collider" type="CollisionShape2D" parent="Attack_Projectile"]
@@ -216,14 +259,21 @@ position = Vector2(-13.75, 3)
 shape = SubResource("RectangleShape2D_hj1c0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Attack_Projectile"]
-position = Vector2(-13.999999, 2)
-scale = Vector2(0.07925537, 0.07925537)
+visible = false
+position = Vector2(-11, 1.9999995)
+scale = Vector2(0.09408699, 0.09408697)
 texture = ExtResource("8_x44r4")
 region_enabled = true
 region_rect = Rect2(1728, 288, 352, 416)
 
+[node name="playerHitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitBox"]
+position = Vector2(1.5, 4.5)
+shape = SubResource("RectangleShape2D_761t5")
+debug_color = Color(0.80883676, 0.41365224, 0, 0.41960785)
+
 [node name="anim" type="AnimationPlayer" parent="."]
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_jynvv")
+}

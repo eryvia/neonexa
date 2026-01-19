@@ -14,6 +14,9 @@ func physics_update(delta):
 	player.velocity.x = input * player.speed
 	
 	player.update_facing(input)
+	
+	if Input.is_action_just_pressed("attack"):
+		Transitioned.emit(self, "AttackState")
 
 	if Input.is_action_just_pressed("jump"):
 		Transitioned.emit(self, "JumpState")

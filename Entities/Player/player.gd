@@ -4,27 +4,31 @@ class_name Player
 @export var speed := 100.0
 @export var jump_velocity := -600.0
 @export var gravity := 900.0
+
 @export var max_jumps := 2
 var current_jumps := max_jumps
+
 var facing_direction := 1  # 1 = right, -1 = left
-@onready var Attack = $Attack_Projectile
+
+@onready var Attack = $Attack_Projectile                                                                                              
 @onready var AttackCd = 2
 
-#matter
-
+#matter 
+@onready var attack_hitbox: Area2D = $Attack_Projectile
+@onready var attack_hitbox_shape: CollisionShape2D = $Attack_Projectile/Attack_Collider
 
 @onready var state_machine = $StateMachine
+
+@onready var anim: AnimationPlayer = $anim
 
 func _ready():
 	add_to_group("player")
 	$Attack_Projectile/Attack_Collider.disabled = false
 	$Attack_Projectile/Sprite2D.visible = false
+	disable_attack_hitbox()
 	
 func _physics_process(delta):
 	state_machine._physics_process(delta)
-	
-	#if Input.is_action_just_pressed("attack"):
-		
 	move_and_slide()
 	
 func update_facing(input):
@@ -39,3 +43,9 @@ func facing_direction_fn(input):
 		return false
 	else:
 		return self.facing_direction
+		
+func enable_attack_hitbox():
+	attack_hitbox_shape.disabled = false
+
+func disable_attack_hitbox():
+	attack_hitbox_shape.disabled = true

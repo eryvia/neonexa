@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://gf45aov1wafw"]
+[gd_scene load_steps=18 format=3 uid="uid://gf45aov1wafw"]
 
 [ext_resource type="Script" uid="uid://be6qslidlc1c2" path="res://Entities/Guard/guard.gd" id="1_edth3"]
 [ext_resource type="Texture2D" uid="uid://fqtc4ix1cobi" path="res://Entities/Guard/Art/Guard-ase.png" id="1_gp63h"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://dao4h7dnqot3s" path="res://Entities/Player/state_machine.gd" id="3_kl3r6"]
 [ext_resource type="Script" uid="uid://cyjwpcldg5gam" path="res://Entities/Guard/pursue_state.gd" id="5_kl3r6"]
 [ext_resource type="Script" uid="uid://pxxth5e4hcdy" path="res://Entities/Guard/enemy_idle_state.gd" id="6_edth3"]
-[ext_resource type="Script" uid="uid://dfva5gxsfl14q" path="res://Entities/Guard/ground_enemy_slash_state.gd" id="7_j6vv2"]
 [ext_resource type="Script" uid="uid://dmakqn6vmk6pl" path="res://Entities/Guard/patrol_state.gd" id="8_1wp4l"]
 [ext_resource type="Script" uid="uid://h72f2obbhwtx" path="res://Entities/Guard/attack_area.gd" id="8_aj7hh"]
 [ext_resource type="Script" uid="uid://dc7x1vn5icp7p" path="res://Entities/Guard/hit_box.gd" id="10_lfoyx"]
@@ -81,9 +80,6 @@ script = ExtResource("5_kl3r6")
 
 [node name="EnemyIdleState" type="Node" parent="StateMachine"]
 script = ExtResource("6_edth3")
-
-[node name="GroundEnemySlashState" type="Node" parent="StateMachine"]
-script = ExtResource("7_j6vv2")
 
 [node name="PatrolState" type="Node" parent="StateMachine"]
 script = ExtResource("8_1wp4l")
