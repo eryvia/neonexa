@@ -170,7 +170,7 @@ animations = [{
 size = Vector2(11, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hj1c0"]
-size = Vector2(15.5, 22)
+size = Vector2(15.5, 22.501028)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_761t5"]
 size = Vector2(9, 15)
@@ -227,8 +227,23 @@ position = Vector2(1.5, 3)
 shape = SubResource("RectangleShape2D_x44r4")
 debug_color = Color(0, 0.6229185, 0.5447775, 0.41960785)
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -1)
+[node name="Attack_Projectile" type="Area2D" parent="."]
+position = Vector2(1, 4)
+
+[node name="Attack_Collider" type="CollisionShape2D" parent="Attack_Projectile"]
+position = Vector2(-14, -3)
+scale = Vector2(0.9688752, 1.0433849)
+shape = SubResource("RectangleShape2D_hj1c0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Attack_Projectile"]
+visible = false
+position = Vector2(-22, -2.0000043)
+scale = Vector2(0.09408699, 0.09408697)
+texture = ExtResource("8_x44r4")
+region_enabled = true
+region_rect = Rect2(1728, 288, 352, 416)
+
+[node name="AttackMarker" type="Marker2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -69)
@@ -251,20 +266,6 @@ script = ExtResource("7_hj1c0")
 
 [node name="AttackState" type="Node" parent="StateMachine"]
 script = ExtResource("8_761t5")
-
-[node name="Attack_Projectile" type="Area2D" parent="."]
-
-[node name="Attack_Collider" type="CollisionShape2D" parent="Attack_Projectile"]
-position = Vector2(-13.75, 3)
-shape = SubResource("RectangleShape2D_hj1c0")
-
-[node name="Sprite2D" type="Sprite2D" parent="Attack_Projectile"]
-visible = false
-position = Vector2(-11, 1.9999995)
-scale = Vector2(0.09408699, 0.09408697)
-texture = ExtResource("8_x44r4")
-region_enabled = true
-region_rect = Rect2(1728, 288, 352, 416)
 
 [node name="playerHitBox" type="Area2D" parent="."]
 

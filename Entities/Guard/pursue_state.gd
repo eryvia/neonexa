@@ -29,4 +29,8 @@ func _choosing_next_state(direction):
 	if direction.x < 3:
 		Transitioned.emit(self, "GroundEnemySlashState")
 	
-		
+
+func _on_attack_area_body_entered(body: Node2D) -> void:
+	Transitioned.emit(self, "AttackState")
+	pass
+	 

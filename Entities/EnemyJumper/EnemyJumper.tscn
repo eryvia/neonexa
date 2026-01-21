@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://8pb75njcvji0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ly6a"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"jump_ins",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rpy6k"]
+radius = 16.0
+
+[node name="EnemyJumper" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2ly6a")
+animation = &"jump_ins"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rpy6k")
