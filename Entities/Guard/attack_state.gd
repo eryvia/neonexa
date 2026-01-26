@@ -1,5 +1,5 @@
 extends State
-class_name AttackState
+class_name AttackStateddw
 
 func enter():
 	var weight:int
@@ -15,7 +15,6 @@ func enter():
 func physics_update(delta):
 	if owner.isAttacking:
 		owner.velocity.x = owner.facing * 200
-
 
 func GroundLongSlash(): 
 	owner.position.x = 0
