@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://brles2brqiwmx"]
+[gd_scene load_steps=45 format=3 uid="uid://brles2brqiwmx"]
 
 [ext_resource type="Script" uid="uid://byndxy24po04m" path="res://Entities/Player/player.gd" id="1_e5kic"]
 [ext_resource type="Texture2D" uid="uid://c3deil2ueqnqo" path="res://Entities/Player/Art/player_spritesheet_new.png" id="2_hj1c0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://34bafl4tjbh2" path="res://Entities/Player/jump_state.gd" id="7_hj1c0"]
 [ext_resource type="Script" uid="uid://cx3svmxq62ag" path="res://Entities/Player/attack_state.gd" id="8_761t5"]
 [ext_resource type="Texture2D" uid="uid://wd7irmyww0jp" path="res://Entities/Player/Art/player_attacks.png" id="8_x44r4"]
+[ext_resource type="Script" uid="uid://bv7341qhj0ehs" path="res://Entities/Player/dash_state.gd" id="10_hacra"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tepoh"]
 atlas = ExtResource("2_hj1c0")
@@ -329,6 +330,9 @@ script = ExtResource("7_hj1c0")
 [node name="AttackState" type="Node" parent="StateMachine"]
 script = ExtResource("8_761t5")
 
+[node name="DashState" type="Node" parent="StateMachine"]
+script = ExtResource("10_hacra")
+
 [node name="playerHitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitBox"]
@@ -340,3 +344,6 @@ debug_color = Color(0.80883676, 0.41365224, 0, 0.41960785)
 libraries = {
 &"": SubResource("AnimationLibrary_jynvv")
 }
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.461

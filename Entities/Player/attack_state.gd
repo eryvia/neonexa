@@ -9,7 +9,7 @@ var t := 0.0
 func enter() -> void:             
 	var animation = player.get_node("AnimatedSprite2D")                                           
 	t = 0.0
-	player.velocity.x = 0 
+	#player.velocity.x = 0 
 	player.anim.play("basic_attack")
 	player.disable_attack_hitbox()
 	animation.play("attack")

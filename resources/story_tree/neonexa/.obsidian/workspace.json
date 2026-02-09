@@ -11,30 +11,41 @@
             "id": "0de3c8ccde3dc7f5",
             "type": "leaf",
             "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "d1ca9609f0fd20eb",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "The player.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The player"
+              "title": "Untitled"
             }
           },
           {
-            "id": "d4a07e6cad82bdef",
+            "id": "e93dda3a1d2e37a4",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.10.6"
+                "file": "Main story.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.10.6"
+              "icon": "lucide-file",
+              "title": "Main story"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -182,10 +193,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "d4a07e6cad82bdef",
+  "active": "0de3c8ccde3dc7f5",
   "lastOpenFiles": [
-    "Untitled.canvas",
+    "Untitled.md",
     "The player.md",
+    "Main story.md",
+    "Untitled.canvas",
     "The Prologue/Player (early stage).md",
     "Pasted image 20251124181847.png",
     "Root.md",

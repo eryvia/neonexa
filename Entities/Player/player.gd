@@ -11,7 +11,7 @@ var current_jumps := max_jumps
 var facing_direction := 1  # 1 = right, -1 = left
 
 @onready var Attack = $Attack_Projectile                                                                                              
-@onready var AttackCd = 2
+@onready var can_atttack:bool = true
 
 #matter 
 @onready var attack_hitbox: Area2D = $Attack_Projectile
