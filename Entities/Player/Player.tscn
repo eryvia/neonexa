@@ -306,7 +306,7 @@ texture = ExtResource("8_x44r4")
 region_enabled = true
 region_rect = Rect2(1728, 288, 352, 416)
 
-[node name="AttackMarker" type="Marker2D" parent="."]
+[node name="Attack_Pivot" type="Marker2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -69)

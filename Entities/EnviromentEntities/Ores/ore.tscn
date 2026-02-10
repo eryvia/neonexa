@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://da73y8rsf5fr8"]
+
+[ext_resource type="Script" uid="uid://dsfxi5e2jn8m8" path="res://ore.gd" id="1_u70es"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad5bv"]
+
+[node name="Ore" type="Area2D"]
+script = ExtResource("1_u70es")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ad5bv")
+debug_color = Color(0.83561856, 0.38126245, 0.20351794, 0.41960785)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

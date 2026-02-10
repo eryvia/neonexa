@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccdfjnfpyd2hm"
-path="res://.godot/imported/silksong1.png-1461e9787a04b722473601a564685292.ctex"
+path="res://.godot/imported/silksong1.png-3d1a84d2444b8d320a7c11b2e73cd8c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/design/background/silksong1.png"
-dest_files=["res://.godot/imported/silksong1.png-1461e9787a04b722473601a564685292.ctex"]
+source_file="res://resources/design/background/silksong1.png"
+dest_files=["res://.godot/imported/silksong1.png-3d1a84d2444b8d320a7c11b2e73cd8c1.ctex"]
 
 [params]
 

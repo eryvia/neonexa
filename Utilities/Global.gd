@@ -1,6 +1,7 @@
 extends Node
 
 const GAME_SCENES: Dictionary = {
+	"player": "uid://brles2brqiwmx",
 	"sandbox": "uid://c80maj2vdho5i"
 }
 

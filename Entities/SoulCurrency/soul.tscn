@@ -1,38 +1,38 @@
 [gd_scene load_steps=13 format=3 uid="uid://cyvixke6d5ic2"]
 
-[ext_resource type="Script" uid="uid://dt5xk2d6j76h7" path="res://Entities/SoulCurrency/soul_currency.gd" id="1_jwh5k"]
-[ext_resource type="Texture2D" uid="uid://drofo41n20h0q" path="res://Entities/SoulCurrency/Art/soulCurrency.png" id="1_tfp4n"]
+[ext_resource type="Script" uid="uid://dt5xk2d6j76h7" path="res://Entities/SoulCurrency/soul.gd" id="1_3u3qc"]
+[ext_resource type="Texture2D" uid="uid://drofo41n20h0q" path="res://Entities/SoulCurrency/Art/soulCurrency.png" id="2_ldalf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwh5k"]
-atlas = ExtResource("1_tfp4n")
+atlas = ExtResource("2_ldalf")
 region = Rect2(112, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ms0o0"]
-atlas = ExtResource("1_tfp4n")
+atlas = ExtResource("2_ldalf")
 region = Rect2(128, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ooimo"]
-atlas = ExtResource("1_tfp4n")
+atlas = ExtResource("2_ldalf")
 region = Rect2(144, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vmyuu"]
-atlas = ExtResource("1_tfp4n")
+atlas = ExtResource("2_ldalf")
 region = Rect2(160, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tx2hn"]
-atlas = ExtResource("1_tfp4n")
+atlas = ExtResource("2_ldalf")
 region = Rect2(176, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5xd4j"]
-atlas = ExtResource("1_tfp4n")
+atlas = ExtResource("2_ldalf")
 region = Rect2(192, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5wta"]
-atlas = ExtResource("1_tfp4n")
+atlas = ExtResource("2_ldalf")
 region = Rect2(208, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bumr5"]
-atlas = ExtResource("1_tfp4n")
+atlas = ExtResource("2_ldalf")
 region = Rect2(224, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lnrbg"]
@@ -75,8 +75,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_3npcd"]
 radius = 5.3851647
 
-[node name="soul" type="Area2D"]
-script = ExtResource("1_jwh5k")
+[node name="Soul" type="Area2D"]
+script = ExtResource("1_3u3qc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lnrbg")
@@ -88,4 +88,7 @@ frame_progress = 0.042465106
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_3npcd")
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
