@@ -21,9 +21,9 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	post[] = currency_at_one_spot():
-		pass 
+	pass
 
 func currency_at_one_spot():
 	var player = Global.player
-	return {player.position.x, player.position.y}
+	pass
+	#return {player.position.x, player.position.y}

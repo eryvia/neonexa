@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c80maj2vdho5i"]
+[gd_scene load_steps=12 format=4 uid="uid://c80maj2vdho5i"]
 
 [ext_resource type="Script" uid="uid://dmo677814xioj" path="res://Stages/SandBox/sand_box.gd" id="1_b73f1"]
 [ext_resource type="Texture2D" uid="uid://d24ebm6i5ep8u" path="res://Stages/OldIntakeSector/Art/Background/OIS_BG-ase.png" id="2_nlitk"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bhb2joaavl30e" path="res://Stages/OldIntakeSector/Art/OldIntakeSector.png" id="6_blkab"]
 [ext_resource type="PackedScene" uid="uid://c2tj5uq3q1wxa" path="res://Entities/Rulers/Rulebounder/Rulebounder.tscn" id="7_blkab"]
 [ext_resource type="PackedScene" uid="uid://gf45aov1wafw" path="res://Entities/Guard/guard.tscn" id="8_y2c6g"]
+[ext_resource type="PackedScene" uid="uid://dumouq6hymro0" path="res://Utilities/CurrencyDropPoint.tscn" id="9_gclki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7o460"]
 texture = ExtResource("6_blkab")
@@ -880,3 +881,6 @@ offset_bottom = 175.912
 
 [node name="Guard" parent="." instance=ExtResource("8_y2c6g")]
 position = Vector2(-350, 64)
+
+[node name="CurrencyDropPoint" parent="." instance=ExtResource("9_gclki")]
+position = Vector2(-133, 68)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://os1b2wd8wuij"
-path="res://.godot/imported/resting-grounds-194287.png-f6dc3996632a4ca8097b08581dc54e04.ctex"
+path="res://.godot/imported/resting-grounds-194287.png-e3de013ead98fc94e321fb03863497ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/design/resting-grounds-194287.png"
-dest_files=["res://.godot/imported/resting-grounds-194287.png-f6dc3996632a4ca8097b08581dc54e04.ctex"]
+source_file="res://Resources/design/resting-grounds-194287.png"
+dest_files=["res://.godot/imported/resting-grounds-194287.png-e3de013ead98fc94e321fb03863497ac.ctex"]
 
 [params]
 
