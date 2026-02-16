@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://brles2brqiwmx"]
+[gd_scene format=3 uid="uid://brles2brqiwmx"]
 
 [ext_resource type="Script" uid="uid://byndxy24po04m" path="res://Entities/Player/player.gd" id="1_e5kic"]
 [ext_resource type="Texture2D" uid="uid://c3deil2ueqnqo" path="res://Entities/Player/Art/player_spritesheet_new.png" id="2_hj1c0"]
@@ -273,32 +273,32 @@ _data = {
 &"basic_attack": SubResource("Animation_761t5")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=2048605313]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_e5kic")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=156224208]
 position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_vcmon")
 animation = &"attack"
 autoplay = "idle"
 frame_progress = 0.53748626
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=810134]
 position = Vector2(1.5, 3)
 shape = SubResource("RectangleShape2D_x44r4")
 debug_color = Color(0, 0.6229185, 0.5447775, 0.41960785)
 
-[node name="Attack_Projectile" type="Area2D" parent="."]
+[node name="Attack_Projectile" type="Area2D" parent="." unique_id=1133964567]
 position = Vector2(1, 4)
 
-[node name="Attack_Collider" type="CollisionShape2D" parent="Attack_Projectile"]
+[node name="Attack_Collider" type="CollisionShape2D" parent="Attack_Projectile" unique_id=1249277219]
 position = Vector2(-14, -3)
 scale = Vector2(0.9688752, 1.0433849)
 shape = SubResource("RectangleShape2D_hj1c0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Attack_Projectile"]
+[node name="Sprite2D" type="Sprite2D" parent="Attack_Projectile" unique_id=1364725707]
 visible = false
 position = Vector2(-22, -2.0000043)
 scale = Vector2(0.09408699, 0.09408697)
@@ -306,44 +306,42 @@ texture = ExtResource("8_x44r4")
 region_enabled = true
 region_rect = Rect2(1728, 288, 352, 416)
 
-[node name="Attack_Pivot" type="Marker2D" parent="."]
+[node name="Attack_Pivot" type="Marker2D" parent="." unique_id=32683118]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=922718036]
 position = Vector2(0, -69)
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1652929311 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_1des2")
 initial_state = NodePath("IdleState")
 
-[node name="IdleState" type="Node" parent="StateMachine"]
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=739678767]
 script = ExtResource("4_1des2")
 
-[node name="WalkState" type="Node" parent="StateMachine"]
+[node name="WalkState" type="Node" parent="StateMachine" unique_id=1864519986]
 script = ExtResource("5_an6q6")
 
-[node name="FallState" type="Node" parent="StateMachine"]
+[node name="FallState" type="Node" parent="StateMachine" unique_id=1605556869]
 script = ExtResource("6_t38ms")
 
-[node name="JumpState" type="Node" parent="StateMachine"]
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=344522668]
 script = ExtResource("7_hj1c0")
 
-[node name="AttackState" type="Node" parent="StateMachine"]
+[node name="AttackState" type="Node" parent="StateMachine" unique_id=2092948412]
 script = ExtResource("8_761t5")
 
-[node name="DashState" type="Node" parent="StateMachine"]
+[node name="DashState" type="Node" parent="StateMachine" unique_id=1114524004]
 script = ExtResource("10_hacra")
 
-[node name="playerHitBox" type="Area2D" parent="."]
+[node name="playerHitBox" type="Area2D" parent="." unique_id=646323916]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitBox" unique_id=1562757715]
 position = Vector2(1.5, 4.5)
 shape = SubResource("RectangleShape2D_761t5")
 debug_color = Color(0.80883676, 0.41365224, 0, 0.41960785)
 
-[node name="anim" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_jynvv")
-}
+[node name="anim" type="AnimationPlayer" parent="." unique_id=515157304]
+libraries/ = SubResource("AnimationLibrary_jynvv")
 
-[node name="AttackTimer" type="Timer" parent="."]
+[node name="AttackTimer" type="Timer" parent="." unique_id=860851968]
 wait_time = 0.461

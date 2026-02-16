@@ -2,7 +2,6 @@ extends Node2D
 class_name SoulDropPoint
 
 @export var amount = 10
-@onready var timer = $IdleTimer
 
 func _ready() -> void:
 	var scene = preload("uid://cyvixke6d5ic2") #Soul Scene
