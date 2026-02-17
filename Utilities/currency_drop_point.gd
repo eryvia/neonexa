@@ -1,17 +1,15 @@
 extends Node2D
 class_name SoulDropPoint
 
-@export var amount = 10
+@export var amount := 10
+@export var soul_scene: PackedScene = preload("uid://cyvixke6d5ic2")
 
 func _ready() -> void:
-	var scene = preload("uid://cyvixke6d5ic2") #Soul Scene
-	for x in amount.len():
-		var instance = scene.instantiate()
-		add_child(instance)
-		
-		var num = randi() % 50
-		instance.position.x = num
-		instance.position.y = num
-		SignalBus.connect("soul_can_be_harvested", Callable(self, "_soul_can_be_harvested"))
-		SignalBus.soul_is_harestable_now()
-		
+	for i in amount:
+		var soul := soul_scene.instantiate() as Soul
+		add_child(soul)
+
+		soul.position = Vector2(randi() % 50, randi() % 50)
+	
+	await get_tree().create_timer(0.4).timeout
+	SignalBus.soul_can_be_harvested_now()

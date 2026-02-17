@@ -1,23 +1,31 @@
 extends State           
 class_name AttackState
 
-@onready var pivot = $Attack_Pivot
-
 @export var active_time := 0.08  
 @export var total_time := 0.20    
 
 var t := 0.0
 
-
 func enter() -> void:
-	if player.facing_direction == 1:
-		$Child.scale.x = -$Player.scale.x
+	
+	player.attack_hitbox.scale.x = -1 if player.facing_direction == 1 else 1
 		
-	var animation = player.get_node("AnimatedSprite2D")                                           
-	t = 0.0
-	#player.velocity.x = 0 
-	player.anim.play("basic_attack")
 	player.disable_attack_hitbox()
+
+	t = 0.0
+	var slash: AnimatedSprite2D = player.player_attack_anim
+	slash.visible = true
+	slash.stop()
+	slash.frame = 0
+	
+	var sf := slash.sprite_frames
+	if sf and sf.has_animation("default_slash"):
+		sf.set_animation_loop("default_slash", false)
+	
+	var animation = player.get_node("AnimatedSprite2D")                                           
+
+	player.player_attack_anim.visible = true
+	player.player_attack_anim.play("default_slash")
 	animation.play("attack")
 
 

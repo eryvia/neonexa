@@ -18,13 +18,12 @@ var facing_direction := 1  # 1 = right, -1 = left
 @onready var attack_hitbox_shape: CollisionShape2D = $Attack_Projectile/Attack_Collider
 
 @onready var state_machine = $StateMachine
-
-@onready var anim: AnimationPlayer = $anim
+@onready var player_attack_anim = $Attack_Projectile/PlayerAttackAnimation
 
 func _ready():
 	add_to_group("player")
 	$Attack_Projectile/Attack_Collider.disabled = false
-	$Attack_Projectile/Sprite2D.visible = false
+	player_attack_anim.visible = false
 	disable_attack_hitbox()
 	
 func _physics_process(delta):
