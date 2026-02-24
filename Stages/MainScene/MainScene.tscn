@@ -1,11 +1,56 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn0d1brp825vr"]
+[gd_scene format=3 uid="uid://dn0d1brp825vr"]
 
 [ext_resource type="Script" uid="uid://c7q335b75nxgo" path="res://Stages/MainScene/mainScene.gd" id="1_gratp"]
-[ext_resource type="Texture2D" uid="uid://dexgj7gogphpi" path="res://Stages/MainScene/Art/bg1.jpg" id="2_gyvga"]
+[ext_resource type="Texture2D" uid="uid://dcura21k4y8a" path="res://Stages/MainScene/Art/bg.jpg" id="2_jtagt"]
 [ext_resource type="FontFile" uid="uid://c6ual6wdh5cp1" path="res://Common/fonts/pixeloid-font/PixeloidMono-aYe1R.ttf" id="3_86d06"]
 [ext_resource type="PackedScene" uid="uid://b67et8cy1d0kj" path="res://Utilities/Transitions/FadeTransition.tscn" id="4_gyvga"]
+[ext_resource type="FontFile" uid="uid://dnji3n1crhnds" path="res://Common/fonts/alagard/alagard.ttf" id="5_dq1md"]
+[ext_resource type="Texture2D" uid="uid://2qn5q8iv7bx0" path="res://Stages/MainScene/Art/mini_axo.png" id="6_dq1md"]
 
-[node name="MainScene" type="Control"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_odwdx"]
+atlas = ExtResource("6_dq1md")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6pti"]
+atlas = ExtResource("6_dq1md")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_628cb"]
+atlas = ExtResource("6_dq1md")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8yw1"]
+atlas = ExtResource("6_dq1md")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4ph8"]
+atlas = ExtResource("6_dq1md")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jtagt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odwdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6pti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_628cb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8yw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4ph8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="MainScene" type="Control" unique_id=237313574]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,12 +59,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gratp")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2103451815]
 position = Vector2(192.00002, 107)
 scale = Vector2(0.100508116, 0.10115739)
-texture = ExtResource("2_gyvga")
+texture = ExtResource("2_jtagt")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=516413035]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.259
@@ -34,15 +79,15 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/separation = 9
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1140023961]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.12628347, 0.99999994, 0.9602862, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_86d06")
 theme_override_font_sizes/font_size = 18
 text = "Pilgrimage"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1996412525]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.12628347, 0.99999994, 0.9602862, 1)
@@ -50,11 +95,56 @@ theme_override_fonts/font = ExtResource("3_86d06")
 theme_override_font_sizes/font_size = 18
 text = "Exit"
 
-[node name="FadeTransition" parent="." instance=ExtResource("4_gyvga")]
+[node name="FadeTransition" parent="." unique_id=742606885 instance=ExtResource("4_gyvga")]
 visible = false
 layout_mode = 1
 
-[node name="FadeTimer" type="Timer" parent="FadeTransition"]
+[node name="FadeTimer" type="Timer" parent="FadeTransition" unique_id=1833689457]
+
+[node name="MainVBox" type="VBoxContainer" parent="." unique_id=745281936]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.86500007
+anchor_top = 0.71300006
+anchor_right = 0.97400004
+anchor_bottom = 0.96800005
+offset_left = -0.16003418
+offset_top = 6.991989
+offset_right = 3.9839783
+offset_bottom = -0.088012695
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Journey" type="Label" parent="MainVBox" unique_id=1355205441]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("5_dq1md")
+theme_override_font_sizes/font_size = 12
+text = "Journey"
+horizontal_alignment = 2
+
+[node name="Options" type="Label" parent="MainVBox" unique_id=1656684105]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dq1md")
+theme_override_font_sizes/font_size = 12
+text = "Options"
+horizontal_alignment = 2
+
+[node name="Escape" type="Label" parent="MainVBox" unique_id=1931712013]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_dq1md")
+theme_override_font_sizes/font_size = 12
+text = "Escape"
+horizontal_alignment = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1304651234]
+position = Vector2(321, 170)
+scale = Vector2(0.65625, 0.65625)
+sprite_frames = SubResource("SpriteFrames_jtagt")
+frame = 4
+frame_progress = 1.0
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
