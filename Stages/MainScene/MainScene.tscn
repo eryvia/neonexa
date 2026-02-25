@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b67et8cy1d0kj" path="res://Utilities/Transitions/FadeTransition.tscn" id="4_gyvga"]
 [ext_resource type="FontFile" uid="uid://dnji3n1crhnds" path="res://Common/fonts/alagard/alagard.ttf" id="5_dq1md"]
 [ext_resource type="Texture2D" uid="uid://2qn5q8iv7bx0" path="res://Stages/MainScene/Art/mini_axo.png" id="6_dq1md"]
+[ext_resource type="AudioStream" uid="uid://hkhkkr1iotfm" path="res://Resources/music/Song6.wav" id="7_odwdx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odwdx"]
 atlas = ExtResource("6_dq1md")
@@ -65,6 +66,7 @@ scale = Vector2(0.100508116, 0.10115739)
 texture = ExtResource("2_jtagt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=516413035]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.259
@@ -145,6 +147,12 @@ scale = Vector2(0.65625, 0.65625)
 sprite_frames = SubResource("SpriteFrames_jtagt")
 frame = 4
 frame_progress = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=675393576]
+stream = ExtResource("7_odwdx")
+volume_db = -10.598
+pitch_scale = 1.08
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

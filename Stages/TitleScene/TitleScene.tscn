@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dq8b864nnyj5y"]
+
+[ext_resource type="Texture2D" uid="uid://c7flj5pksw4st" path="res://Stages/TitleScene/Art/TitleOnlyBG.png" id="1_yeec3"]
+[ext_resource type="Texture2D" uid="uid://cx0q4uhu0g13m" path="res://Stages/TitleScene/Art/TitleOnly.png" id="2_07inx"]
+[ext_resource type="FontFile" uid="uid://nlh3ys6cvaj2" path="res://Common/fonts/kiwisoda/KiwiSoda.ttf" id="3_gnxhu"]
+
+[node name="Node2D" type="Control" unique_id=1948401121]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -384.0
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="." unique_id=92435559]
+position = Vector2(197.00002, 111)
+scale = Vector2(0.14471552, 0.14166668)
+texture = ExtResource("1_yeec3")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=1428022650]
+position = Vector2(195, 103)
+scale = Vector2(0.0775463, 0.0775463)
+texture = ExtResource("2_07inx")
+
+[node name="Label3" type="Label" parent="." unique_id=712719376]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 168.0
+offset_right = 243.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("3_gnxhu")
+theme_override_font_sizes/font_size = 12
+text = "Press any button"
+
+[node name="Label2" type="Label" parent="." unique_id=1356878317]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 8.0
+offset_right = 374.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("3_gnxhu")
+theme_override_font_sizes/font_size = 12
+text = "V.1.0"
+
+[node name="Label" type="Label" parent="." unique_id=1108283905]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 190.0
+offset_right = 393.0
+offset_bottom = 222.0
+theme_override_fonts/font = ExtResource("3_gnxhu")
+theme_override_font_sizes/font_size = 14
+text = "Game was made by eryvia, tru paint and hardship"

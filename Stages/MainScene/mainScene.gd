@@ -50,9 +50,12 @@ func update_menu():
 		if i == selected_index:
 			menu_items[i].modulate = Color(1, 1, 0)
 
-			mini_axo.global_position.y = menu_items[i].global_position.y
-			mini_axo.global_position.x = menu_items[i].global_position.x - 24
-
+			mini_axo.global_position.y = menu_items[i].global_position.y + 6
+			mini_axo.global_position.x = menu_items[i].global_position.x - 10
+			
+			if mini_axo.is_playing():
+				mini_axo.stop()
+			
 			mini_axo.play("default")
 		else:
 			menu_items[i].modulate = Color(1, 1, 1)
