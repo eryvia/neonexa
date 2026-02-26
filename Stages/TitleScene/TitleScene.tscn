@@ -1,10 +1,70 @@
 [gd_scene format=3 uid="uid://dq8b864nnyj5y"]
 
+[ext_resource type="Script" uid="uid://dxea5jndcspyj" path="res://Stages/TitleScene/title_scene.gd" id="1_gnxhu"]
 [ext_resource type="Texture2D" uid="uid://c7flj5pksw4st" path="res://Stages/TitleScene/Art/TitleOnlyBG.png" id="1_yeec3"]
 [ext_resource type="Texture2D" uid="uid://cx0q4uhu0g13m" path="res://Stages/TitleScene/Art/TitleOnly.png" id="2_07inx"]
+[ext_resource type="Texture2D" uid="uid://c8ykj4ves1bi5" path="res://Stages/TitleScene/Newart.png" id="3_e16fk"]
 [ext_resource type="FontFile" uid="uid://nlh3ys6cvaj2" path="res://Common/fonts/kiwisoda/KiwiSoda.ttf" id="3_gnxhu"]
+[ext_resource type="Texture2D" uid="uid://x8tgthrvmcgg" path="res://Stages/TitleScene/Try1.png" id="5_e16fk"]
 
-[node name="Node2D" type="Control" unique_id=1948401121]
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj6m5"]
+atlas = ExtResource("5_e16fk")
+region = Rect2(0, 0, 384, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dju3q"]
+atlas = ExtResource("5_e16fk")
+region = Rect2(384, 0, 384, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bee3k"]
+atlas = ExtResource("5_e16fk")
+region = Rect2(768, 0, 384, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lcoj"]
+atlas = ExtResource("5_e16fk")
+region = Rect2(1152, 0, 384, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxeln"]
+atlas = ExtResource("5_e16fk")
+region = Rect2(1536, 0, 384, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjg4s"]
+atlas = ExtResource("5_e16fk")
+region = Rect2(1920, 0, 384, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58qlr"]
+atlas = ExtResource("5_e16fk")
+region = Rect2(2304, 0, 384, 216)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8q8s1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj6m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dju3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bee3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lcoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxeln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjg4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58qlr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="TitleScreen" type="Control" unique_id=1948401121]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,25 +73,31 @@ offset_right = -384.0
 offset_bottom = -216.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gnxhu")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=92435559]
-position = Vector2(197.00002, 111)
+position = Vector2(200, 120.99999)
 scale = Vector2(0.14471552, 0.14166668)
 texture = ExtResource("1_yeec3")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=602827168]
+position = Vector2(173, 172)
+scale = Vector2(0.07359665, 0.07359665)
+texture = ExtResource("3_e16fk")
+
 [node name="Title" type="Sprite2D" parent="." unique_id=1428022650]
-position = Vector2(195, 103)
-scale = Vector2(0.0775463, 0.0775463)
+position = Vector2(194, 108.00001)
+scale = Vector2(0.05729166, 0.057291668)
 texture = ExtResource("2_07inx")
 
-[node name="Label3" type="Label" parent="." unique_id=712719376]
+[node name="PressButton" type="Label" parent="." unique_id=712719376]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 168.0
-offset_right = 243.0
-offset_bottom = 200.0
+offset_left = 154.0
+offset_top = 169.0
+offset_right = 250.0
+offset_bottom = 201.0
 theme_override_fonts/font = ExtResource("3_gnxhu")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 8
 text = "Press any button"
 
 [node name="Label2" type="Label" parent="." unique_id=1356878317]
@@ -44,12 +110,20 @@ theme_override_fonts/font = ExtResource("3_gnxhu")
 theme_override_font_sizes/font_size = 12
 text = "V.1.0"
 
-[node name="Label" type="Label" parent="." unique_id=1108283905]
+[node name="Author" type="Label" parent="." unique_id=1108283905]
 layout_mode = 0
-offset_left = 57.0
-offset_top = 190.0
-offset_right = 393.0
-offset_bottom = 222.0
+offset_left = 8.0
+offset_top = 203.0
+offset_right = 344.0
+offset_bottom = 235.0
 theme_override_fonts/font = ExtResource("3_gnxhu")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 6
 text = "Game was made by eryvia, tru paint and hardship"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1029238356]
+visible = false
+position = Vector2(168, 185.00002)
+scale = Vector2(0.9837964, 0.68576384)
+sprite_frames = SubResource("SpriteFrames_8q8s1")
+autoplay = "default"
+frame_progress = 0.32985723
