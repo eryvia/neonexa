@@ -14,9 +14,9 @@ func _on_soul_can_be_harvested() -> void:
 	soul_timer.start()
 
 func _on_body_entered(body: Node2D) -> void:
-	print("one coing")
+	Global.souls += 1
 	queue_free()
-	pass # Replace with function body.
+	pass
 
 func _on_timer_timeout() -> void:
 	pass

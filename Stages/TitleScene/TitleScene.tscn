@@ -61,7 +61,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 15.0
+"speed": 12.0
 }]
 
 [node name="TitleScreen" type="Control" unique_id=1948401121]
@@ -81,49 +81,29 @@ scale = Vector2(0.14471552, 0.14166668)
 texture = ExtResource("1_yeec3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=602827168]
+visible = false
 position = Vector2(173, 172)
 scale = Vector2(0.07359665, 0.07359665)
 texture = ExtResource("3_e16fk")
 
 [node name="Title" type="Sprite2D" parent="." unique_id=1428022650]
-position = Vector2(194, 108.00001)
-scale = Vector2(0.05729166, 0.057291668)
+position = Vector2(201.00002, 80.999985)
+scale = Vector2(0.06660879, 0.0666088)
 texture = ExtResource("2_07inx")
 
 [node name="PressButton" type="Label" parent="." unique_id=712719376]
 layout_mode = 0
-offset_left = 154.0
-offset_top = 169.0
-offset_right = 250.0
-offset_bottom = 201.0
+offset_left = 171.8889
+offset_top = 160.0625
+offset_right = 267.88892
+offset_bottom = 192.0625
 theme_override_fonts/font = ExtResource("3_gnxhu")
 theme_override_font_sizes/font_size = 8
 text = "Press any button"
 
-[node name="Label2" type="Label" parent="." unique_id=1356878317]
-layout_mode = 0
-offset_left = 350.0
-offset_top = 8.0
-offset_right = 374.0
-offset_bottom = 40.0
-theme_override_fonts/font = ExtResource("3_gnxhu")
-theme_override_font_sizes/font_size = 12
-text = "V.1.0"
-
-[node name="Author" type="Label" parent="." unique_id=1108283905]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 203.0
-offset_right = 344.0
-offset_bottom = 235.0
-theme_override_fonts/font = ExtResource("3_gnxhu")
-theme_override_font_sizes/font_size = 6
-text = "Game was made by eryvia, tru paint and hardship"
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1029238356]
-visible = false
-position = Vector2(168, 185.00002)
+position = Vector2(173, 172)
 scale = Vector2(0.9837964, 0.68576384)
 sprite_frames = SubResource("SpriteFrames_8q8s1")
 autoplay = "default"
-frame_progress = 0.32985723
+frame_progress = 0.955174

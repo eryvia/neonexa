@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dy2io3v7sh2ds"]
+
+[ext_resource type="Script" uid="uid://crctlj541t0y1" path="res://Interface/GameplayUI/HPBar/hp_bar.gd" id="1_xsb0f"]
+[ext_resource type="PackedScene" uid="uid://dsgiojuo5kbts" path="res://Interface/GameplayUI/HPBar/SoulFragmentControl.tscn" id="2_xsb0f"]
+
+[node name="HPBar" type="HBoxContainer" unique_id=235787013]
+anchors_preset = -1
+anchor_right = 0.513
+anchor_bottom = 0.171
+offset_right = 0.0079956055
+offset_bottom = 0.063999176
+script = ExtResource("1_xsb0f")
+fragment_scene = ExtResource("2_xsb0f")
+
+[node name="SoulFragmentControl" parent="." unique_id=1887871411 instance=ExtResource("2_xsb0f")]
+layout_mode = 2

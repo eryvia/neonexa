@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dsgiojuo5kbts"]
+
+[ext_resource type="PackedScene" uid="uid://ip2pprvpsk8u" path="res://Interface/GameplayUI/HPBar/SoulFragment.tscn" id="1_86rai"]
+
+[node name="SoulFragmentControl" type="Control" unique_id=1887871411]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SoulFragment" parent="." unique_id=2093794468 instance=ExtResource("1_86rai")]

@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="neonexa"
-run/main_scene="uid://dq8b864nnyj5y"
+run/main_scene="uid://c80maj2vdho5i"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://bkuoxv6jwqv6y"
 

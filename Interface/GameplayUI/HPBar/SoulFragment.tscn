@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://ip2pprvpsk8u"]
+
+[ext_resource type="Texture2D" uid="uid://dbu2pgw1i5l1" path="res://Interface/GameplayUI/Art/soul_fragment.png" id="1_knktn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n188v"]
+atlas = ExtResource("1_knktn")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dscxg"]
+atlas = ExtResource("1_knktn")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0yv1"]
+atlas = ExtResource("1_knktn")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwojg"]
+atlas = ExtResource("1_knktn")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjnef"]
+atlas = ExtResource("1_knktn")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho3e8"]
+atlas = ExtResource("1_knktn")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3hua"]
+atlas = ExtResource("1_knktn")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a5u4"]
+atlas = ExtResource("1_knktn")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i52ex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n188v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dscxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0yv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwojg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjnef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho3e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3hua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a5u4")
+}],
+"loop": true,
+"name": &"break",
+"speed": 15.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_knktn"]
+script/source = "extends AnimatedSprite2D
+class_name SoulFragment
+"
+
+[node name="SoulFragment" type="AnimatedSprite2D" unique_id=2093794468]
+sprite_frames = SubResource("SpriteFrames_i52ex")
+animation = &"break"
+frame = 1
+frame_progress = 0.6511536
+script = SubResource("GDScript_knktn")

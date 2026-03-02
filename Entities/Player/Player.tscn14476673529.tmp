@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://cx3svmxq62ag" path="res://Entities/Player/attack_state.gd" id="8_761t5"]
 [ext_resource type="Script" uid="uid://bv7341qhj0ehs" path="res://Entities/Player/dash_state.gd" id="10_hacra"]
 [ext_resource type="PackedScene" uid="uid://gvnx4tfthugi" path="res://Interface/GameplayUI/GameplayUI.tscn" id="11_jynvv"]
-[ext_resource type="PackedScene" uid="uid://cgdhee60h41x4" path="res://Interface/OnAreaTitle/OnAreaTitle.tscn" id="12_lmeus"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6pxy"]
 atlas = ExtResource("2_hj1c0")
@@ -308,22 +307,6 @@ collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_e5kic")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=78070580]
-
-[node name="GameplayUI" parent="CanvasLayer" unique_id=404227278 instance=ExtResource("11_jynvv")]
-offset_left = -135.0
-offset_top = -117.0
-offset_right = -135.0
-offset_bottom = -117.0
-metadata/_edit_use_anchors_ = true
-
-[node name="AreaTitle" parent="CanvasLayer" unique_id=318683816 instance=ExtResource("12_lmeus")]
-offset_left = 0.0
-offset_top = 87.0
-offset_right = 0.0
-offset_bottom = 86.912
-metadata/_edit_use_anchors_ = true
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=156224208]
 position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_vcmon")
@@ -388,3 +371,5 @@ debug_color = Color(0.80883676, 0.41365224, 0, 0.41960785)
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=860851968]
 wait_time = 0.461
+
+[node name="GameplayUI" parent="." unique_id=404227278 instance=ExtResource("11_jynvv")]

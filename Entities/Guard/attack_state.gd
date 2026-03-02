@@ -1,5 +1,5 @@
 extends State
-class_name AttackStateddw
+class_name AttackStateEnemy
 
 func enter():
 	var weight:int

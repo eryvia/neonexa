@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://dmo677814xioj" path="res://Stages/SandBox/sand_box.gd" id="1_b73f1"]
 [ext_resource type="Texture2D" uid="uid://d24ebm6i5ep8u" path="res://Stages/OldIntakeSector/Art/Background/OIS_BG-ase.png" id="2_nlitk"]
 [ext_resource type="PackedScene" uid="uid://brles2brqiwmx" path="res://Entities/Player/Player.tscn" id="3_6d07n"]
-[ext_resource type="PackedScene" uid="uid://cgdhee60h41x4" path="res://Interface/OnAreaTitle/OnAreaTitle.tscn" id="4_b73f1"]
 [ext_resource type="PackedScene" uid="uid://b67et8cy1d0kj" path="res://Utilities/Transitions/FadeTransition.tscn" id="5_7o460"]
 [ext_resource type="Texture2D" uid="uid://bhb2joaavl30e" path="res://Stages/OldIntakeSector/Art/OldIntakeSector.png" id="6_blkab"]
 [ext_resource type="PackedScene" uid="uid://c2tj5uq3q1wxa" path="res://Entities/Rulers/Rulebounder/Rulebounder.tscn" id="7_blkab"]
 [ext_resource type="PackedScene" uid="uid://gf45aov1wafw" path="res://Entities/Guard/guard.tscn" id="8_y2c6g"]
-[ext_resource type="PackedScene" uid="uid://dumouq6hymro0" path="res://Utilities/CurrencyDropPoint.tscn" id="9_gclki"]
+[ext_resource type="PackedScene" uid="uid://cyvixke6d5ic2" path="res://Entities/SoulCurrency/soul.tscn" id="9_gclki"]
+[ext_resource type="PackedScene" uid="uid://dumouq6hymro0" path="res://Utilities/CurrencyDropPoint.tscn" id="10_wc1ym"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7o460"]
 texture = ExtResource("6_blkab")
@@ -871,16 +871,11 @@ position = Vector2(350, 128)
 position = Vector2(131, 106)
 jump_velocity = -400.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1842620649]
-
-[node name="AreaTitle" parent="Player/CanvasLayer" unique_id=681358214 instance=ExtResource("4_b73f1")]
-offset_left = 3.0
-offset_top = 176.0
-offset_right = 3.0
-offset_bottom = 175.912
-
 [node name="Guard" parent="." unique_id=332138441 instance=ExtResource("8_y2c6g")]
 position = Vector2(-350, 64)
 
-[node name="CurrencyDropPoint" parent="." unique_id=53369898 instance=ExtResource("9_gclki")]
-position = Vector2(-128, 66)
+[node name="Soul" parent="." unique_id=2088495979 instance=ExtResource("9_gclki")]
+position = Vector2(-120, 67)
+
+[node name="CurrencyDropPoint" parent="." unique_id=1268538949 instance=ExtResource("10_wc1ym")]
+position = Vector2(-168, 68)

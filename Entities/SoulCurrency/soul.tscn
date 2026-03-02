@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cyvixke6d5ic2"]
+[gd_scene format=3 uid="uid://cyvixke6d5ic2"]
 
 [ext_resource type="Script" uid="uid://dt5xk2d6j76h7" path="res://Entities/SoulCurrency/soul.gd" id="1_3u3qc"]
 [ext_resource type="Texture2D" uid="uid://drofo41n20h0q" path="res://Entities/SoulCurrency/Art/soulCurrency.png" id="2_ldalf"]
@@ -73,22 +73,26 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3npcd"]
-radius = 5.3851647
+radius = 3.0
 
-[node name="Soul" type="Area2D"]
+[node name="Soul" type="Area2D" unique_id=1438931156]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_3u3qc")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=441708413]
+position = Vector2(0, -1)
+scale = Vector2(0.59375, 0.59375)
 sprite_frames = SubResource("SpriteFrames_lnrbg")
 animation = &"idleGround"
 autoplay = "idleGround"
-frame_progress = 0.042465106
+frame = 6
+frame_progress = 0.44609734
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1985304740]
 shape = SubResource("CircleShape2D_3npcd")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1904716691]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
