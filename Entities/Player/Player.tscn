@@ -297,7 +297,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default_slash",
-"speed": 24.0
+"speed": 32.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_761t5"]
@@ -342,12 +342,12 @@ scale = Vector2(0.9688752, 1.0433849)
 shape = SubResource("RectangleShape2D_hj1c0")
 
 [node name="PlayerAttackAnimation" type="AnimatedSprite2D" parent="Attack_Projectile" unique_id=1260696218]
-visible = false
 position = Vector2(0.9999995, -12)
 scale = Vector2(0.72265625, 0.72265625)
 sprite_frames = SubResource("SpriteFrames_knby3")
 animation = &"default_slash"
-frame_progress = 0.15345575
+frame = 7
+frame_progress = 1.0
 
 [node name="AttackPivot" type="Marker2D" parent="." unique_id=32683118]
 
