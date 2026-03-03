@@ -7,7 +7,7 @@ const GAME_SCENES: Dictionary = {
 }
 
 var souls = 0
-var hp_fragments = 4
+var hp_fragments = 5
 
 func call_current_state(current_state):
 	print(current_state)

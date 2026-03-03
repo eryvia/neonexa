@@ -45,6 +45,10 @@ folder_colors={
 "res://Utilities/": "purple"
 }
 
+[global_group]
+
+enemy=""
+
 [input]
 
 move_right={

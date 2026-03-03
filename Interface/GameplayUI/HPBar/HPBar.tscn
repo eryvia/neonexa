@@ -7,10 +7,16 @@
 anchors_preset = -1
 anchor_right = 0.513
 anchor_bottom = 0.171
-offset_right = 0.0079956055
-offset_bottom = 0.063999176
+offset_left = 19.0
+offset_top = 22.0
+offset_right = 19.007996
+offset_bottom = 22.064
+theme_override_constants/separation = 17
 script = ExtResource("1_xsb0f")
 fragment_scene = ExtResource("2_xsb0f")
 
-[node name="SoulFragmentControl" parent="." unique_id=1887871411 instance=ExtResource("2_xsb0f")]
+[node name="SoulFragmentControl2" parent="." unique_id=1887871411 instance=ExtResource("2_xsb0f")]
+layout_mode = 2
+
+[node name="SoulFragmentControl" parent="." unique_id=208347761 instance=ExtResource("2_xsb0f")]
 layout_mode = 2

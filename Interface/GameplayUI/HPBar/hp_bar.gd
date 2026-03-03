@@ -20,11 +20,11 @@ func setup_health():
 
 func take_damage(amount: int):
 	for i in range(amount):
-		if current_health > 0:
+		if current_health > 0:       
 			if i > 1: 
-				get_tree().create_timer(0.1).timeout
+				get_tree().create_timer(1.2).timeout
 			var frag_to_break = get_child(current_health - 1)
-			frag_to_break.play("break")
+			frag_to_break.play_break()
 			current_health -= 1
 
 func heal(amount: int):
