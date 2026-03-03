@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="neonexa"
 run/main_scene="uid://c80maj2vdho5i"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://bkuoxv6jwqv6y"
 
 [autoload]
@@ -48,6 +48,7 @@ folder_colors={
 [global_group]
 
 enemy=""
+player=""
 
 [input]
 

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://gf45aov1wafw"]
+[gd_scene load_steps=19 format=3 uid="uid://gf45aov1wafw"]
 
 [ext_resource type="Script" uid="uid://be6qslidlc1c2" path="res://Entities/Guard/guard.gd" id="1_edth3"]
 [ext_resource type="Texture2D" uid="uid://fqtc4ix1cobi" path="res://Entities/Guard/Art/Guard-ase.png" id="1_gp63h"]
@@ -59,74 +59,74 @@ size = Vector2(18, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ycji"]
 size = Vector2(114, 20)
 
-[node name="Guard" type="CharacterBody2D" unique_id=1305041960]
+[node name="Guard" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_edth3")
 speed = 30.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2074547219]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kl3r6")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=878584973]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 2)
 shape = SubResource("RectangleShape2D_gp63h")
 
-[node name="StateMachine" type="Node" parent="." unique_id=1308845573 node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_kl3r6")
 initial_state = NodePath("EnemyIdleState")
 metadata/_custom_type_script = "uid://dao4h7dnqot3s"
 
-[node name="PursueState" type="Node" parent="StateMachine" unique_id=432672302]
+[node name="PursueState" type="Node" parent="StateMachine"]
 script = ExtResource("5_kl3r6")
 
-[node name="EnemyIdleState" type="Node" parent="StateMachine" unique_id=214022069]
+[node name="EnemyIdleState" type="Node" parent="StateMachine"]
 script = ExtResource("6_edth3")
 
-[node name="PatrolState" type="Node" parent="StateMachine" unique_id=109874340]
+[node name="PatrolState" type="Node" parent="StateMachine"]
 script = ExtResource("8_1wp4l")
 
-[node name="AttackState" type="Node" parent="StateMachine" unique_id=821307319]
+[node name="AttackState" type="Node" parent="StateMachine"]
 script = ExtResource("7_lfoyx")
 
-[node name="DetectionArea" type="Area2D" parent="." unique_id=2093591547]
+[node name="DetectionArea" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("2_x3a6o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=880940286]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 modulate = Color(1, 0, 1, 0.49411765)
 shape = SubResource("CircleShape2D_gp63h")
 
-[node name="AttackArea" type="Area2D" parent="." unique_id=1184812117]
+[node name="AttackArea" type="Area2D" parent="."]
 monitoring = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=727390544]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(-6, 3)
 scale = Vector2(5.140264, 3.6254168)
 shape = SubResource("CircleShape2D_j6vv2")
 
-[node name="Sprite2D" type="Sprite2D" parent="AttackArea" unique_id=936560063]
+[node name="Sprite2D" type="Sprite2D" parent="AttackArea"]
 
-[node name="GLSlashTimer" type="Timer" parent="AttackArea" unique_id=675332699]
+[node name="GLSlashTimer" type="Timer" parent="AttackArea"]
 
-[node name="HitBox" type="Area2D" parent="." unique_id=1999180877]
+[node name="HitBox" type="Area2D" parent="."]
 script = ExtResource("10_lfoyx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1458872976]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-4, 2)
 shape = SubResource("RectangleShape2D_xcd63")
 debug_color = Color(0.9120377, 9.6646545e-05, 0.726337, 0.41960785)
 
-[node name="LongRangeAttack" type="Area2D" parent="." unique_id=1342462965]
+[node name="LongRangeAttack" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LongRangeAttack" unique_id=251578235]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LongRangeAttack"]
 position = Vector2(-73, 1)
 shape = SubResource("RectangleShape2D_4ycji")
 debug_color = Color(0.98675984, 0, 0.32509443, 0.41960785)
 
-[node name="anim" type="AnimationPlayer" parent="." unique_id=851364270]
+[node name="anim" type="AnimationPlayer" parent="."]
 
 [connection signal="body_entered" from="DetectionArea" to="StateMachine/EnemyIdleState" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="StateMachine/PursueState" method="_on_detection_area_body_exited"]

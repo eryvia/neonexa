@@ -1,4 +1,4 @@
-extends State
+extends  State
 class_name IdleState
 
 func enter() -> void:

@@ -9,7 +9,7 @@ func _ready() -> void:
 		var soul := soul_scene.instantiate() as Soul
 		add_child(soul)
 
-		soul.position = Vector2(randi() % 50, randi() % 50)
+		soul.position = Vector2(randi() % 50, (randi() % 50) / 2)
 	
 	await get_tree().create_timer(0.4).timeout
 	SignalBus.soul_can_be_harvested_now()

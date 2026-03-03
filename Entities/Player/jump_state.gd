@@ -14,6 +14,9 @@ func physics_update(delta: float) -> void:
 	player.velocity.x = input * player.speed
 
 	player.update_facing(input)
+	
+	if Input.is_action_just_pressed("attack") and not player.attack_cooldown:
+		player.perform_attack()
 
 	if player.velocity.y > 0:
 		Transitioned.emit(self, "FallState")

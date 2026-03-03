@@ -17,11 +17,9 @@ func physics_update(delta):
 		else:
 			player.get_node("AnimatedSprite2D").play("walk")
 
-	# 2. Trigger Attack without leaving the WalkState
 	if Input.is_action_just_pressed("attack") and not player.attack_cooldown:
 		player.perform_attack()
 
-	# 3. Transitions
 	if input == 0: Transitioned.emit(self, "IdleState")
 	if Input.is_action_just_pressed("jump"): Transitioned.emit(self, "JumpState")
 	if not player.is_on_floor(): Transitioned.emit(self, "FallState")

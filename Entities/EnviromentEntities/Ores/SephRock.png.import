@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vgtifqh57xfb"
-path="res://.godot/imported/Blasphemous.png-8a0741d33cd4b3b6e568af15279fef7f.ctex"
+uid="uid://d3ri28ijv0cn5"
+path="res://.godot/imported/SephRock.png-26c0de3fd3215b4ac5fcb56aa5a94008.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/design/startScreen/Blasphemous.png"
-dest_files=["res://.godot/imported/Blasphemous.png-8a0741d33cd4b3b6e568af15279fef7f.ctex"]
+source_file="res://Entities/EnviromentEntities/Ores/SephRock.png"
+dest_files=["res://.godot/imported/SephRock.png-26c0de3fd3215b4ac5fcb56aa5a94008.ctex"]
 
 [params]
 

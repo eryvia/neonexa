@@ -1,7 +1,7 @@
 extends Area2D
 class_name Ore
 
-@export var hp = 4 #cracks essencials 
+@export var hp = 4 
 @onready var collision_ore = $CollisionShape2D
 
 func _ready() -> void:

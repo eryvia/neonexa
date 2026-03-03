@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Guard
 
 @export var speed := 200.0
+
 var target: Node2D = null
 var facing_direction = 1
 var hp = 4

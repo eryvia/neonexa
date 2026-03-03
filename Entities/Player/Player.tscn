@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://brles2brqiwmx"]
+[gd_scene load_steps=52 format=3 uid="uid://brles2brqiwmx"]
 
 [ext_resource type="Script" uid="uid://byndxy24po04m" path="res://Entities/Player/player.gd" id="1_e5kic"]
 [ext_resource type="Texture2D" uid="uid://c3deil2ueqnqo" path="res://Entities/Player/Art/player_spritesheet_new.png" id="2_hj1c0"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://cx3svmxq62ag" path="res://Entities/Player/attack_state.gd" id="8_761t5"]
 [ext_resource type="Script" uid="uid://bv7341qhj0ehs" path="res://Entities/Player/dash_state.gd" id="10_hacra"]
 [ext_resource type="PackedScene" uid="uid://gvnx4tfthugi" path="res://Interface/GameplayUI/GameplayUI.tscn" id="11_jynvv"]
-[ext_resource type="PackedScene" uid="uid://cgdhee60h41x4" path="res://Interface/OnAreaTitle/OnAreaTitle.tscn" id="12_lmeus"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6pxy"]
 atlas = ExtResource("2_hj1c0")
@@ -303,24 +302,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_761t5"]
 size = Vector2(9, 15)
 
-[node name="Player" type="CharacterBody2D" unique_id=2048605313]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_e5kic")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=78070580]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GameplayUI" parent="CanvasLayer" unique_id=404227278 instance=ExtResource("11_jynvv")]
+[node name="GameplayUI" parent="CanvasLayer" instance=ExtResource("11_jynvv")]
 metadata/_edit_use_anchors_ = true
 
-[node name="AreaTitle" parent="CanvasLayer" unique_id=318683816 instance=ExtResource("12_lmeus")]
-offset_left = 0.0
-offset_top = 87.0
-offset_right = 0.0
-offset_bottom = 86.912
-metadata/_edit_use_anchors_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=156224208]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_vcmon")
 animation = &"attack"
@@ -328,20 +320,20 @@ autoplay = "idle"
 frame = 7
 frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=810134]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 3)
 shape = SubResource("RectangleShape2D_x44r4")
 debug_color = Color(0, 0.6229185, 0.5447775, 0.41960785)
 
-[node name="Attack_Projectile" type="Area2D" parent="." unique_id=1133964567]
+[node name="Attack_Projectile" type="Area2D" parent="."]
 position = Vector2(1, 4)
 
-[node name="Attack_Collider" type="CollisionShape2D" parent="Attack_Projectile" unique_id=1249277219]
+[node name="Attack_Collider" type="CollisionShape2D" parent="Attack_Projectile"]
 position = Vector2(-8, -6.000001)
 scale = Vector2(0.9688752, 1.0433849)
 shape = SubResource("RectangleShape2D_hj1c0")
 
-[node name="PlayerAttackAnimation" type="AnimatedSprite2D" parent="Attack_Projectile" unique_id=1260696218]
+[node name="PlayerAttackAnimation" type="AnimatedSprite2D" parent="Attack_Projectile"]
 position = Vector2(0.9999995, -12)
 scale = Vector2(0.72265625, 0.72265625)
 sprite_frames = SubResource("SpriteFrames_knby3")
@@ -349,41 +341,41 @@ animation = &"default_slash"
 frame = 7
 frame_progress = 1.0
 
-[node name="AttackPivot" type="Marker2D" parent="." unique_id=32683118]
+[node name="AttackPivot" type="Marker2D" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=922718036]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -69)
 
-[node name="StateMachine" type="Node" parent="." unique_id=1652929311 node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_1des2")
 initial_state = NodePath("IdleState")
 
-[node name="IdleState" type="Node" parent="StateMachine" unique_id=739678767]
+[node name="IdleState" type="Node" parent="StateMachine"]
 script = ExtResource("4_1des2")
 
-[node name="WalkState" type="Node" parent="StateMachine" unique_id=1864519986]
+[node name="WalkState" type="Node" parent="StateMachine"]
 script = ExtResource("5_an6q6")
 
-[node name="FallState" type="Node" parent="StateMachine" unique_id=1605556869]
+[node name="FallState" type="Node" parent="StateMachine"]
 script = ExtResource("6_t38ms")
 
-[node name="JumpState" type="Node" parent="StateMachine" unique_id=344522668]
+[node name="JumpState" type="Node" parent="StateMachine"]
 script = ExtResource("7_hj1c0")
 
-[node name="AttackState" type="Node" parent="StateMachine" unique_id=2092948412]
+[node name="AttackState" type="Node" parent="StateMachine"]
 script = ExtResource("8_761t5")
 
-[node name="DashState" type="Node" parent="StateMachine" unique_id=1114524004]
+[node name="DashState" type="Node" parent="StateMachine"]
 script = ExtResource("10_hacra")
 
-[node name="playerHitBox" type="Area2D" parent="." unique_id=646323916]
+[node name="playerHitBox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitBox" unique_id=1562757715]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitBox"]
 position = Vector2(1.5, 4.5)
 shape = SubResource("RectangleShape2D_761t5")
 debug_color = Color(0.80883676, 0.41365224, 0, 0.41960785)
 
-[node name="AttackTimer" type="Timer" parent="." unique_id=860851968]
+[node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.461
 
 [connection signal="health_changed" from="." to="CanvasLayer/GameplayUI" method="_on_player_health_changed"]
