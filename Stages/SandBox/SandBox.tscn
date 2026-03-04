@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c80maj2vdho5i"]
+[gd_scene load_steps=14 format=4 uid="uid://c80maj2vdho5i"]
 
 [ext_resource type="Script" uid="uid://dmo677814xioj" path="res://Stages/SandBox/sand_box.gd" id="1_b73f1"]
 [ext_resource type="Texture2D" uid="uid://d24ebm6i5ep8u" path="res://Stages/OldIntakeSector/Art/Background/OIS_BG-ase.png" id="2_nlitk"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvixke6d5ic2" path="res://Entities/SoulCurrency/soul.tscn" id="9_gclki"]
 [ext_resource type="PackedScene" uid="uid://8pb75njcvji0" path="res://Entities/EnemyJumper/EnemyJumper.tscn" id="10_0nuwg"]
 [ext_resource type="PackedScene" uid="uid://dumouq6hymro0" path="res://Utilities/CurrencyDropPoint.tscn" id="10_wc1ym"]
+[ext_resource type="PackedScene" uid="uid://da73y8rsf5fr8" path="res://Entities/EnviromentEntities/Ores/ore.tscn" id="11_0nuwg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7o460"]
 texture = ExtResource("6_blkab")
@@ -883,3 +884,7 @@ position = Vector2(-168, 68)
 
 [node name="EnemyJumper" parent="." instance=ExtResource("10_0nuwg")]
 position = Vector2(-69, 60)
+
+[node name="Ore" parent="." instance=ExtResource("11_0nuwg")]
+position = Vector2(274, 118)
+scale = Vector2(1, 1.0074667)

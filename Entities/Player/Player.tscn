@@ -325,7 +325,7 @@ position = Vector2(1.5, 3)
 shape = SubResource("RectangleShape2D_x44r4")
 debug_color = Color(0, 0.6229185, 0.5447775, 0.41960785)
 
-[node name="Attack_Projectile" type="Area2D" parent="."]
+[node name="Attack_Projectile" type="Area2D" parent="." groups=["player_attack"]]
 position = Vector2(1, 4)
 
 [node name="Attack_Collider" type="CollisionShape2D" parent="Attack_Projectile"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dn0d1brp825vr"]
+[gd_scene load_steps=14 format=3 uid="uid://dn0d1brp825vr"]
 
 [ext_resource type="Script" uid="uid://c7q335b75nxgo" path="res://Stages/MainScene/mainScene.gd" id="1_gratp"]
 [ext_resource type="Texture2D" uid="uid://dcura21k4y8a" path="res://Stages/MainScene/Art/bg.jpg" id="2_jtagt"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b67et8cy1d0kj" path="res://Utilities/Transitions/FadeTransition.tscn" id="4_gyvga"]
 [ext_resource type="FontFile" uid="uid://dnji3n1crhnds" path="res://Common/fonts/alagard/alagard.ttf" id="5_dq1md"]
 [ext_resource type="Texture2D" uid="uid://2qn5q8iv7bx0" path="res://Stages/MainScene/Art/mini_axo.png" id="6_dq1md"]
-[ext_resource type="AudioStream" uid="uid://hkhkkr1iotfm" path="res://Resources/music/Song6.wav" id="7_odwdx"]
+[ext_resource type="AudioStream" uid="uid://hkhkkr1iotfm" path="res://resources/music/Song6.wav" id="7_odwdx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odwdx"]
 atlas = ExtResource("6_dq1md")
@@ -51,7 +51,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="MainScene" type="Control" unique_id=237313574]
+[node name="MainScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,12 +60,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gratp")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2103451815]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(192.00002, 107)
 scale = Vector2(0.100508116, 0.10115739)
 texture = ExtResource("2_jtagt")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=516413035]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -81,7 +81,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/separation = 9
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=1140023961]
+[node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -89,7 +89,7 @@ theme_override_fonts/font = ExtResource("3_86d06")
 theme_override_font_sizes/font_size = 18
 text = "Pilgrimage"
 
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1996412525]
+[node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.12628347, 0.99999994, 0.9602862, 1)
@@ -97,13 +97,13 @@ theme_override_fonts/font = ExtResource("3_86d06")
 theme_override_font_sizes/font_size = 18
 text = "Exit"
 
-[node name="FadeTransition" parent="." unique_id=742606885 instance=ExtResource("4_gyvga")]
+[node name="FadeTransition" parent="." instance=ExtResource("4_gyvga")]
 visible = false
 layout_mode = 1
 
-[node name="FadeTimer" type="Timer" parent="FadeTransition" unique_id=1833689457]
+[node name="FadeTimer" type="Timer" parent="FadeTransition"]
 
-[node name="MainVBox" type="VBoxContainer" parent="." unique_id=745281936]
+[node name="MainVBox" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.86500007
@@ -119,7 +119,7 @@ grow_vertical = 2
 theme_override_constants/separation = 5
 alignment = 1
 
-[node name="Journey" type="Label" parent="MainVBox" unique_id=1355205441]
+[node name="Journey" type="Label" parent="MainVBox"]
 layout_mode = 2
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("5_dq1md")
@@ -127,28 +127,28 @@ theme_override_font_sizes/font_size = 12
 text = "Journey"
 horizontal_alignment = 2
 
-[node name="Options" type="Label" parent="MainVBox" unique_id=1656684105]
+[node name="Options" type="Label" parent="MainVBox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_dq1md")
 theme_override_font_sizes/font_size = 12
 text = "Options"
 horizontal_alignment = 2
 
-[node name="Escape" type="Label" parent="MainVBox" unique_id=1931712013]
+[node name="Escape" type="Label" parent="MainVBox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_dq1md")
 theme_override_font_sizes/font_size = 12
 text = "Escape"
 horizontal_alignment = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1304651234]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(321, 170)
 scale = Vector2(0.65625, 0.65625)
 sprite_frames = SubResource("SpriteFrames_jtagt")
 frame = 4
 frame_progress = 1.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=675393576]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_odwdx")
 volume_db = -10.598
 pitch_scale = 1.08
