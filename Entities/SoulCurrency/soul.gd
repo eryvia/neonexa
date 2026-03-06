@@ -1,6 +1,8 @@
 extends Area2D
 class_name Soul
 
+signal SoulHarvested
+
 var isHarvestable = false
 var is_harvestable := false
 @onready var soul_timer: Timer = $Timer

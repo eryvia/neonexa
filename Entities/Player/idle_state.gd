@@ -11,6 +11,8 @@ func enter() -> void:
 func update(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
 		Transitioned.emit(self, "JumpState")
+	if Input.is_action_just_pressed("attack") and not player.attack_cooldown:
+		player.perform_attack()
 
 func physics_update(delta: float) -> void:
 	var input = Input.get_axis("move_left", "move_right")

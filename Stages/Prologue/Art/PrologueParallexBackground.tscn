@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cu5uxjl51rqeb"]
+
+[ext_resource type="Texture2D" uid="uid://uaitj6p7y3qc" path="res://Stages/Prologue/Art/PrologueBackground1.png" id="1_rgfij"]
+[ext_resource type="Texture2D" uid="uid://bkkqbjct2p31t" path="res://Stages/Prologue/Art/PrologueBackground2.png" id="2_bpcx3"]
+[ext_resource type="Texture2D" uid="uid://cfc0306jo8vpe" path="res://Stages/Prologue/Art/PrologueBackground3.png" id="3_2vh4i"]
+
+[node name="PrologueParallax" type="Node2D" unique_id=1062184574]
+position = Vector2(192, 108)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1117438603]
+scroll_scale = Vector2(0.2, 0)
+repeat_size = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2112888470]
+texture = ExtResource("1_rgfij")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1951664000]
+scroll_scale = Vector2(0.4, 0)
+repeat_size = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1386704245]
+texture = ExtResource("2_bpcx3")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1075479239]
+scroll_scale = Vector2(0.6, 0)
+repeat_size = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=1268264649]
+texture = ExtResource("3_2vh4i")

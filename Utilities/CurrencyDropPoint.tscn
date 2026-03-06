@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dumouq6hymro0"]
+[gd_scene format=3 uid="uid://dumouq6hymro0"]
 
 [ext_resource type="Script" uid="uid://db75nrml8ho4s" path="res://Utilities/currency_drop_point.gd" id="1_qc3ek"]
 
-[node name="CurrencyDropPoint" type="Node2D"]
+[node name="CurrencyDropPoint" type="Node2D" unique_id=404737464]
 script = ExtResource("1_qc3ek")

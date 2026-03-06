@@ -3,6 +3,7 @@ class_name StateMachine
 
 @export var initial_state: State
 var current_state: State
+var previous_state: State
 var states: Dictionary = {}
 
 func _ready() -> void:

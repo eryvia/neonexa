@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://cyvixke6d5ic2"]
+
+[ext_resource type="Script" uid="uid://dt5xk2d6j76h7" path="res://Entities/SoulCurrency/soul.gd" id="1_3u3qc"]
+[ext_resource type="Texture2D" uid="uid://drofo41n20h0q" path="res://Entities/SoulCurrency/Art/soulCurrency.png" id="2_ldalf"]
+[ext_resource type="Script" uid="uid://dao4h7dnqot3s" path="res://Entities/Player/state_machine.gd" id="3_ldalf"]
+[ext_resource type="Script" uid="uid://bf27hen2pl5ww" path="res://Entities/SoulCurrency/arc_state.gd" id="4_o8fi3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwh5k"]
+atlas = ExtResource("2_ldalf")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms0o0"]
+atlas = ExtResource("2_ldalf")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooimo"]
+atlas = ExtResource("2_ldalf")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmyuu"]
+atlas = ExtResource("2_ldalf")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx2hn"]
+atlas = ExtResource("2_ldalf")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xd4j"]
+atlas = ExtResource("2_ldalf")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5wta"]
+atlas = ExtResource("2_ldalf")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bumr5"]
+atlas = ExtResource("2_ldalf")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnrbg"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idleAir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwh5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms0o0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ooimo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmyuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx2hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xd4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5wta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bumr5")
+}],
+"loop": true,
+"name": &"idleGround",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3npcd"]
+radius = 3.0
+
+[node name="Soul" type="Area2D" unique_id=97272377]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_3u3qc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=772536418]
+position = Vector2(0, -1)
+scale = Vector2(0.59375, 0.59375)
+sprite_frames = SubResource("SpriteFrames_lnrbg")
+animation = &"idleGround"
+autoplay = "idleGround"
+frame = 6
+frame_progress = 0.44609734
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=796369055]
+shape = SubResource("CircleShape2D_3npcd")
+
+[node name="Timer" type="Timer" parent="." unique_id=1029189142]
+
+[node name="StateMachine" type="Node" parent="." unique_id=903867913]
+script = ExtResource("3_ldalf")
+metadata/_custom_type_script = "uid://dao4h7dnqot3s"
+
+[node name="ArcState" type="Node" parent="StateMachine" unique_id=454907895]
+script = ExtResource("4_o8fi3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

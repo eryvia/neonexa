@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://da73y8rsf5fr8"]
+[gd_scene format=3 uid="uid://da73y8rsf5fr8"]
 
 [ext_resource type="Script" uid="uid://dsfxi5e2jn8m8" path="res://ore.gd" id="1_u70es"]
 [ext_resource type="Texture2D" uid="uid://d3ri28ijv0cn5" path="res://Entities/EnviromentEntities/Ores/SephRock.png" id="2_3a7oq"]
@@ -50,14 +50,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Ore" type="Area2D"]
+[node name="Ore" type="Area2D" unique_id=353248022]
 script = ExtResource("1_u70es")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=228892700]
 shape = SubResource("RectangleShape2D_ad5bv")
 debug_color = Color(0.83561856, 0.38126245, 0.20351794, 0.41960785)
 
-[node name="RockSprite" type="AnimatedSprite2D" parent="."]
+[node name="RockSprite" type="AnimatedSprite2D" parent="." unique_id=587900640]
 position = Vector2(-1.000001, 1.0000019)
 scale = Vector2(0.515625, 0.515625)
 sprite_frames = SubResource("SpriteFrames_3bseh")
@@ -65,7 +65,7 @@ frame = 1
 frame_progress = 0.13203411
 script = ExtResource("3_gj5r4")
 
-[node name="CurrencyDropPoint" parent="." instance=ExtResource("3_q3ikk")]
+[node name="CurrencyDropPoint" parent="." unique_id=1132841137 instance=ExtResource("3_q3ikk")]
 
 [connection signal="OreHit" from="." to="." method="_on_ore_hit"]
 [connection signal="OreHit" from="." to="CurrencyDropPoint" method="_on_ore_ore_hit"]

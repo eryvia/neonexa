@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://cm8sesolaxcvv"]
 
-[node name="OldIntakeSector" type="Node2D"]
+[node name="OldIntakeSector" type="Node2D" unique_id=1905272597]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=505352943]

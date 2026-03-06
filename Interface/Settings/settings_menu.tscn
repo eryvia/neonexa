@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bgyjsjbt0jolt"]
+
+[node name="SettingsMenu" type="Control" unique_id=1421884208]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=847866284]
+layout_mode = 0
+offset_right = 385.0
+offset_bottom = 217.0
+color = Color(0.49992883, 0.66271675, 0.57695556, 1)
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1300019371]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 17.0
+offset_right = 347.0
+offset_bottom = 189.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel" unique_id=217071505]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBox" unique_id=1697630262]
+layout_mode = 2

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cpms8bwmu82m"]
+
+[ext_resource type="Texture2D" uid="uid://bvwj052go0s4s" path="res://Stages/OldIntakeSector/Art/Background/OldIntakeSectorBackground1.png" id="1_02h2p"]
+[ext_resource type="Texture2D" uid="uid://cc8rxfw7r3dkn" path="res://Stages/OldIntakeSector/Art/Background/OldIntakeSectorBackground2.png" id="2_3gqx1"]
+[ext_resource type="Texture2D" uid="uid://dxp8eolr2hbuq" path="res://Stages/OldIntakeSector/Art/Background/OldIntakeSectorBackground3.png" id="3_qlgal"]
+[ext_resource type="Texture2D" uid="uid://s66ne4ekpbxy" path="res://Stages/OldIntakeSector/Art/Background/OldIntakeSectorBackground4.png" id="4_uruld"]
+
+[node name="ParallaxScrollingScene" type="Node2D" unique_id=320314394]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1191521405]
+scroll_scale = Vector2(0.2, 0)
+repeat_size = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=562599067]
+texture = ExtResource("1_02h2p")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=631827552]
+scroll_scale = Vector2(0.3, 0)
+repeat_size = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=265115042]
+texture = ExtResource("2_3gqx1")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1695610689]
+scroll_scale = Vector2(0.4, 0)
+repeat_size = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=634760483]
+texture = ExtResource("3_qlgal")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=210467218]
+scroll_scale = Vector2(0.5, 0)
+repeat_size = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=1803804323]
+texture = ExtResource("4_uruld")

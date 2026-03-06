@@ -5,15 +5,12 @@ func enter() -> void:
 	#Global.call_current_state(self)
 	player.get_node("AnimatedSprite2D").play("fall")
 
-
 func physics_update(delta: float) -> void:
-	player.velocity.y += player.gravity * delta
-
-	var input := Input.get_axis("move_left", "move_right")
-	player.velocity.x = input * player.speed
-
-	player.update_facing(input)
+	#player.velocity.y += player.gravity * delta
+	player.velocity.y = move_toward(player.velocity.y, player.fall_velocity, player.fall_gravity * delta)
 	
+	var input := Input.get_axis("move_left", "move_right")
+
 	if player.is_on_floor():
 		player.current_jumps = player.max_jumps
 		if input == 0:
@@ -21,6 +18,8 @@ func physics_update(delta: float) -> void:
 		else:
 			Transitioned.emit(self, "WalkState")
 		return
+	player.handle_movement()
+	player.update_facing(input)
 
 		
 	if Input.is_action_just_pressed("jump"):

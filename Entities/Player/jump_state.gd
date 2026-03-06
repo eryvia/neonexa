@@ -11,8 +11,7 @@ func physics_update(delta: float) -> void:
 	player.velocity.y += player.gravity * delta
 
 	var input := Input.get_axis("move_left", "move_right")
-	player.velocity.x = input * player.speed
-
+	player.handle_movement()
 	player.update_facing(input)
 	
 	if Input.is_action_just_pressed("attack") and not player.attack_cooldown:
