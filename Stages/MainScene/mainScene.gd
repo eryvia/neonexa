@@ -2,7 +2,7 @@ extends Control
 
 var hovering: bool = false
 var button_type = null
-const sandbox = preload(Global.GAME_SCENES.sandbox)
+const Prologue = preload(Global.GAME_SCENES.Prologue)
 @onready var fade_timer = $FadeTransition/FadeTimer
 @onready var menu_items := $MainVBox.get_children()
 @onready var mini_axo := $AnimatedSprite2D
@@ -62,7 +62,7 @@ func update_menu():
 
 func _on_fade_timer_timeout() -> void:
 	if button_type == "start":
-		get_tree().change_scene_to_packed(sandbox)
+		get_tree().change_scene_to_packed(Prologue)
 		pass
 	if button_type == "exit":
 		get_tree().quit()

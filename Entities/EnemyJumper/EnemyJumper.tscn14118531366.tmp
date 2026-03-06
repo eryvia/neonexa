@@ -5,9 +5,6 @@
 [ext_resource type="Script" uid="uid://dao4h7dnqot3s" path="res://Entities/Player/state_machine.gd" id="2_6hq1a"]
 [ext_resource type="Script" uid="uid://b8qv7v6jyhy58" path="res://Entities/EnemyJumper/idle_state.gd" id="5_a1csx"]
 [ext_resource type="Script" uid="uid://jchdcw7rpmnb" path="res://Entities/EnemyJumper/JumpState.gd" id="5_y5c0w"]
-[ext_resource type="Script" uid="uid://cdnip2syhy7m3" path="res://Entities/EnemyJumper/enemy_run_state.gd" id="6_a1csx"]
-[ext_resource type="Script" uid="uid://dbeu6l4ydnqh2" path="res://Entities/EnemyJumper/enemy_hurt_state.gd" id="7_2vsit"]
-[ext_resource type="Script" uid="uid://4j6ig3y2hy1" path="res://Entities/EnemyJumper/enemy_slash_state.gd" id="8_bl8ap"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55ao5"]
 atlas = ExtResource("1_rpy6k")
@@ -142,14 +139,12 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rpy6k"]
-radius = 8.062258
+radius = 7.071068
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y5c0w"]
 radius = 140.00357
 
-[node name="EnemyJumper" type="CharacterBody2D" unique_id=311291103 groups=["enemy"]]
-collision_layer = 4
-collision_mask = 3
+[node name="EnemyJumper" type="CharacterBody2D" unique_id=311291103]
 script = ExtResource("1_sg1m8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=962143867]
@@ -164,32 +159,20 @@ shape = SubResource("CircleShape2D_rpy6k")
 
 [node name="StateMachine" type="Node" parent="." unique_id=177985662 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_6hq1a")
-initial_state = NodePath("EnemyIdleState")
+initial_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://dao4h7dnqot3s"
 
-[node name="EnemyIdleState" type="Node" parent="StateMachine" unique_id=1610050484]
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1610050484]
 script = ExtResource("5_a1csx")
 
-[node name="EnemyLeapState" type="Node" parent="StateMachine" unique_id=168237892]
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=168237892]
 script = ExtResource("5_y5c0w")
 
-[node name="EnemyRunState" type="Node" parent="StateMachine" unique_id=200933880]
-script = ExtResource("6_a1csx")
-
-[node name="EnemyHurtState" type="Node" parent="StateMachine" unique_id=1628133990]
-script = ExtResource("7_2vsit")
-
-[node name="EnemySlashState" type="Node" parent="StateMachine" unique_id=71133632]
-script = ExtResource("8_bl8ap")
-
 [node name="DetectionArea" type="Area2D" parent="." unique_id=140008449]
-collision_layer = 4
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=3318538]
-position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_y5c0w")
 debug_color = Color(0.34058368, 0.4863658, 1, 0.41960785)
 
-[connection signal="TargetEntered" from="." to="StateMachine/EnemyIdleState" method="_on_enemy_jumper_target_entered"]
-[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
+[connection signal="TargetEntered" from="." to="StateMachine/IdleState" method="_on_enemy_jumper_target_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

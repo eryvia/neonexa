@@ -61,8 +61,7 @@ debug_color = Color(0.83561856, 0.38126245, 0.20351794, 0.41960785)
 position = Vector2(-1.000001, 1.0000019)
 scale = Vector2(0.515625, 0.515625)
 sprite_frames = SubResource("SpriteFrames_3bseh")
-frame = 1
-frame_progress = 0.13203411
+frame_progress = 0.19404063
 script = ExtResource("3_gj5r4")
 
 [node name="CurrencyDropPoint" parent="." unique_id=1132841137 instance=ExtResource("3_q3ikk")]

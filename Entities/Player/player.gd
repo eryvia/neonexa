@@ -11,18 +11,21 @@ var is_paused = false
 @export var fall_velocity := 500
 @export var walk_velocity := 100.0
 
-@export var dash_velocity := 400.0
-@export var dash_duration := 0.2
-@export var dash_cooldown := 0.6
+@export var dash_velocity := 200.0
+@export var dash_duration := 0.3
+var can_dash := true
 
-@export var jump_velocity := -600.0
-@export var gravity := 900.0
+var wall_velocity := 80.0
+var wall_gravity := 400.0
+
+@export var jump_velocity := -500.0
 @export var max_jumps := 2
 var current_jumps := max_jumps
 var amount := 1
-
+@onready var _can_travel = true
 
 #Cds
+var is_dead = false
 var input_direction := 1 # 1 = right, -1 = left
 
 @onready var Attack = $Attack_Projectile                                                                                              
@@ -35,6 +38,9 @@ var attack_cooldown: bool = false
 @onready var state_machine = $StateMachine
 @onready var player_attack_anim = $Attack_Projectile/PlayerAttackAnimation
 @onready var player_animation = $AnimatedSprite2D
+@onready var gm = $CanvasLayer/GameplayUI
+@onready var dash_anim = $DashImpactAnim
+
 
 func _ready():
 	Global.player = self
@@ -47,9 +53,15 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _input(event):
+	if is_dead: return
 	if event.is_action_pressed("ui_cancel") and not is_paused:
 		is_paused = true
 		PauseMenu.open($CanvasLayer/GameplayUI, self)
+		
+func start_dash_cooldown() -> void:
+	can_dash = false
+	await get_tree().create_timer(0.6).timeout
+	can_dash = true
 		
 func _on_player_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
@@ -58,12 +70,6 @@ func _on_player_hit_box_area_entered(area: Area2D) -> void:
 			return
 		print("player got hit")
 		health_changed.emit(amount)
-	
-func start_dash_cooldown() -> void:
-	dash_cooldown = true
-	await get_tree().create_timer(0.6).timeout
-	dash_cooldown = false
-	
 	
 #Attack Hitboxes
 func enable_attack_hitbox():
@@ -89,17 +95,22 @@ func perform_attack():
 	$AnimatedSprite2D.play("attack") 
 	velocity.x += 50 * input_direction
 	
+	#anticipitaion ->. kinda just left it.
 	await get_tree().create_timer(0.06).timeout
 	enable_attack_hitbox()
 	
-	await get_tree().create_timer(0.08).timeout
+	$AttackSoundEffect.play()
+	
+	await get_tree().create_timer(0.04).timeout
 	disable_attack_hitbox()
 	
 	await get_tree().create_timer(0.1).timeout 
+	
 	is_attacking = false
 	player_attack_anim.visible = false
 	
 	await get_tree().create_timer(0.4).timeout
+	
 	attack_cooldown = false
 	
 	
@@ -116,3 +127,10 @@ func handle_movement() -> void:
 	if input_direction:
 		player_animation.flip_h = input_direction > 0
 	velocity.x = input_direction * walk_velocity
+	
+func die() -> void:
+	if is_dead: return
+	is_dead = true
+	DeadScreen.open(gm, self)
+	Engine.time_scale = 0.0
+	

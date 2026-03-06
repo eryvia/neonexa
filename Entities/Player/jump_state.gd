@@ -8,14 +8,18 @@ func enter() -> void:
 	player.current_jumps -= 1
 	
 func physics_update(delta: float) -> void:
-	player.velocity.y += player.gravity * delta
+	player.velocity.y += player.fall_gravity * delta
 
 	var input := Input.get_axis("move_left", "move_right")
 	player.handle_movement()
 	player.update_facing(input)
-	
+
+			
 	if Input.is_action_just_pressed("attack") and not player.attack_cooldown:
 		player.perform_attack()
+	
+	if Input.is_action_just_pressed("dash") and player.can_dash:
+		Transitioned.emit(self, "DashState")
 
 	if player.velocity.y > 0:
 		Transitioned.emit(self, "FallState")

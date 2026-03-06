@@ -2,6 +2,64 @@
 
 [ext_resource type="Script" uid="uid://blk4m4e25yevd" path="res://Interface/GameplayUI/gameplay_ui.gd" id="1_oojjv"]
 [ext_resource type="PackedScene" uid="uid://dy2io3v7sh2ds" path="res://Interface/GameplayUI/HPBar/HPBar.tscn" id="2_5fkdc"]
+[ext_resource type="Texture2D" uid="uid://cy7ipdekm4wyr" path="res://Interface/soulUI.png" id="3_6knkn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu12w"]
+atlas = ExtResource("3_6knkn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4l0f"]
+atlas = ExtResource("3_6knkn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc5ls"]
+atlas = ExtResource("3_6knkn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04nl8"]
+atlas = ExtResource("3_6knkn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mo2w"]
+atlas = ExtResource("3_6knkn")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3i3s"]
+atlas = ExtResource("3_6knkn")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1ry6"]
+atlas = ExtResource("3_6knkn")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h45mg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu12w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4l0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc5ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04nl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mo2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3i3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1ry6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
 
 [node name="GameplayUI" type="Control" unique_id=1830756615]
 layout_mode = 3
@@ -20,9 +78,14 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="." unique_id=359315867]
 layout_mode = 0
-offset_left = 319.0
+offset_left = 331.0
 offset_top = 5.0
-offset_right = 379.0
+offset_right = 358.0
 offset_bottom = 28.0
-text = "4124"
+text = "0"
 horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1333276243]
+position = Vector2(365, 29)
+sprite_frames = SubResource("SpriteFrames_h45mg")
+frame_progress = 0.09766712

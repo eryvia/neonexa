@@ -1,8 +1,11 @@
 extends State
+class_name EnemyIdleState
 
-func enter(): 
-	parent.animation.play("jump_in")
+func enter():
+	parent.get_node("AnimatedSprite2D").play("idle")
 
-func _on_enemy_jumper_target_entered() -> void:
-	Transitioned.emit(self, "JumpState")
-	pass # Replace with function body.
+func physics_update(delta: float) -> void:
+	if parent.isDetecting:
+		Transitioned.emit(self, "EnemyRunState")
+		
+		

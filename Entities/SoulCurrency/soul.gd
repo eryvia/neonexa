@@ -16,9 +16,10 @@ func _on_soul_can_be_harvested() -> void:
 	soul_timer.start()
 
 func _on_body_entered(body: Node2D) -> void:
+	body.get_node("SoundEffect").play()
 	Global.souls += 1
+	SignalBus.souls_changed.emit(Global.souls)
 	queue_free()
-	pass
 
 func _on_timer_timeout() -> void:
 	pass

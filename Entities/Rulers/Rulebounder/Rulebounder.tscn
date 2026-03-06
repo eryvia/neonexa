@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2tj5uq3q1wxa"]
+[gd_scene format=3 uid="uid://c2tj5uq3q1wxa"]
 
 [ext_resource type="Script" uid="uid://cl5jd2dme1a14" path="res://Entities/Rulers/Rulebounder/rulebounder.gd" id="1_siadv"]
 [ext_resource type="PackedScene" uid="uid://bcrmwjtcqqpn2" path="res://Utilities/Recepies/InteractiveArea.tscn" id="1_xgxhk"]
@@ -29,16 +29,16 @@ animations = [{
 "speed": 1.2
 }]
 
-[node name="Rulebounder" type="Node2D"]
+[node name="Rulebounder" type="Node2D" unique_id=2074414136]
 script = ExtResource("1_siadv")
 
-[node name="InteractiveArea" parent="." instance=ExtResource("1_xgxhk")]
+[node name="InteractiveArea" parent="." unique_id=1392121557 instance=ExtResource("1_xgxhk")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveArea" unique_id=1862112238]
 position = Vector2(3.5, 0)
 shape = SubResource("RectangleShape2D_siadv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=70692342]
 sprite_frames = SubResource("SpriteFrames_hidxi")
 animation = &"idle"
 autoplay = "idle"

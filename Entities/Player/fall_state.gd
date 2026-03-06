@@ -20,7 +20,13 @@ func physics_update(delta: float) -> void:
 		return
 	player.handle_movement()
 	player.update_facing(input)
+		
+	if Input.is_action_just_pressed("jump") and player.current_jumps > 0:
+		player.current_jumps -= 1
+		Transitioned.emit(self, "JumpState")
 
+	if Input.is_action_just_pressed("dash") and player.can_dash:
+		Transitioned.emit(self, "DashState")
 		
 	if Input.is_action_just_pressed("jump"):
 		if player.current_jumps < 1:

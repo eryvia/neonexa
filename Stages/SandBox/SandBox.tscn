@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dumouq6hymro0" path="res://Utilities/CurrencyDropPoint.tscn" id="10_wc1ym"]
 [ext_resource type="PackedScene" uid="uid://da73y8rsf5fr8" path="res://Entities/EnviromentEntities/Ores/ore.tscn" id="11_0nuwg"]
 [ext_resource type="PackedScene" uid="uid://cu5uxjl51rqeb" path="res://Stages/Prologue/Art/PrologueParallexBackground.tscn" id="12_epv55"]
-[ext_resource type="Texture2D" uid="uid://cl8uqxsw32ghu" path="res://Stages/OldIntakeSector/Art/Background/OldIntakeSectorBackground5.png" id="12_m6nn0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7o460"]
 texture = ExtResource("6_blkab")
@@ -867,7 +866,6 @@ position = Vector2(350, 128)
 
 [node name="Player" parent="." unique_id=514043592 instance=ExtResource("3_6d07n")]
 position = Vector2(194, 114)
-jump_velocity = -400.0
 
 [node name="Guard" parent="." unique_id=676920841 instance=ExtResource("8_y2c6g")]
 position = Vector2(-350, 64)
@@ -884,11 +882,6 @@ position = Vector2(-69, 60)
 [node name="Ore" parent="." unique_id=584168929 instance=ExtResource("11_0nuwg")]
 position = Vector2(274, 118)
 scale = Vector2(1, 1.0074667)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=73077430]
-position = Vector2(-178, 15.999998)
-scale = Vector2(1.4910188, 1.4910187)
-texture = ExtResource("12_m6nn0")
 
 [node name="PrologueParallax" parent="." unique_id=1062184574 instance=ExtResource("12_epv55")]
 z_index = -4000

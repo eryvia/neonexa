@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://s66ne4ekpbxy" path="res://Stages/OldIntakeSector/Art/Background/OldIntakeSectorBackground4.png" id="4_uruld"]
 
 [node name="ParallaxScrollingScene" type="Node2D" unique_id=320314394]
+position = Vector2(193, 107)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1191521405]
 scroll_scale = Vector2(0.2, 0)
@@ -30,7 +31,9 @@ texture = ExtResource("3_qlgal")
 
 [node name="Parallax2D4" type="Parallax2D" parent="." unique_id=210467218]
 scroll_scale = Vector2(0.5, 0)
+scroll_offset = Vector2(286, 99)
 repeat_size = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=1803804323]
+position = Vector2(98, -98)
 texture = ExtResource("4_uruld")

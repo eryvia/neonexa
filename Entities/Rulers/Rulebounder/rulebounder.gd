@@ -4,12 +4,12 @@ extends Node2D
 @onready var animS = $AnimatedSprite2D
 
 const lines: Array[String] = [
-	"Hey, you seem pretty strong!",
-	"Wanna spar?",
-	"Wait...",
-	"I shouldn't waste my energy",
-	"Well, I'll see you at the buffet!",
-	"Okay, u stupid fker"
+	"Hello..",
+	"So you finally decided to stand up",
+	"So...",
+	"You dont remember do you?",
+	"Well, that isnt necessery a bad thing",
+	"I hope you find peace then.",
 ]#max width dont work
 
 func _ready():

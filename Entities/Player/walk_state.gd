@@ -27,5 +27,5 @@ func physics_update(delta):
 	
 	if not player.is_on_floor(): Transitioned.emit(self, "FallState")
 
-	if Input.is_action_just_pressed("dash") and not player.dash_cooldown:
+	if Input.is_action_just_pressed("dash") and player.can_dash:
 		Transitioned.emit(self, "DashState")

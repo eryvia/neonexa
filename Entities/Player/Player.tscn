@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://byndxy24po04m" path="res://Entities/Player/player.gd" id="1_e5kic"]
 [ext_resource type="Texture2D" uid="uid://c3deil2ueqnqo" path="res://Entities/Player/Art/player_spritesheet_new.png" id="2_hj1c0"]
 [ext_resource type="Script" uid="uid://dao4h7dnqot3s" path="res://Entities/Player/state_machine.gd" id="3_1des2"]
+[ext_resource type="PackedScene" uid="uid://cgdhee60h41x4" path="res://Interface/OnAreaTitle/OnAreaTitle.tscn" id="3_gallu"]
 [ext_resource type="Script" uid="uid://dhnkh2wp6u0y2" path="res://Entities/Player/idle_state.gd" id="4_1des2"]
 [ext_resource type="Texture2D" uid="uid://c1crksw6ujdbg" path="res://Entities/Player/Art/player_basic_attaks_spritesheet.png" id="4_jynvv"]
 [ext_resource type="Script" uid="uid://rspxkkijpmhq" path="res://Entities/Player/walk_state.gd" id="5_an6q6"]
@@ -12,6 +13,8 @@
 [ext_resource type="Script" uid="uid://bv7341qhj0ehs" path="res://Entities/Player/dash_state.gd" id="10_hacra"]
 [ext_resource type="PackedScene" uid="uid://gvnx4tfthugi" path="res://Interface/GameplayUI/GameplayUI.tscn" id="11_jynvv"]
 [ext_resource type="Texture2D" uid="uid://vecoq7p4fpso" path="res://Entities/Player/Art/impacts.png" id="12_lmeus"]
+[ext_resource type="AudioStream" uid="uid://bw5ic2onefc44" path="res://Resources/soudn_effects/soul_collect.wav" id="13_061yh"]
+[ext_resource type="AudioStream" uid="uid://bq3t74wr8sulo" path="res://Resources/soudn_effects/Attack.mp3" id="14_uw7o4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6pxy"]
 atlas = ExtResource("2_hj1c0")
@@ -195,9 +198,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0k8yw")
 }],
-"loop": true,
+"loop": false,
 "name": &"dash",
-"speed": 5.0
+"speed": 22.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -344,7 +347,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default_slash",
-"speed": 32.0
+"speed": 30.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_761t5"]
@@ -431,13 +434,15 @@ script = ExtResource("1_e5kic")
 [node name="GameplayUI" parent="CanvasLayer" unique_id=1407318217 instance=ExtResource("11_jynvv")]
 metadata/_edit_use_anchors_ = true
 
+[node name="AreaTitle" parent="CanvasLayer" unique_id=318683816 instance=ExtResource("3_gallu")]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=389605694]
 position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_vcmon")
 animation = &"dash"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.29015425
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=160683563]
 position = Vector2(1.5, 3)
@@ -464,6 +469,9 @@ frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=198869314]
 position = Vector2(-1, -3)
+limit_left = -1000000
+limit_bottom = 120
+limit_smoothed = true
 
 [node name="StateMachine" type="Node" parent="." unique_id=1724109760 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_1des2")
@@ -487,8 +495,6 @@ script = ExtResource("8_761t5")
 [node name="DashState" type="Node" parent="StateMachine" unique_id=5054919]
 script = ExtResource("10_hacra")
 
-[node name="Node" type="Node" parent="StateMachine" unique_id=1688559315]
-
 [node name="playerHitBox" type="Area2D" parent="." unique_id=1704610638]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitBox" unique_id=1564401228]
@@ -506,6 +512,16 @@ scale = Vector2(0.4609375, 0.4609375)
 sprite_frames = SubResource("SpriteFrames_ap068")
 frame = 8
 frame_progress = 1.0
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="." unique_id=836709507]
+stream = ExtResource("13_061yh")
+volume_db = -7.664
+pitch_scale = 0.87
+
+[node name="AttackSoundEffect" type="AudioStreamPlayer2D" parent="." unique_id=988482518]
+stream = ExtResource("14_uw7o4")
+volume_db = -2.887
+pitch_scale = 1.02
 
 [connection signal="health_changed" from="." to="CanvasLayer/GameplayUI" method="_on_player_health_changed"]
 [connection signal="area_entered" from="playerHitBox" to="." method="_on_player_hit_box_area_entered"]

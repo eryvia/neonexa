@@ -23,7 +23,9 @@ func _ready() -> void:
 	if initial_state:
 		initial_state.enter()
 		current_state = initial_state
-
+		
+	print("registered states: ", states.keys())
+	
 func _process(delta: float) -> void:
 	if current_state:
 		current_state.update(delta)
@@ -35,17 +37,16 @@ func _physics_process(delta: float) -> void:
 func on_child_transform(state, new_state_name):
 	if state != current_state:
 		return
-	
+		
 	var new_state = states.get(new_state_name.to_lower())
 	if !new_state:
-		print("coulnt find a new state")
+		print("FAILED: ", get_parent().name, " tried to find '", new_state_name, "' in ", states.keys())
 		return
 	
 	if current_state:
 		current_state.exit()
 		
 	new_state.enter()
-
 	current_state = new_state
 	
 	#hello
