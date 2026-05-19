@@ -22,7 +22,7 @@ func physics_update(delta):
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	if body == parent.target:
 		parent.target = null
-		Transitioned.emit(self, "EnemyIdleState")
+		#Transitioned.emit(self, "EnemyIdleState")
 
 
 func _choosing_next_state(direction):

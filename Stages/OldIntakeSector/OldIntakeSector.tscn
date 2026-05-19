@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://brles2brqiwmx" path="res://Entities/Player/Player.tscn" id="5_u5hb4"]
 [ext_resource type="Texture2D" uid="uid://tp2ani0nx1w6" path="res://Stages/OldIntakeSector/Art/Background/OldIntakeSectorBackground6.png" id="6_rbbvr"]
 [ext_resource type="Texture2D" uid="uid://hgvqlkom1xfa" path="res://Stages/OldIntakeSector/Art/Background/OldIntakeSectorBackground7.png" id="7_qafsx"]
+[ext_resource type="PackedScene" uid="uid://8pb75njcvji0" path="res://Entities/EnemyJumper/EnemyJumper.tscn" id="8_qafsx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p48vl"]
 texture = ExtResource("2_p45ay")
@@ -151,3 +152,6 @@ texture = ExtResource("6_rbbvr")
 position = Vector2(7, 37.999992)
 scale = Vector2(2.1886818, 2.1886818)
 texture = ExtResource("7_qafsx")
+
+[node name="EnemyJumper" parent="." unique_id=311291103 instance=ExtResource("8_qafsx")]
+position = Vector2(137, 5)

@@ -5,9 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b67et8cy1d0kj" path="res://Utilities/Transitions/FadeTransition.tscn" id="5_7o460"]
 [ext_resource type="Texture2D" uid="uid://bhb2joaavl30e" path="res://Stages/OldIntakeSector/Art/OldIntakeSector.png" id="6_blkab"]
 [ext_resource type="PackedScene" uid="uid://c2tj5uq3q1wxa" path="res://Entities/Rulers/Rulebounder/Rulebounder.tscn" id="7_blkab"]
-[ext_resource type="PackedScene" uid="uid://gf45aov1wafw" path="res://Entities/Guard/guard.tscn" id="8_y2c6g"]
-[ext_resource type="PackedScene" uid="uid://cyvixke6d5ic2" path="res://Entities/SoulCurrency/soul.tscn" id="9_gclki"]
-[ext_resource type="PackedScene" uid="uid://8pb75njcvji0" path="res://Entities/EnemyJumper/EnemyJumper.tscn" id="10_0nuwg"]
 [ext_resource type="PackedScene" uid="uid://dumouq6hymro0" path="res://Utilities/CurrencyDropPoint.tscn" id="10_wc1ym"]
 [ext_resource type="PackedScene" uid="uid://da73y8rsf5fr8" path="res://Entities/EnviromentEntities/Ores/ore.tscn" id="11_0nuwg"]
 [ext_resource type="PackedScene" uid="uid://cu5uxjl51rqeb" path="res://Stages/Prologue/Art/PrologueParallexBackground.tscn" id="12_epv55"]
@@ -867,17 +864,8 @@ position = Vector2(350, 128)
 [node name="Player" parent="." unique_id=514043592 instance=ExtResource("3_6d07n")]
 position = Vector2(194, 114)
 
-[node name="Guard" parent="." unique_id=676920841 instance=ExtResource("8_y2c6g")]
-position = Vector2(-350, 64)
-
-[node name="Soul" parent="." unique_id=222917566 instance=ExtResource("9_gclki")]
-position = Vector2(-120, 67)
-
 [node name="CurrencyDropPoint" parent="." unique_id=438745840 instance=ExtResource("10_wc1ym")]
 position = Vector2(-168, 68)
-
-[node name="EnemyJumper" parent="." unique_id=354665946 instance=ExtResource("10_0nuwg")]
-position = Vector2(-69, 60)
 
 [node name="Ore" parent="." unique_id=584168929 instance=ExtResource("11_0nuwg")]
 position = Vector2(274, 118)

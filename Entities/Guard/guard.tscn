@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://gf45aov1wafw"]
+[gd_scene format=3 uid="uid://gf45aov1wafw"]
 
 [ext_resource type="Script" uid="uid://be6qslidlc1c2" path="res://Entities/Guard/guard.gd" id="1_edth3"]
 [ext_resource type="Texture2D" uid="uid://fqtc4ix1cobi" path="res://Entities/Guard/Art/Guard-ase.png" id="1_gp63h"]
 [ext_resource type="Script" uid="uid://2wxnlutje28c" path="res://Entities/Guard/detection_area.gd" id="2_x3a6o"]
 [ext_resource type="Script" uid="uid://dao4h7dnqot3s" path="res://Entities/Player/state_machine.gd" id="3_kl3r6"]
 [ext_resource type="Script" uid="uid://cyjwpcldg5gam" path="res://Entities/Guard/pursue_state.gd" id="5_kl3r6"]
-[ext_resource type="Script" uid="uid://pxxth5e4hcdy" path="res://Entities/Guard/enemy_idle_state.gd" id="6_edth3"]
 [ext_resource type="Script" uid="uid://btc5ne4cwfswl" path="res://Entities/Guard/attack_state.gd" id="7_lfoyx"]
 [ext_resource type="Script" uid="uid://dmakqn6vmk6pl" path="res://Entities/Guard/patrol_state.gd" id="8_1wp4l"]
 [ext_resource type="Script" uid="uid://dc7x1vn5icp7p" path="res://Entities/Guard/hit_box.gd" id="10_lfoyx"]
@@ -59,74 +58,73 @@ size = Vector2(18, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ycji"]
 size = Vector2(114, 20)
 
-[node name="Guard" type="CharacterBody2D"]
+[node name="Guard" type="CharacterBody2D" unique_id=1231780720]
 collision_layer = 2
 script = ExtResource("1_edth3")
 speed = 30.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=287132768]
 sprite_frames = SubResource("SpriteFrames_kl3r6")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1098526615]
 position = Vector2(-4, 2)
 shape = SubResource("RectangleShape2D_gp63h")
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=919755864 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_kl3r6")
 initial_state = NodePath("EnemyIdleState")
 metadata/_custom_type_script = "uid://dao4h7dnqot3s"
 
-[node name="PursueState" type="Node" parent="StateMachine"]
+[node name="PursueState" type="Node" parent="StateMachine" unique_id=1472401586]
 script = ExtResource("5_kl3r6")
 
-[node name="EnemyIdleState" type="Node" parent="StateMachine"]
-script = ExtResource("6_edth3")
+[node name="EnemyIdleState" type="Node" parent="StateMachine" unique_id=1226217523]
 
-[node name="PatrolState" type="Node" parent="StateMachine"]
+[node name="PatrolState" type="Node" parent="StateMachine" unique_id=1370699950]
 script = ExtResource("8_1wp4l")
 
-[node name="AttackState" type="Node" parent="StateMachine"]
+[node name="AttackState" type="Node" parent="StateMachine" unique_id=48437526]
 script = ExtResource("7_lfoyx")
 
-[node name="DetectionArea" type="Area2D" parent="."]
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1069347479]
 collision_mask = 2
 script = ExtResource("2_x3a6o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1068638669]
 modulate = Color(1, 0, 1, 0.49411765)
 shape = SubResource("CircleShape2D_gp63h")
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="AttackArea" type="Area2D" parent="." unique_id=1475212660]
 monitoring = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1590144254]
 position = Vector2(-6, 3)
 scale = Vector2(5.140264, 3.6254168)
 shape = SubResource("CircleShape2D_j6vv2")
 
-[node name="Sprite2D" type="Sprite2D" parent="AttackArea"]
+[node name="Sprite2D" type="Sprite2D" parent="AttackArea" unique_id=757810754]
 
-[node name="GLSlashTimer" type="Timer" parent="AttackArea"]
+[node name="GLSlashTimer" type="Timer" parent="AttackArea" unique_id=863364063]
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="." unique_id=866084078]
 script = ExtResource("10_lfoyx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=883093080]
 position = Vector2(-4, 2)
 shape = SubResource("RectangleShape2D_xcd63")
 debug_color = Color(0.9120377, 9.6646545e-05, 0.726337, 0.41960785)
 
-[node name="LongRangeAttack" type="Area2D" parent="."]
+[node name="LongRangeAttack" type="Area2D" parent="." unique_id=1687657739]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LongRangeAttack"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LongRangeAttack" unique_id=2037208693]
 position = Vector2(-73, 1)
 shape = SubResource("RectangleShape2D_4ycji")
 debug_color = Color(0.98675984, 0, 0.32509443, 0.41960785)
 
-[node name="anim" type="AnimationPlayer" parent="."]
+[node name="anim" type="AnimationPlayer" parent="." unique_id=521017832]
 
 [connection signal="body_entered" from="DetectionArea" to="StateMachine/EnemyIdleState" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="StateMachine/PursueState" method="_on_detection_area_body_exited"]

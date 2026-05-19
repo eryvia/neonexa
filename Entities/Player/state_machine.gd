@@ -50,3 +50,6 @@ func on_child_transform(state, new_state_name):
 	current_state = new_state
 	
 	#hello
+	
+func change_state(new_state_name: String):
+	on_child_transform(current_state, new_state_name)

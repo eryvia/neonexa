@@ -1,41 +1,36 @@
 extends State
 class_name JumpState
 
+var step := 0
+
 func enter() -> void:
-	#Global.call_current_state(self)
-	player.get_node("AnimatedSprite2D").play("jump")
+	player.player_animation.play("jump")
 	player.velocity.y = player.jump_velocity
 	player.current_jumps -= 1
-	
+	player.coyote_timer = 0.0
+	player.start_hang_phase = false
+	step = 0
+
 func physics_update(delta: float) -> void:
-	player.velocity.y += player.fall_gravity * delta
-
-	var input := Input.get_axis("move_left", "move_right")
-	player.handle_movement()
-	player.update_facing(input)
-
-			
-	if Input.is_action_just_pressed("attack") and not player.attack_cooldown:
-		player.perform_attack()
-	
-	if Input.is_action_just_pressed("dash") and player.can_dash:
-		Transitioned.emit(self, "DashState")
-
-	if player.velocity.y > 0:
+	if step < player.jump_steps_max and Input.is_action_pressed("jump"):
+		player.velocity.y = player.jump_velocity
+		step += 1
+	else:
+		if step >= player.jump_steps_max and Input.is_action_pressed("jump"):
+			player.start_hang_phase = true
+		else:
+			if player.velocity.y < 0.0:
+				player.velocity.y *= player.jump_release_multiplier
 		Transitioned.emit(self, "FallState")
 		return
+
+	var input := Input.get_axis("move_left", "move_right")
+	player.handle_movement(delta)
+	player.update_facing(input)
 
 	if Input.is_action_just_pressed("jump") and player.current_jumps > 0:
 		Transitioned.emit(self, "JumpState")
 		return
 
-	"""
-	if no frame idk
-	
-	if player.is_on_floor():
-		player.jumps = 2
-		if input == 0:
-			Transitioned.emit(self, "IdleState")
-		else:
-			Transitioned.emit(self, "MoveState")
-	"""
+	if Input.is_action_just_pressed("dash") and player.can_dash:
+		Transitioned.emit(self, "DashState")

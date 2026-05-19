@@ -1,7 +1,8 @@
 extends State
 class_name EnemyRunState
 
-#func enter():
+func enter():
+	print("RunState", self)
 	#parent.get_node("AnimatedSprite2D").play("run")
 
 func physics_update(delta):
@@ -16,7 +17,6 @@ func physics_update(delta):
 
 	parent.velocity.x = dir * parent.run_speed
 	parent.velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
-	parent.move_and_slide()
 
 	if parent.can_attack:
 		if dist <= parent.attack_range:

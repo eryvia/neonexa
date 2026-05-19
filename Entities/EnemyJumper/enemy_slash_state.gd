@@ -27,7 +27,6 @@ func physics_update(delta):
 		Transitioned.emit(self, "EnemyRunState")
 
 func exit():
-	
 	parent.get_tree().create_timer(parent.attack_cooldown_time).timeout.connect(
 		func(): parent.can_attack = true
 	)

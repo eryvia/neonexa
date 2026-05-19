@@ -12,6 +12,7 @@ scroll_scale = Vector2(0.2, 0)
 repeat_size = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2112888470]
+modulate = Color(0.2901961, 0.33333334, 0.40784314, 1)
 texture = ExtResource("1_rgfij")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1951664000]
@@ -19,6 +20,7 @@ scroll_scale = Vector2(0.4, 0)
 repeat_size = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1386704245]
+modulate = Color(0.41960785, 0.48235294, 0.56078434, 1)
 texture = ExtResource("2_bpcx3")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1075479239]
@@ -26,4 +28,5 @@ scroll_scale = Vector2(0.6, 0)
 repeat_size = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=1268264649]
+modulate = Color(0.5411765, 0.58431375, 0.6392157, 1)
 texture = ExtResource("3_2vh4i")

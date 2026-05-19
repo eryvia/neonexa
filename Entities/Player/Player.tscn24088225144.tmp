@@ -6,24 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://cgdhee60h41x4" path="res://Interface/OnAreaTitle/OnAreaTitle.tscn" id="3_gallu"]
 [ext_resource type="Script" uid="uid://dhnkh2wp6u0y2" path="res://Entities/Player/idle_state.gd" id="4_1des2"]
 [ext_resource type="Texture2D" uid="uid://c1crksw6ujdbg" path="res://Entities/Player/Art/player_basic_attaks_spritesheet.png" id="4_jynvv"]
-[ext_resource type="Shader" uid="uid://coc3tm2dqlau5" path="res://Entities/Player/eye_glow.gdshader" id="4_samso"]
 [ext_resource type="Script" uid="uid://rspxkkijpmhq" path="res://Entities/Player/walk_state.gd" id="5_an6q6"]
 [ext_resource type="Script" uid="uid://3m10cfw5gdug" path="res://Entities/Player/fall_state.gd" id="6_t38ms"]
 [ext_resource type="Script" uid="uid://34bafl4tjbh2" path="res://Entities/Player/jump_state.gd" id="7_hj1c0"]
 [ext_resource type="Script" uid="uid://bv7341qhj0ehs" path="res://Entities/Player/dash_state.gd" id="10_hacra"]
 [ext_resource type="PackedScene" uid="uid://gvnx4tfthugi" path="res://Interface/GameplayUI/GameplayUI.tscn" id="11_jynvv"]
-[ext_resource type="Script" uid="uid://dwxfeoe6bbwoh" path="res://Entities/Player/freeze_state.gd" id="12_gallu"]
 [ext_resource type="Texture2D" uid="uid://vecoq7p4fpso" path="res://Entities/Player/Art/impacts.png" id="12_lmeus"]
 [ext_resource type="AudioStream" uid="uid://bw5ic2onefc44" path="res://Resources/soudn_effects/soul_collect.wav" id="13_061yh"]
 [ext_resource type="AudioStream" uid="uid://bq3t74wr8sulo" path="res://Resources/soudn_effects/Attack.mp3" id="14_uw7o4"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hl213"]
-shader = ExtResource("4_samso")
-shader_parameter/glow_color = Color(0.5294118, 0.78039217, 0.27058825, 1)
-shader_parameter/glow_intensity = 5.0
-shader_parameter/glow_size = 3.0
-shader_parameter/pulse_speed = 3.90000018525
-shader_parameter/pulse_amount = 0.3990000189525
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6pxy"]
 atlas = ExtResource("2_hj1c0")
@@ -242,7 +232,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_samso")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idled",
 "speed": 4.0
 }, {
 "frames": [{
@@ -430,7 +420,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 24.0
+"speed": 17.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1257063874 groups=["player"]]
@@ -444,19 +434,12 @@ script = ExtResource("1_e5kic")
 metadata/_edit_use_anchors_ = true
 
 [node name="AreaTitle" parent="CanvasLayer" unique_id=318683816 instance=ExtResource("3_gallu")]
-anchor_left = 0.003
-anchor_top = 0.78200006
-anchor_bottom = 1.0
-offset_left = -0.15199995
-offset_top = 0.08798218
-offset_bottom = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=389605694]
-material = SubResource("ShaderMaterial_hl213")
 position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_vcmon")
-animation = &"walk"
-autoplay = "idle"
+animation = &"idled"
+autoplay = "idled"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=160683563]
 position = Vector2(1.5, 3)
@@ -464,7 +447,6 @@ shape = SubResource("RectangleShape2D_x44r4")
 debug_color = Color(0, 0.6229185, 0.5447775, 0.41960785)
 
 [node name="Attack_Projectile" type="Area2D" parent="." unique_id=1928092718 groups=["player_attack"]]
-visible = false
 position = Vector2(1, 4)
 collision_layer = 8
 collision_mask = 36
@@ -508,9 +490,6 @@ script = ExtResource("7_hj1c0")
 
 [node name="DashState" type="Node" parent="StateMachine" unique_id=5054919]
 script = ExtResource("10_hacra")
-
-[node name="FreezeState" type="Node" parent="StateMachine" unique_id=942291106]
-script = ExtResource("12_gallu")
 
 [node name="playerHitBox" type="Area2D" parent="." unique_id=1704610638]
 

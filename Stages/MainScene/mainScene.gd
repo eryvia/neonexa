@@ -2,7 +2,7 @@ extends Control
 
 var hovering: bool = false
 var button_type = null
-const Prologue = preload(Global.GAME_SCENES.Prologue)
+const Prologue = preload(Global.GAME_SCENES.sandbox)
 @onready var fade_timer = $FadeTransition/FadeTimer
 @onready var menu_items := $MainVBox.get_children()
 @onready var mini_axo := $AnimatedSprite2D

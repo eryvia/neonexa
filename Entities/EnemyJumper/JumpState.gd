@@ -2,7 +2,7 @@ extends State
 class_name EnemyLeapState
 
 func enter():
-	parent.get_node("AnimatedSprite2D").play("jump")
+	parent.get_node("AnimatedSprite2D").play("jump_in")
 	if parent.target:
 		_launch()
 
@@ -15,7 +15,6 @@ func _launch():
 
 func physics_update(delta):
 	parent.velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
-	parent.move_and_slide()
 
 	if parent.is_on_floor() and parent.velocity.y >= 0:
 		var dist = parent.global_position.distance_to(parent.target.global_position)

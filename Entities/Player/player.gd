@@ -1,15 +1,26 @@
 extends CharacterBody2D
 class_name Player
-
 signal health_changed(amount)
 
-#Ui elements
 var is_paused = false
 
-#Player Configs
+@export var walk_velocity := 150.0
+
+@export var jump_velocity := -370.0
+@export var max_jumps := 1
+var current_jumps := max_jumps
+@export var jump_steps_max := 5
+@export var jump_release_multiplier := 0.0
+
+@export var hang_time_steps_max := 6
+@export var hang_time_gravity_start := 0.13
+
+@export var coyote_time := 0.08
+@export var jump_buffer_time := 0.1
+
 @export var fall_gravity := 1500.0
 @export var fall_velocity := 500
-@export var walk_velocity := 100.0
+@export var terminal_velocity := 500.0
 
 @export var dash_velocity := 200.0
 @export var dash_duration := 0.3
@@ -18,25 +29,21 @@ var can_dash := true
 var wall_velocity := 80.0
 var wall_gravity := 400.0
 
-@export var jump_velocity := -500.0
-@export var max_jumps := 2
-var current_jumps := max_jumps
 var amount := 1
-@onready var _can_travel = true
+var is_dead := false
+var input_direction := 1
+#var is_attacking := false
+var attack_cooldown := false
+var coyote_timer := 0.0
+var jump_buffer_timer := 0.0
+var start_hang_phase := false
+@onready var _can_travel := true
 
-#Cds
-var is_dead = false
-var input_direction := 1 # 1 = right, -1 = left
-
-@onready var Attack = $Attack_Projectile                                                                                              
-var is_attacking:bool = false
-var attack_cooldown: bool = false
-
-#matter 
+#@onready var Attack = $Attack_Projectile
 @onready var attack_hitbox: Area2D = $Attack_Projectile
 @onready var attack_hitbox_shape: CollisionShape2D = $Attack_Projectile/Attack_Collider
+#@onready var player_attack_anim = $Attack_Projectile/PlayerAttackAnimation
 @onready var state_machine = $StateMachine
-@onready var player_attack_anim = $Attack_Projectile/PlayerAttackAnimation
 @onready var player_animation = $AnimatedSprite2D
 @onready var gm = $CanvasLayer/GameplayUI
 @onready var dash_anim = $DashImpactAnim
@@ -44,25 +51,70 @@ var attack_cooldown: bool = false
 
 func _ready():
 	Global.player = self
-	$Attack_Projectile/Attack_Collider.disabled = false
-	player_attack_anim.visible = false
 	disable_attack_hitbox()
-	
+
+
 func _physics_process(delta):
-	state_machine._physics_process(delta)
+	tick_timers(delta)
 	move_and_slide()
-	
+
+
 func _input(event):
 	if is_dead: return
 	if event.is_action_pressed("ui_cancel") and not is_paused:
 		is_paused = true
 		PauseMenu.open($CanvasLayer/GameplayUI, self)
-		
+
+
+func handle_movement(delta: float) -> void:
+	var input := Input.get_axis("move_left", "move_right")
+	if input != 0.0:
+		velocity.x = input * walk_velocity
+	else:
+		velocity.x = 0.0
+
+
+func update_facing(input: float) -> void:
+	if input != 0.0:
+		input_direction = 1 if input > 0.0 else -1
+		player_animation.flip_h = input > 0.0
+
+
+func tick_timers(delta: float) -> void:
+	coyote_timer = maxf(coyote_timer - delta, 0.0)
+	jump_buffer_timer = maxf(jump_buffer_timer - delta, 0.0)
+
+
+func grant_coyote() -> void:
+	coyote_timer = coyote_time
+
+
+func buffer_jump() -> void:
+	jump_buffer_timer = jump_buffer_time
+
+
+func consume_coyote_or_double() -> bool:
+	if coyote_timer > 0.0:
+		coyote_timer = 0.0
+		return true
+	if current_jumps > 0:
+		return true
+	return false
+
+
+func consume_jump_buffer() -> bool:
+	if jump_buffer_timer > 0.0:
+		jump_buffer_timer = 0.0
+		return true
+	return false
+
+
 func start_dash_cooldown() -> void:
 	can_dash = false
 	await get_tree().create_timer(0.6).timeout
 	can_dash = true
-		
+
+
 func _on_player_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		Global.hp_fragments -= 1
@@ -70,67 +122,21 @@ func _on_player_hit_box_area_entered(area: Area2D) -> void:
 			return
 		print("player got hit")
 		health_changed.emit(amount)
-	
-#Attack Hitboxes
-func enable_attack_hitbox():
-	attack_hitbox_shape.disabled = false
 
-func disable_attack_hitbox():
-	attack_hitbox_shape.disabled = true
 
-func perform_attack():
-	if attack_cooldown: return
-	is_attacking = true
-	attack_cooldown = true
-	
-	if input_direction > 0:
-		$Attack_Projectile.scale.x = -1
-	else: 
-		$Attack_Projectile.scale.x = 1
-		
-	#$Attack_Projectile.scale.x = input_direction
-	
-	player_attack_anim.visible = true
-	player_attack_anim.play("default_slash")
-	$AnimatedSprite2D.play("attack") 
-	velocity.x += 50 * input_direction
-	
-	#anticipitaion ->. kinda just left it.
-	await get_tree().create_timer(0.06).timeout
-	enable_attack_hitbox()
-	
-	$AttackSoundEffect.play()
-	
-	await get_tree().create_timer(0.04).timeout
-	disable_attack_hitbox()
-	
-	await get_tree().create_timer(0.1).timeout 
-	
-	is_attacking = false
-	player_attack_anim.visible = false
-	
-	await get_tree().create_timer(0.4).timeout
-	
-	attack_cooldown = false
-	
-	
-func update_facing(input):
-	if is_attacking: 
-		return 
-		
-	if input != 0:     
-		input_direction = 1 if input > 0 else -1
-		#$Attack_Projectile.scale.x = -1 * facing_direction
-	 
-func handle_movement() -> void:
-	var input_direction := signf(Input.get_axis("move_left", "move_right"))
-	if input_direction:
-		player_animation.flip_h = input_direction > 0
-	velocity.x = input_direction * walk_velocity
-	
 func die() -> void:
 	if is_dead: return
 	is_dead = true
 	DeadScreen.open(gm, self)
 	Engine.time_scale = 0.0
-	
+
+
+func _on_attack_projectile_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy") and body.has_method("got_hurt"):
+		body.got_hurt()
+
+func enable_attack_hitbox():
+	attack_hitbox_shape.disabled = false
+
+func disable_attack_hitbox():
+	attack_hitbox_shape.disabled = true

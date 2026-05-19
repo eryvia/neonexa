@@ -149,7 +149,7 @@ radius = 140.00357
 
 [node name="EnemyJumper" type="CharacterBody2D" unique_id=311291103 groups=["enemy"]]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("1_sg1m8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=962143867]
@@ -192,4 +192,4 @@ shape = SubResource("CircleShape2D_y5c0w")
 debug_color = Color(0.34058368, 0.4863658, 1, 0.41960785)
 
 [connection signal="TargetEntered" from="." to="StateMachine/EnemyIdleState" method="_on_enemy_jumper_target_entered"]
-[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
