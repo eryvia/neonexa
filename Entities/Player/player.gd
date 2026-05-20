@@ -16,7 +16,7 @@ var current_jumps := max_jumps
 @export var hang_time_gravity_start := 0.13
 
 @export var coyote_time := 0.08
-@export var jump_buffer_time := 0.1
+@export var jump_buffer_time := 0.2
 
 @export var fall_gravity := 1500.0
 @export var fall_velocity := 500
@@ -48,6 +48,12 @@ var start_hang_phase := false
 @onready var gm = $CanvasLayer/GameplayUI
 @onready var dash_anim = $DashImpactAnim
 
+#RayCasts
+@onready var right_inner = $RayCasts/Right_Inner
+@onready var right_outer = $RayCasts/Right_Outer
+@onready var left_inner = $RayCasts/Left_Inner
+@onready var left_outer = $RayCasts/Left_Outer
+
 
 func _ready():
 	Global.player = self
@@ -58,13 +64,11 @@ func _physics_process(delta):
 	tick_timers(delta)
 	move_and_slide()
 
-
 func _input(event):
 	if is_dead: return
 	if event.is_action_pressed("ui_cancel") and not is_paused:
 		is_paused = true
 		PauseMenu.open($CanvasLayer/GameplayUI, self)
-
 
 func handle_movement(delta: float) -> void:
 	var input := Input.get_axis("move_left", "move_right")
@@ -79,19 +83,15 @@ func update_facing(input: float) -> void:
 		input_direction = 1 if input > 0.0 else -1
 		player_animation.flip_h = input > 0.0
 
-
 func tick_timers(delta: float) -> void:
 	coyote_timer = maxf(coyote_timer - delta, 0.0)
 	jump_buffer_timer = maxf(jump_buffer_timer - delta, 0.0)
 
-
 func grant_coyote() -> void:
 	coyote_timer = coyote_time
 
-
 func buffer_jump() -> void:
 	jump_buffer_timer = jump_buffer_time
-
 
 func consume_coyote_or_double() -> bool:
 	if coyote_timer > 0.0:

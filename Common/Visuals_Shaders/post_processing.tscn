@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://coiu4jdtyukx6"]
+
+[ext_resource type="Shader" uid="uid://t4q8p2ktuc7c" path="res://Stages/Prologue/post_processing.gdshader" id="1_2m6dk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmuh3"]
+shader = ExtResource("1_2m6dk")
+shader_parameter/vignette_intensity = 0.6590000313025
+shader_parameter/vignette_softness = 0.38000001805
+shader_parameter/desaturation = 0.2350000111625
+shader_parameter/tint_color = Color(0.59607846, 0.8627451, 0.24705882, 1)
+shader_parameter/tint_strength = 0.23200001102
+
+[node name="PostProcessing" type="CanvasLayer" unique_id=1925452141]
+layer = 100
+
+[node name="ScreenEffect" type="ColorRect" parent="." unique_id=1199211519]
+material = SubResource("ShaderMaterial_qmuh3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

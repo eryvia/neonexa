@@ -487,7 +487,6 @@ frame_progress = 1.0
 [node name="Camera2D" type="Camera2D" parent="." unique_id=198869314]
 position = Vector2(-1, -3)
 limit_left = -1000000
-limit_bottom = 120
 limit_smoothed = true
 
 [node name="StateMachine" type="Node" parent="." unique_id=1724109760 node_paths=PackedStringArray("initial_state")]
@@ -511,6 +510,27 @@ script = ExtResource("10_hacra")
 
 [node name="FreezeState" type="Node" parent="StateMachine" unique_id=942291106]
 script = ExtResource("12_gallu")
+
+[node name="RayCasts" type="Node" parent="." unique_id=1214068953]
+
+[node name="Left_Inner" type="RayCast2D" parent="RayCasts" unique_id=1154164408]
+visible = false
+target_position = Vector2(0, -14)
+
+[node name="Left_Outer" type="RayCast2D" parent="RayCasts" unique_id=1309996841]
+visible = false
+position = Vector2(-2, 0)
+target_position = Vector2(0, -14)
+
+[node name="Right_Inner" type="RayCast2D" parent="RayCasts" unique_id=2126823978]
+visible = false
+position = Vector2(3, 0)
+target_position = Vector2(0, -14)
+
+[node name="Right_Outer" type="RayCast2D" parent="RayCasts" unique_id=1797629408]
+visible = false
+position = Vector2(5, 0)
+target_position = Vector2(0, -14)
 
 [node name="playerHitBox" type="Area2D" parent="." unique_id=1704610638]
 

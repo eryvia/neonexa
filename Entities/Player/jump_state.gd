@@ -12,6 +12,13 @@ func enter() -> void:
 	step = 0
 
 func physics_update(delta: float) -> void:
+	"""
+		if player.right_outer.is_colliding() && !player.right_inner.is_colliding() && !player.left_outer.is_colliding() && !player.left_inner.is_colliding(): 
+			player.global_position += 5
+		if !player.right_outer.is_colliding() && !player.right_inner.is_colliding() && player.left_outer.is_colliding() && !player.left_inner.is_colliding(): 
+			player.global_position -= 5
+	"""
+		
 	if step < player.jump_steps_max and Input.is_action_pressed("jump"):
 		player.velocity.y = player.jump_velocity
 		step += 1

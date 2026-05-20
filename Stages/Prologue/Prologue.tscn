@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c04it1lgwtnka"]
 
 [ext_resource type="PackedScene" uid="uid://cu5uxjl51rqeb" path="res://Stages/Prologue/Art/PrologueParallexBackground.tscn" id="1_dnni4"]
-[ext_resource type="Shader" uid="uid://t4q8p2ktuc7c" path="res://Stages/Prologue/post_processing.gdshader" id="1_kvhc4"]
+[ext_resource type="PackedScene" uid="uid://coiu4jdtyukx6" path="res://Common/Visuals_Shaders/post_processing.tscn" id="1_kvhc4"]
 [ext_resource type="Texture2D" uid="uid://bhb2joaavl30e" path="res://Stages/OldIntakeSector/Art/OldIntakeSector.png" id="2_clt1e"]
 [ext_resource type="PackedScene" uid="uid://brles2brqiwmx" path="res://Entities/Player/Player.tscn" id="3_xl843"]
 [ext_resource type="Texture2D" uid="uid://cl8uqxsw32ghu" path="res://Stages/OldIntakeSector/Art/Background/OldIntakeSectorBackground5.png" id="4_3bpki"]
@@ -10,14 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bevgiy2mb7bsr" path="res://Utilities/Recepies/killzone.tscn" id="7_jm4l1"]
 [ext_resource type="PackedScene" uid="uid://c2tj5uq3q1wxa" path="res://Entities/Rulers/Rulebounder/Rulebounder.tscn" id="9_865v2"]
 [ext_resource type="PackedScene" uid="uid://ceupbdcdj88jg" path="res://Utilities/transport.tscn" id="10_kvhc4"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmuh3"]
-shader = ExtResource("1_kvhc4")
-shader_parameter/vignette_intensity = 0.6590000313025
-shader_parameter/vignette_softness = 0.38000001805
-shader_parameter/desaturation = 0.2350000111625
-shader_parameter/tint_color = Color(0.59607846, 0.8627451, 0.24705882, 1)
-shader_parameter/tint_strength = 0.23200001102
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xl843"]
 texture = ExtResource("2_clt1e")
@@ -399,17 +391,7 @@ size = Vector2(703.0815, 34.301956)
 
 [node name="Prologue" type="Node2D" unique_id=1174428091]
 
-[node name="PostProcessing" type="CanvasLayer" parent="." unique_id=1918601990]
-layer = 100
-
-[node name="ScreenEffect" type="ColorRect" parent="PostProcessing" unique_id=729045966]
-material = SubResource("ShaderMaterial_qmuh3")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="PostProcessing" parent="." unique_id=1925452141 instance=ExtResource("1_kvhc4")]
 
 [node name="PrologueParallax" parent="." unique_id=1062184574 instance=ExtResource("1_dnni4")]
 z_index = -4000
@@ -434,7 +416,7 @@ attenuation = 0.5176344
 position = Vector2(427, -11)
 
 [node name="God" type="Sprite2D" parent="." unique_id=745880618]
-position = Vector2(-32, -26)
+position = Vector2(-34, -34)
 scale = Vector2(1.4502662, 1.4502661)
 texture = ExtResource("4_3bpki")
 
