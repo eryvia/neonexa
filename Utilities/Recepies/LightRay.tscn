@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c7fdiypumpcid"]
+
+[ext_resource type="Shader" uid="uid://b4e4uxiyfn5nb" path="res://Utilities/Recepies/LightRay.gdshader" id="1_mn0ps"]
+[ext_resource type="Texture2D" uid="uid://dvsaefl4tyouy" path="res://Stages/Verdant Veins/FinalArt-Background/Verdant_Veins_Act11.png" id="1_yf0g0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f15i4"]
+shader = ExtResource("1_mn0ps")
+shader_parameter/ray_color = Color(0.95, 0.93, 0.7, 1)
+shader_parameter/softness = 0.25
+shader_parameter/flicker_speed = 1.2
+shader_parameter/sway = 0.04
+
+[node name="LightRay" type="Sprite2D" unique_id=746729520]
+material = SubResource("ShaderMaterial_f15i4")
+rotation = -1.3316863
+scale = Vector2(1.375384, 0.15581395)
+texture = ExtResource("1_yf0g0")

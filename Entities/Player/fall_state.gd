@@ -39,6 +39,7 @@ func physics_update(delta: float) -> void:
 	var input := Input.get_axis("move_left", "move_right")
 
 	if player.is_on_floor():
+		player.lending_particles.emitting = true
 		player.current_jumps = player.max_jumps
 		if player.consume_jump_buffer():
 			Transitioned.emit(self, "JumpState")

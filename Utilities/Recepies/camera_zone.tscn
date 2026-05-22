@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ftyoaqgto7qi"]
+
+[ext_resource type="Script" uid="uid://ci7i3hjio2pak" path="res://Utilities/Recepies/camera_zone.gd" id="1_wh7l8"]
+
+[node name="CameraZone" type="Area2D" unique_id=1470842464]
+script = ExtResource("1_wh7l8")

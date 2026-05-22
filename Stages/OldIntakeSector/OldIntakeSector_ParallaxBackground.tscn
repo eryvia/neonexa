@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://s66ne4ekpbxy" path="res://Stages/OldIntakeSector/Art/Background/OldIntakeSectorBackground4.png" id="4_uruld"]
 
 [node name="ParallaxScrollingScene" type="Node2D" unique_id=320314394]
-position = Vector2(193, 107)
+position = Vector2(193, 108)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1191521405]
 scroll_scale = Vector2(0.2, 0)

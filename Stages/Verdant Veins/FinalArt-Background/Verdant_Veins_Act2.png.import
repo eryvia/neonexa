@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfb0ok78bulne"
-path="res://.godot/imported/Cave_Entrance_Moss_01.png-87b83b10eb136ef7c294ceb4ecaeb8c7.ctex"
+uid="uid://cs77pmid4tmu2"
+path="res://.godot/imported/Verdant_Veins_Act2.png-9d8612c796f8b737bd2f0e55081dfa66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Stages/Verdant Veins/FinalArt-Background/Cave_Entrance_Moss_01.png"
-dest_files=["res://.godot/imported/Cave_Entrance_Moss_01.png-87b83b10eb136ef7c294ceb4ecaeb8c7.ctex"]
+source_file="res://Stages/Verdant Veins/FinalArt-Background/Verdant_Veins_Act2.png"
+dest_files=["res://.godot/imported/Verdant_Veins_Act2.png-9d8612c796f8b737bd2f0e55081dfa66.ctex"]
 
 [params]
 

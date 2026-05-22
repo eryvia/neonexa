@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c1crksw6ujdbg" path="res://Entities/Player/Art/player_basic_attaks_spritesheet.png" id="4_jynvv"]
 [ext_resource type="Shader" uid="uid://coc3tm2dqlau5" path="res://Entities/Player/eye_glow.gdshader" id="4_samso"]
 [ext_resource type="Script" uid="uid://rspxkkijpmhq" path="res://Entities/Player/walk_state.gd" id="5_an6q6"]
+[ext_resource type="Texture2D" uid="uid://ci5san8tia0lk" path="res://Entities/Player/Art/player_spritesheet_newest.png" id="6_5m37j"]
 [ext_resource type="Script" uid="uid://3m10cfw5gdug" path="res://Entities/Player/fall_state.gd" id="6_t38ms"]
 [ext_resource type="Script" uid="uid://34bafl4tjbh2" path="res://Entities/Player/jump_state.gd" id="7_hj1c0"]
 [ext_resource type="Script" uid="uid://bv7341qhj0ehs" path="res://Entities/Player/dash_state.gd" id="10_hacra"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://vecoq7p4fpso" path="res://Entities/Player/Art/impacts.png" id="12_lmeus"]
 [ext_resource type="AudioStream" uid="uid://bw5ic2onefc44" path="res://Resources/soudn_effects/soul_collect.wav" id="13_061yh"]
 [ext_resource type="AudioStream" uid="uid://bq3t74wr8sulo" path="res://Resources/soudn_effects/Attack.mp3" id="14_uw7o4"]
+[ext_resource type="Texture2D" uid="uid://cttv7kxwdkvqb" path="res://Assests/player_particle.png" id="17_hl213"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hl213"]
 shader = ExtResource("4_samso")
@@ -81,17 +83,21 @@ region = Rect2(2320, 0, 40, 40)
 atlas = ExtResource("2_hj1c0")
 region = Rect2(2360, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_761t5"]
-atlas = ExtResource("2_hj1c0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_e32up"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(720, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk162"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(760, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a5a1"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(800, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sauhj"]
+atlas = ExtResource("6_5m37j")
 region = Rect2(840, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hacra"]
-atlas = ExtResource("2_hj1c0")
-region = Rect2(880, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jynvv"]
-atlas = ExtResource("2_hj1c0")
-region = Rect2(920, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmeus"]
 atlas = ExtResource("2_hj1c0")
@@ -113,49 +119,53 @@ region = Rect2(1080, 0, 40, 40)
 atlas = ExtResource("2_hj1c0")
 region = Rect2(1120, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hl213"]
-atlas = ExtResource("2_hj1c0")
-region = Rect2(680, 0, 40, 40)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5m37j"]
-atlas = ExtResource("2_hj1c0")
-region = Rect2(720, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e34i1"]
-atlas = ExtResource("2_hj1c0")
-region = Rect2(760, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vcmon"]
-atlas = ExtResource("2_hj1c0")
-region = Rect2(800, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e8qxc"]
-atlas = ExtResource("2_hj1c0")
-region = Rect2(400, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rvtm2"]
-atlas = ExtResource("2_hj1c0")
-region = Rect2(440, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o8vwu"]
-atlas = ExtResource("2_hj1c0")
-region = Rect2(480, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gbla8"]
-atlas = ExtResource("2_hj1c0")
-region = Rect2(520, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vi0tq"]
-atlas = ExtResource("2_hj1c0")
+atlas = ExtResource("6_5m37j")
 region = Rect2(560, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c5u7s"]
-atlas = ExtResource("2_hj1c0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_e34i1"]
+atlas = ExtResource("6_5m37j")
 region = Rect2(600, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kcvdc"]
-atlas = ExtResource("2_hj1c0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcmon"]
+atlas = ExtResource("6_5m37j")
 region = Rect2(640, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x77tl"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(680, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8qxc"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(200, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvtm2"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(240, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8vwu"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(280, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbla8"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(320, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi0tq"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(360, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5u7s"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(400, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcvdc"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(440, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap068"]
+atlas = ExtResource("6_5m37j")
+region = Rect2(480, 0, 40, 40)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vcmon"]
 animations = [{
@@ -213,17 +223,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_761t5")
+"texture": SubResource("AtlasTexture_e32up")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hacra")
+"texture": SubResource("AtlasTexture_pk162")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jynvv")
+"texture": SubResource("AtlasTexture_4a5a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sauhj")
 }],
 "loop": false,
 "name": &"fall",
-"speed": 4.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -247,9 +260,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hl213")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_5m37j")
 }, {
 "duration": 1.0,
@@ -257,10 +267,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vcmon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x77tl")
 }],
 "loop": false,
 "name": &"jump",
-"speed": 4.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -283,10 +296,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kcvdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap068")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 6.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x44r4"]
@@ -433,6 +449,20 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hl213"]
+blend_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_samso"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 30.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 200, 0)
+scale_min = 0.14999999
+scale_max = 0.25
+color = Color(0.56078434, 0.6784314, 0.48235294, 0.7647059)
+
 [node name="Player" type="CharacterBody2D" unique_id=1257063874 groups=["player"]]
 collision_layer = 2
 collision_mask = 7
@@ -455,8 +485,10 @@ offset_bottom = 0.0
 material = SubResource("ShaderMaterial_hl213")
 position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_vcmon")
-animation = &"walk"
+animation = &"jump"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=160683563]
 position = Vector2(1.5, 3)
@@ -559,6 +591,17 @@ pitch_scale = 0.87
 stream = ExtResource("14_uw7o4")
 volume_db = -2.887
 pitch_scale = 1.02
+
+[node name="LandingParticles" type="GPUParticles2D" parent="." unique_id=1932424666]
+material = SubResource("CanvasItemMaterial_hl213")
+position = Vector2(1, 14)
+emitting = false
+amount = 12
+texture = ExtResource("17_hl213")
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_samso")
 
 [connection signal="health_changed" from="." to="CanvasLayer/GameplayUI" method="_on_player_health_changed"]
 [connection signal="body_entered" from="Attack_Projectile" to="." method="_on_attack_projectile_body_entered"]

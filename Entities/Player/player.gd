@@ -47,6 +47,7 @@ var start_hang_phase := false
 @onready var player_animation = $AnimatedSprite2D
 @onready var gm = $CanvasLayer/GameplayUI
 @onready var dash_anim = $DashImpactAnim
+@onready var lending_particles = $LandingParticles
 
 #RayCasts
 @onready var right_inner = $RayCasts/Right_Inner

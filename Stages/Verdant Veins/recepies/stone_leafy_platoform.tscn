@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://tow0sownclnj"]
+
+[ext_resource type="Texture2D" uid="uid://40r7bi06bpiu" path="res://Stages/Verdant Veins/VerdantVeins-assets.png" id="1_r6e34"]
+
+[node name="StoneLeafyPlatform" type="StaticBody2D" unique_id=1019055899]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=782238789]
+z_index = 2
+texture = ExtResource("1_r6e34")
+region_enabled = true
+region_rect = Rect2(90, 112, 60, 80)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1090246496]
+polygon = PackedVector2Array(28, 5, 5, 12, -11, 3, -9, -10, 25, -10)
