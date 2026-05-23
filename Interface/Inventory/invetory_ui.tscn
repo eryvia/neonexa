@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b64aqpgmn5c02"]
+
+[ext_resource type="Script" uid="uid://38kmbjal5mgr" path="res://Interface/Inventory/invetory_ui.gd" id="1_53pr6"]
+[ext_resource type="Texture2D" uid="uid://d14vchcbc07vo" path="res://Interface/GameplayUI/InventoryUI.png" id="2_rq03p"]
+
+[node name="InvetoryUI" type="CanvasLayer" unique_id=362139748]
+script = ExtResource("1_53pr6")
+
+[node name="Panel" type="Panel" parent="." unique_id=1723823270]
+visible = false
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.08800001
+anchor_right = 0.94000006
+anchor_bottom = 0.90700006
+offset_left = 0.11199951
+offset_top = -0.0080013275
+offset_right = 0.039978027
+offset_bottom = 0.08798218
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel" unique_id=1786618161]
+visible = false
+position = Vector2(170, 89)
+texture = ExtResource("2_rq03p")
+
+[node name="QuestList" type="VBoxContainer" parent="Panel" unique_id=2082700586]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.164
+anchor_right = 0.36900002
+anchor_bottom = 0.864
+offset_left = 0.03199768
+offset_top = -0.027999878
+offset_right = -0.09100342
+offset_bottom = 0.07199097
+
+[node name="ItemList" type="VBoxContainer" parent="Panel" unique_id=1345873342]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.60800004
+anchor_top = 0.136
+anchor_right = 0.87600005
+anchor_bottom = 0.84700006
+offset_left = -0.11201477
+offset_top = -0.0720005
+offset_right = 0.035980225
+offset_bottom = 0.08099365

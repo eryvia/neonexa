@@ -1,18 +1,20 @@
 extends Area2D
-class_name CameraZone
 
-@export var limit_left: int = -500
-@export var limit_right: int = 500  
-@export var limit_top: int = -300
-@export var limit_bottom: int = 300
-@export var zoom_level: float = 1.0
+@export var limit_left: int = -320
+@export var limit_right: int = 320
+@export var limit_top: int = -180
+@export var limit_bottom: int = 180
 
-func _on_body_entered(body):
-	if body.is_in_group("player"):
-		var cam = body.get_node("Camera2D")
-		var tween = create_tween()
-		tween.tween_property(cam, "limit_left", limit_left, 0.3)
-		tween.tween_property(cam, "limit_right", limit_right, 0.3)
-		tween.tween_property(cam, "limit_top", limit_top, 0.3)
-		tween.tween_property(cam, "limit_bottom", limit_bottom, 0.3)
-		tween.parallel().tween_property(cam, "zoom", Vector2(zoom_level, zoom_level), 0.5)
+func _ready():
+	await get_tree().process_frame
+	for body in get_overlapping_bodies():
+		_on_body_entered(body)
+
+func _on_body_entered(body: Node2D):
+	if not body.is_in_group("player"):
+		return
+	# Find camera in scene root instead of inside player
+	var cam = get_tree().get_first_node_in_group("main_camera")
+	if cam and cam.has_method("enter_zone"):
+		print(cam)
+		cam.enter_zone(limit_left, limit_right, limit_top, limit_bottom)

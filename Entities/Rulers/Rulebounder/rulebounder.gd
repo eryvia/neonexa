@@ -10,7 +10,7 @@ const lines: Array[String] = [
 	"You dont remember do you?",
 	"Well, that isnt necessery a bad thing",
 	"I hope you find peace then.",
-]#max width dont work
+]
 
 func _ready():
 	interaction_area.interact = _on_interact

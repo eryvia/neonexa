@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://vtqd20bmf6xe"]
+
+[ext_resource type="Script" uid="uid://dlba4hhwtmgxl" path="res://Utilities/Recepies/last_checkpoint.gd" id="1_amlck"]
+
+[node name="LastCheckpoint" type="Area2D" unique_id=1601282991]
+script = ExtResource("1_amlck")

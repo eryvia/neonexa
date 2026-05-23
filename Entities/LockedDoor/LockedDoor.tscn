@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bfqi6w6x8x340"]
+
+[ext_resource type="Script" uid="uid://m7puhclwhdjx" path="res://Utilities/Recepies/interactive_area.gd" id="1_pv8p3"]
+[ext_resource type="Script" uid="uid://boucpoldfy42r" path="res://Entities/LockedDoor/locked_door.gd" id="1_xqmkl"]
+[ext_resource type="Texture2D" uid="uid://dcura21k4y8a" path="res://Stages/MainScene/Art/bg.jpg" id="2_xqmkl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57w4g"]
+size = Vector2(115, 211)
+
+[node name="LockedDoor" type="Node2D" unique_id=18287366]
+script = ExtResource("1_xqmkl")
+
+[node name="InteractiveArea" type="Area2D" parent="." unique_id=1664200521]
+script = ExtResource("1_pv8p3")
+metadata/_custom_type_script = "uid://m7puhclwhdjx"
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractiveArea" unique_id=1094469745]
+position = Vector2(41, 98)
+scale = Vector2(0.03, 0.09)
+texture = ExtResource("2_xqmkl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveArea" unique_id=2033391689]
+position = Vector2(39.5, 95.5)
+shape = SubResource("RectangleShape2D_57w4g")

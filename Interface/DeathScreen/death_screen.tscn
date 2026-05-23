@@ -3,19 +3,12 @@
 [ext_resource type="Script" uid="uid://bkuywi02rxdhh" path="res://Interface/DeathScreen/death_screen.gd" id="1_s7y1s"]
 [ext_resource type="AudioStream" uid="uid://cfopkm5ggpk1t" path="res://Resources/music/Song2.wav" id="2_63f8t"]
 
-[node name="DeathScreen" type="Control" unique_id=1192364017]
+[node name="DeathScreen" type="CanvasLayer" unique_id=16858742]
 process_mode = 3
-z_index = 20
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_s7y1s")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=625498784]
-layout_mode = 1
+z_index = 7
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,7 +17,7 @@ grow_vertical = 2
 color = Color(0.05490196, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=757489350]
-layout_mode = 1
+z_index = 7
 anchors_preset = -1
 anchor_right = 0.83900005
 anchor_bottom = 0.264
@@ -38,7 +31,7 @@ text = "You have died
 horizontal_alignment = 1
 
 [node name="Panel" type="PanelContainer" parent="." unique_id=189410725]
-layout_mode = 1
+z_index = 7
 anchors_preset = -1
 anchor_left = 0.21400002
 anchor_top = 0.125
@@ -50,14 +43,17 @@ offset_right = -0.17602539
 offset_bottom = 3.4720001
 
 [node name="VBox" type="VBoxContainer" parent="Panel" unique_id=607516197]
+z_index = 7
 layout_mode = 2
 
 [node name="Respawn" type="Button" parent="Panel/VBox" unique_id=1943280]
+z_index = 7
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Another chance?"
 
 [node name="MainMenu" type="Button" parent="Panel/VBox" unique_id=1058674]
+z_index = 7
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "main menu"

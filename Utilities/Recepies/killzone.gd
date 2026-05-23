@@ -1,4 +1,6 @@
 extends Area2D
 
 func _on_body_entered(body):
-	body.die()
+	if body is Player:
+		body.take_hazard_hit()
+	

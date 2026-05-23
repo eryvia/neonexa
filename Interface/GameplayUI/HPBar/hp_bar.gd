@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-@onready var max_health = Global.hp_fragments
+@onready var max_health = Global.hp
 var current_health = 5
 var last_health = current_health
 

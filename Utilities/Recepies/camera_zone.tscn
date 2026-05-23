@@ -4,3 +4,7 @@
 
 [node name="CameraZone" type="Area2D" unique_id=1470842464]
 script = ExtResource("1_wh7l8")
+limit_left = null
+limit_right = null
+limit_top = null
+limit_bottom = null

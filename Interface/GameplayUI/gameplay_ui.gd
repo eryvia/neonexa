@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var souls = Global.souls
 @onready var soulsUI = $Label 

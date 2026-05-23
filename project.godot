@@ -23,9 +23,9 @@ config/icon="uid://bkuoxv6jwqv6y"
 
 SignalBus="*res://Utilities/SignalBus.gd"
 Global="*res://Utilities/Global.gd"
+SceneManager="*uid://qjcnr4xmrm2k"
 InteractiveManager="*res://Utilities/InteractiveManager.tscn"
 DialogueManager="*res://Utilities/DialogueManager.gd"
-SceneManager="*uid://qjcnr4xmrm2k"
 LevelManager="*uid://psxbvxplypx4"
 
 [display]
@@ -52,6 +52,7 @@ folder_colors={
 enemy=""
 player=""
 player_attack=""
+main_camera=""
 
 [input]
 
@@ -93,7 +94,16 @@ attack={
 dash={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(177, 26),"global_position":Vector2(186, 74),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+toggle_inventory={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+move_down={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
 ]
 }
 
@@ -101,9 +111,12 @@ dash={
 
 2d_physics/layer_1="GROUND"
 2d_physics/layer_2="Player"
+2d_physics/layer_4="platform"
 2d_physics/layer_5="death"
+2d_physics/layer_7="TranportZone"
 2d_physics/layer_8="CameraZone"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
