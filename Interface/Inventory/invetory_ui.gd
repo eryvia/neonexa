@@ -21,7 +21,8 @@ func _unhandled_input(e: InputEvent) -> void:
 			_refresh()
 
 func _refresh(_a = null) -> void:
-	for c in quest_list.get_children(): c.queue_free()
+	for c in quest_list.get_children(): c.free() 
+	for c in item_list.get_children(): c.free()
 	for id in Global.quests:
 		var l := Label.new()
 		if Global.is_done(id):

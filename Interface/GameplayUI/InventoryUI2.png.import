@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uaitj6p7y3qc"
-path="res://.godot/imported/PrologueBackground1.png-6095059f75ccc719e66acf60ff7b8338.ctex"
+uid="uid://b6syu2hbhv3fy"
+path="res://.godot/imported/InventoryUI2.png-4b61eec0b3ac16f7bf6c14c36be09cba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Stages/Prologue/Art/PrologueBackground1.png"
-dest_files=["res://.godot/imported/PrologueBackground1.png-6095059f75ccc719e66acf60ff7b8338.ctex"]
+source_file="res://Interface/GameplayUI/InventoryUI2.png"
+dest_files=["res://.godot/imported/InventoryUI2.png-4b61eec0b3ac16f7bf6c14c36be09cba.ctex"]
 
 [params]
 

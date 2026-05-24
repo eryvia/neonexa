@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfl2wd2qeqoqh"
+path="res://.godot/imported/Recording (47).mp3-903e0b46535dd7fd0fc763af7cd19cfd.mp3str"
+
+[deps]
+
+source_file="res://Resources/voice_lines/Recording (47).mp3"
+dest_files=["res://.godot/imported/Recording (47).mp3-903e0b46535dd7fd0fc763af7cd19cfd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

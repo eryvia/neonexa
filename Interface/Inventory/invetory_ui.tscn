@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://b64aqpgmn5c02"]
 
 [ext_resource type="Script" uid="uid://38kmbjal5mgr" path="res://Interface/Inventory/invetory_ui.gd" id="1_53pr6"]
-[ext_resource type="Texture2D" uid="uid://d14vchcbc07vo" path="res://Interface/GameplayUI/InventoryUI.png" id="2_rq03p"]
+[ext_resource type="Script" uid="uid://badgbk0p7q5ny" path="res://Interface/Inventory/label.gd" id="3_j8662"]
+[ext_resource type="Texture2D" uid="uid://dncte73u1ibas" path="res://Interface/GameplayUI/InventoryUI1.png" id="3_xmwwg"]
 
 [node name="InvetoryUI" type="CanvasLayer" unique_id=362139748]
 script = ExtResource("1_53pr6")
+
+[node name="Label" type="Label" parent="." unique_id=369397847]
+z_index = 50
+offset_left = 196.0
+offset_top = 7.0
+offset_right = 236.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 8
+script = ExtResource("3_j8662")
 
 [node name="Panel" type="Panel" parent="." unique_id=1723823270]
 visible = false
@@ -19,9 +29,8 @@ offset_right = 0.039978027
 offset_bottom = 0.08798218
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel" unique_id=1786618161]
-visible = false
 position = Vector2(170, 89)
-texture = ExtResource("2_rq03p")
+texture = ExtResource("3_xmwwg")
 
 [node name="QuestList" type="VBoxContainer" parent="Panel" unique_id=2082700586]
 layout_mode = 1

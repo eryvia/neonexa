@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c2tj5uq3q1wxa" path="res://Entities/Rulers/Rulebounder/Rulebounder.tscn" id="7_blkab"]
 [ext_resource type="PackedScene" uid="uid://dumouq6hymro0" path="res://Utilities/CurrencyDropPoint.tscn" id="10_wc1ym"]
 [ext_resource type="PackedScene" uid="uid://da73y8rsf5fr8" path="res://Entities/EnviromentEntities/Ores/ore.tscn" id="11_0nuwg"]
-[ext_resource type="PackedScene" uid="uid://cu5uxjl51rqeb" path="res://Stages/Prologue/Art/PrologueParallexBackground.tscn" id="12_epv55"]
+[ext_resource type="PackedScene" uid="uid://cu5uxjl51rqeb" path="res://Stages/Cave/Art/PrologueParallexBackground.tscn" id="12_epv55"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7o460"]
 texture = ExtResource("6_blkab")

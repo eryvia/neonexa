@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cb7q00v3ilv"]
+
+[ext_resource type="Texture2D" uid="uid://cttv7kxwdkvqb" path="res://Assests/player_particle.png" id="1_8fwhv"]
+[ext_resource type="Script" uid="uid://i7mdehogr3m1" path="res://Utilities/Recepies/ItemGlow/item_glow.gd" id="1_b7h85"]
+
+[node name="ItemGlow" type="PointLight2D" unique_id=771017205]
+position = Vector2(28.75, 24.75)
+scale = Vector2(9.214286, 8.071428)
+texture = ExtResource("1_8fwhv")
+script = ExtResource("1_b7h85")

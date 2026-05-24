@@ -10,7 +10,7 @@ const GAME_SCENES: Dictionary = {
 	"player": "uid://brles2brqiwmx",
 	"sandbox": "uid://c80maj2vdho5i",
 	"mainScene": "uid://dn0d1brp825vr",
-	"Prologue": "uid://c04it1lgwtnka",
+	"Cave": "uid://c04it1lgwtnka",
 	"PauseMenu": "uid://cadg2taeq3c3a",
 	"DeadScreen": "uid://bptiq5u0gd20a",
 	

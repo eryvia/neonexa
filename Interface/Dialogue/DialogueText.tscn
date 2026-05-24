@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c35exn1msknvj"]
+[gd_scene format=3 uid="uid://c35exn1msknvj"]
 
 [ext_resource type="Script" uid="uid://csd7a8tlar4xg" path="res://Interface/Dialogue/dialogue_text.gd" id="1_p08lu"]
 [ext_resource type="Texture2D" uid="uid://0klohhh0ns7k" path="res://Interface/Dialogue/dialogue-ase.png" id="1_rmqdw"]
 [ext_resource type="FontFile" uid="uid://c6ual6wdh5cp1" path="res://Common/fonts/pixeloid-font/PixeloidMono-aYe1R.ttf" id="2_p08lu"]
 
-[node name="DialogueText" type="MarginContainer"]
+[node name="DialogueText" type="MarginContainer" unique_id=1395716716]
 z_index = 19
 anchors_preset = -1
 anchor_right = 0.108
@@ -13,7 +13,7 @@ offset_right = -9.472
 offset_bottom = -7.959999
 script = ExtResource("1_p08lu")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2102105753]
 layout_mode = 2
 texture = ExtResource("1_rmqdw")
 patch_margin_left = 16
@@ -21,20 +21,20 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1534747935]
 layout_mode = 2
 theme_override_constants/margin_left = 6
 theme_override_constants/margin_top = -4
 theme_override_constants/margin_right = 6
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="Label" type="Label" parent="MarginContainer" unique_id=2083384307]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_p08lu")
 theme_override_font_sizes/font_size = 9
 vertical_alignment = 1
 
-[node name="LetterDisplayTimer" type="Timer" parent="."]
+[node name="LetterDisplayTimer" type="Timer" parent="." unique_id=2056567135]
 wait_time = 0.056
 one_shot = true
 

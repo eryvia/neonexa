@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dsmth7r8jbv54"]
+
+[ext_resource type="Script" uid="uid://byfgnp5eou5og" path="res://Utilities/cutsene_manager.gd" id="1_vvhum"]
+
+[node name="CutsceneManager" type="Node" unique_id=1905401698]
+script = ExtResource("1_vvhum")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1960417329]
+layer = 25
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=227518731]
+z_index = 26
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.63000005
+offset_bottom = -0.08001709
+text = "dawdawd
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1783103919]
+z_index = 25
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=1258191294]

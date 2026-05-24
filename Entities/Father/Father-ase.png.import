@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkkqbjct2p31t"
-path="res://.godot/imported/PrologueBackground2.png-de3c5ec975080c20fd60bf23a7cdbf54.ctex"
+uid="uid://ep3lwplirsjq"
+path="res://.godot/imported/Father-ase.png-30de255b4abbcf526e2725b504953c1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Stages/Prologue/Art/PrologueBackground2.png"
-dest_files=["res://.godot/imported/PrologueBackground2.png-de3c5ec975080c20fd60bf23a7cdbf54.ctex"]
+source_file="res://Entities/Father/Father-ase.png"
+dest_files=["res://.godot/imported/Father-ase.png-30de255b4abbcf526e2725b504953c1f.ctex"]
 
 [params]
 

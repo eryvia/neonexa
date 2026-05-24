@@ -9,10 +9,11 @@ const Prologue = preload(Global.GAME_SCENES.sandbox)
 var selected_index := 0
 
 var cursor1
-var cursor2
+var cursor2d
 #Input.set_custom_mouse_cursor(cursor1)
 
 func _ready() -> void:
+	SceneManager.clear_player()
 	update_menu()
 	fade_timer.wait_time = 1.0
 	pass

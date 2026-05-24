@@ -38,6 +38,11 @@ func place_player_at_start(room: Node, door_id: String):
 	else:
 		push_warning("Start door not found: " + door_id)
 
+func clear_player():
+	if is_instance_valid(_player):
+		_player.queue_free()
+		_player = null
+
 # Called by a Door when the player walks through it
 func use_door(target_scene: String, target_door_id: String):
 	if _is_transitioning:

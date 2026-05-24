@@ -18,15 +18,16 @@ func display_text(text_to_display: String):
 	text = text_to_display
 	label.text = text_to_display
 	
-	await resized
+	await get_tree().process_frame  # let layout happen
+	
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
 	
 	if size.x > MAX_WIDTH:
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD
-		await resized
-		await resized
+		await get_tree().process_frame
+		await get_tree().process_frame  # two frames for autowrap to settle
 		custom_minimum_size.y = size.y
-		
+	
 	global_position.x -= size.x / 2
 	global_position.y -= size.y + 24
 	

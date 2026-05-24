@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cavx45lm10cui"]
+
+[ext_resource type="Texture2D" uid="uid://40r7bi06bpiu" path="res://Stages/Verdant Veins/VerdantVeins-assets.png" id="1_fgueo"]
+[ext_resource type="Script" uid="uid://doax3i6keeqlw" path="res://Utilities/Recepies/LockedGate/locked_gate.gd" id="1_xc6xa"]
+[ext_resource type="PackedScene" uid="uid://bcrmwjtcqqpn2" path="res://Utilities/Recepies/InteractiveArea.tscn" id="3_ok2f1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxj86"]
+size = Vector2(72, 98)
+
+[node name="LockedGate" type="StaticBody2D" unique_id=851282920]
+collision_mask = 2
+script = ExtResource("1_xc6xa")
+next_scene = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2025373424]
+position = Vector2(0, -40)
+texture = ExtResource("1_fgueo")
+region_enabled = true
+region_rect = Rect2(72, 312, 72, 138)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=973385747]
+polygon = PackedVector2Array(8, -32, 24, -32, 24, -40, 16, -48, -16, -48, -16, 8, 8, 8)
+
+[node name="InteractiveArea" parent="." unique_id=1354696144 instance=ExtResource("3_ok2f1")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveArea" unique_id=912378822]
+position = Vector2(20, -39)
+shape = SubResource("RectangleShape2D_fxj86")

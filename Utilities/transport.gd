@@ -21,7 +21,6 @@ func get_spawn_position() -> Vector2:
 		return _spawn_point.global_position
 	return global_position
 
-# Player spawned ON this door — don't let it fire until they step off
 func disarm():
 	_armed = false
 

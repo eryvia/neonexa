@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cv02pn5w0xgxk"]
+
+[ext_resource type="Script" uid="uid://41mbw3jl784" path="res://Stages/Verdant Veins/pick_up.tscn.gd" id="1_73l8c"]
+[ext_resource type="Texture2D" uid="uid://40r7bi06bpiu" path="res://Stages/Verdant Veins/VerdantVeins-assets.png" id="1_ah2vn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0aywj"]
+
+[node name="RigidBody2D" type="Area2D" unique_id=652455845]
+script = ExtResource("1_73l8c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1747160023]
+shape = SubResource("CircleShape2D_0aywj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2061204838]
+texture = ExtResource("1_ah2vn")
+region_enabled = true
+region_rect = Rect2(160, 366, 16, 18)

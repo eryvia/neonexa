@@ -43,3 +43,5 @@ sprite_frames = SubResource("SpriteFrames_hidxi")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.52552843
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2002221224]

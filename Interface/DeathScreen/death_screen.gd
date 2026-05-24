@@ -16,7 +16,6 @@ func _on_respawn():
 	queue_free()
 	get_tree().reload_current_scene()
 	
-
 func _on_main_menu():
 	Engine.time_scale = 1.0
 	queue_free()
