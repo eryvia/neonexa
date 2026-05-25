@@ -8,7 +8,6 @@ signal OreHit
 @onready var RockSprite = $RockSprite 
 @onready var CurrencyDrop = $CurrencyDropPoint 
 
-
 func _ready() -> void:
 	pass
 

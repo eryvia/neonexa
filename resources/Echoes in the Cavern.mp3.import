@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ba65dqxxa0ps6"
-path="res://.godot/imported/Echoes in the Cavern.mp3-3c5285af918eb3dec04dc762cd3a3500.mp3str"
+path="res://.godot/imported/Echoes in the Cavern.mp3-811dc01730f977a149ba9d308cad6ace.mp3str"
 
 [deps]
 
-source_file="res://Resources/Echoes in the Cavern.mp3"
-dest_files=["res://.godot/imported/Echoes in the Cavern.mp3-3c5285af918eb3dec04dc762cd3a3500.mp3str"]
+source_file="res://resources/Echoes in the Cavern.mp3"
+dest_files=["res://.godot/imported/Echoes in the Cavern.mp3-811dc01730f977a149ba9d308cad6ace.mp3str"]
 
 [params]
 

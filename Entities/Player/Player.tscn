@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://gvnx4tfthugi" path="res://Interface/GameplayUI/GameplayUI.tscn" id="11_jynvv"]
 [ext_resource type="Script" uid="uid://dwxfeoe6bbwoh" path="res://Entities/Player/freeze_state.gd" id="12_gallu"]
 [ext_resource type="Texture2D" uid="uid://vecoq7p4fpso" path="res://Entities/Player/Art/impacts.png" id="12_lmeus"]
-[ext_resource type="AudioStream" uid="uid://bw5ic2onefc44" path="res://Resources/soudn_effects/soul_collect.wav" id="13_061yh"]
-[ext_resource type="AudioStream" uid="uid://bq3t74wr8sulo" path="res://Resources/soudn_effects/Attack.mp3" id="14_uw7o4"]
+[ext_resource type="AudioStream" uid="uid://bw5ic2onefc44" path="res://resources/soudn_effects/soul_collect.wav" id="13_061yh"]
+[ext_resource type="AudioStream" uid="uid://bq3t74wr8sulo" path="res://resources/soudn_effects/Attack.mp3" id="14_uw7o4"]
 [ext_resource type="Texture2D" uid="uid://cttv7kxwdkvqb" path="res://Assests/player_particle.png" id="17_hl213"]
 [ext_resource type="Script" uid="uid://den68p61dq3kt" path="res://Entities/Player/plater_light.gd" id="21_h6pxy"]
 

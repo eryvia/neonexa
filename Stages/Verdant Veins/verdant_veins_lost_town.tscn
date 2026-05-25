@@ -14,11 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://b1h3jgrxl70r0" path="res://Entities/NPC/TheAbonded/TheAbnonden.tscn" id="9_b3myp"]
 [ext_resource type="PackedScene" uid="uid://kflg6ykhuav0" path="res://Stages/Verdant Veins/FinalArt-Background/verdant_veins_parallax_bg.tscn" id="10_x5io5"]
 [ext_resource type="PackedScene" uid="uid://dlyb0j21x4gao" path="res://Stages/Verdant Veins/recepies/bridge.tscn" id="12_ru0ud"]
+[ext_resource type="PackedScene" uid="uid://ftyoaqgto7qi" path="res://Utilities/Recepies/camera_zone.tscn" id="15_hxkcp"]
 [ext_resource type="PackedScene" uid="uid://cv02pn5w0xgxk" path="res://Stages/Verdant Veins/core_fragments.tscn" id="15_r65l3"]
 [ext_resource type="PackedScene" uid="uid://bevgiy2mb7bsr" path="res://Utilities/Recepies/killzone.tscn" id="16_r65l3"]
 [ext_resource type="PackedScene" uid="uid://cyvixke6d5ic2" path="res://Entities/SoulCurrency/soul.tscn" id="18_v3py1"]
 [ext_resource type="PackedScene" uid="uid://coiu4jdtyukx6" path="res://Common/Visuals_Shaders/post_processing.tscn" id="19_ug452"]
-[ext_resource type="AudioStream" uid="uid://hkhkkr1iotfm" path="res://Resources/music/Song6.wav" id="20_hxkcp"]
+[ext_resource type="AudioStream" uid="uid://hkhkkr1iotfm" path="res://resources/music/Song6.wav" id="20_hxkcp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e4n3u"]
 texture = ExtResource("1_kxl38")
@@ -984,6 +985,9 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_e4n3u")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nu8kr"]
+size = Vector2(60.25, 468.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v17rn"]
 size = Vector2(640.5, 74)
 
@@ -1106,17 +1110,17 @@ position = Vector2(600, -360)
 [node name="mid_platform4" parent="RoomAssets" unique_id=2043068473 instance=ExtResource("5_xx20k")]
 position = Vector2(64, -624)
 
+[node name="mid_platform5" parent="RoomAssets" unique_id=796820063 instance=ExtResource("5_xx20k")]
+position = Vector2(968, 88)
+
 [node name="mid_platform2" parent="RoomAssets" unique_id=2011457054 instance=ExtResource("5_xx20k")]
 position = Vector2(-32, -504)
-
-[node name="mid_platform2" parent="RoomAssets/mid_platform2" unique_id=796820063 instance=ExtResource("5_xx20k")]
-position = Vector2(1000, 592)
 
 [node name="mid_platform" parent="RoomAssets" unique_id=19441226 instance=ExtResource("5_xx20k")]
 position = Vector2(184, 176)
 
 [node name="StoneLeafyPlatform" parent="RoomAssets" unique_id=1019055899 instance=ExtResource("6_xx20k")]
-position = Vector2(520, 216)
+position = Vector2(610, 146)
 
 [node name="Sprite2D4" type="Sprite2D" parent="RoomAssets" unique_id=835540066]
 position = Vector2(0, 248)
@@ -1139,14 +1143,14 @@ texture = ExtResource("4_tl0f5")
 region_enabled = true
 region_rect = Rect2(192, 30, 40, 36)
 
+[node name="small_platform8" parent="RoomAssets" unique_id=1983300951 instance=ExtResource("7_kg3q7")]
+position = Vector2(-199, -224)
+
+[node name="small_platform7" parent="RoomAssets" unique_id=1433068476 instance=ExtResource("7_kg3q7")]
+position = Vector2(529, -48)
+
 [node name="small_platform" parent="RoomAssets" unique_id=556629291 instance=ExtResource("7_kg3q7")]
-position = Vector2(632, 144)
-
-[node name="small_platform" parent="RoomAssets/small_platform" unique_id=1433068476 instance=ExtResource("7_kg3q7")]
-position = Vector2(8, -240)
-
-[node name="small_platform" parent="RoomAssets/small_platform/small_platform" unique_id=1983300951 instance=ExtResource("7_kg3q7")]
-position = Vector2(-728, -176)
+position = Vector2(521, 192)
 
 [node name="LargePlatform2" parent="RoomAssets" unique_id=1942456245 instance=ExtResource("3_afmte")]
 position = Vector2(600, 64)
@@ -3215,188 +3219,6 @@ texture = ExtResource("4_tl0f5")
 region_enabled = true
 region_rect = Rect2(396, 48, 60, 32)
 
-[node name="Bushes3" type="Node2D" parent="RoomAssets/Node2D3" unique_id=608692932]
-position = Vector2(512, -192)
-rotation = -0.0837758
-
-[node name="Sprite2D3" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3" unique_id=862033650]
-modulate = Color(0.72156864, 0.78431374, 0.72156864, 1)
-z_index = 4
-position = Vector2(541.69714, -209.44965)
-rotation = 0.3333579
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(168, 208, 42, 48)
-
-[node name="Sprite2D4" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3" unique_id=1958612276]
-modulate = Color(0.72156864, 0.78431374, 0.72156864, 1)
-z_index = 4
-position = Vector2(549.69714, -195.44965)
-rotation = 0.6667158
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(168, 208, 42, 48)
-
-[node name="Sprite2D" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3" unique_id=902046702]
-z_index = 4
-position = Vector2(541.69714, -209.44965)
-rotation = 0.3333579
-
-[node name="Sprite2D3" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D" unique_id=8166571]
-modulate = Color(0.72156864, 0.78431374, 0.72156864, 1)
-z_index = 4
-position = Vector2(-25.422256, 10.17557)
-rotation = 0.3333579
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(168, 208, 42, 48)
-
-[node name="Sprite2D4" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D" unique_id=1137747927]
-modulate = Color(0.72156864, 0.78431374, 0.72156864, 1)
-z_index = 4
-position = Vector2(-17.422256, 24.175629)
-rotation = 0.6667158
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(168, 208, 42, 48)
-
-[node name="Sprite2D" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D" unique_id=1328506834]
-z_index = 4
-position = Vector2(-25.422256, 10.17557)
-rotation = 0.3333579
-
-[node name="Sprite2D5" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D" unique_id=833211723]
-modulate = Color(0.72156864, 0.78431374, 0.72156864, 1)
-z_index = 4
-position = Vector2(-2.422227, 23.175602)
-rotation = -0.020943921
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(168, 208, 42, 48)
-
-[node name="Sprite2D6" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D" unique_id=1455526131]
-z_index = 4
-position = Vector2(55.577652, 10.17557)
-rotation = -0.49916416
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(396, 48, 60, 32)
-
-[node name="Sprite2D2" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D" unique_id=1324609492]
-z_index = 4
-position = Vector2(101.652954, -25.200321)
-rotation = -0.75049156
-scale = Vector2(-1, 1)
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(396, 48, 60, 32)
-
-[node name="Sprite2D3" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D/Sprite2D2" unique_id=599523361]
-modulate = Color(0.72156864, 0.78431374, 0.72156864, 1)
-z_index = 4
-position = Vector2(16.815727, -17.090332)
-rotation = 0.3333579
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(168, 208, 42, 48)
-
-[node name="Sprite2D4" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D/Sprite2D2" unique_id=1182928408]
-modulate = Color(0.72156864, 0.78431374, 0.72156864, 1)
-z_index = 4
-position = Vector2(24.815723, -3.0902767)
-rotation = 0.6667158
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(168, 208, 42, 48)
-
-[node name="Sprite2D" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D/Sprite2D2" unique_id=67842076]
-z_index = 4
-position = Vector2(16.815727, -17.090332)
-rotation = 0.3333579
-
-[node name="Sprite2D5" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D/Sprite2D2" unique_id=417429455]
-modulate = Color(0.72156864, 0.78431374, 0.72156864, 1)
-z_index = 4
-position = Vector2(39.81575, -4.0903015)
-rotation = -0.020943921
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(168, 208, 42, 48)
-
-[node name="Sprite2D6" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D/Sprite2D2" unique_id=831954406]
-z_index = 4
-position = Vector2(97.815636, -17.090332)
-rotation = -0.49916416
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(396, 48, 60, 32)
-
-[node name="Sprite2D2" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3/Sprite2D/Sprite2D2" unique_id=1359412087]
-z_index = 4
-position = Vector2(71.8157, -3.0903664)
-rotation = -0.24958208
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(396, 48, 60, 32)
-
-[node name="Sprite2D5" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3" unique_id=1879899330]
-modulate = Color(0.72156864, 0.78431374, 0.72156864, 1)
-z_index = 4
-position = Vector2(564.69714, -196.4497)
-rotation = -0.020943921
-scale = Vector2(0.9999999, 0.9999999)
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(168, 208, 42, 48)
-
-[node name="Sprite2D6" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3" unique_id=1733278132]
-z_index = 4
-position = Vector2(622.6971, -209.44965)
-rotation = -0.49916416
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(396, 48, 60, 32)
-
-[node name="Sprite2D2" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3" unique_id=663943177]
-z_index = 4
-position = Vector2(596.69714, -195.4497)
-rotation = -0.24958208
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(396, 48, 60, 32)
-
-[node name="huge_moss_a" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3" unique_id=601753400]
-z_index = 5
-position = Vector2(650.8463, -173.22241)
-rotation = 0.143117
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(372, 90, 66, 38)
-
-[node name="small_moss_a" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3" unique_id=1076441315]
-z_index = 5
-position = Vector2(682.83215, -172.27307)
-rotation = 0.029670598
-scale = Vector2(0.99999976, 0.99999976)
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(210, 208, 30, 32)
-
-[node name="mid_moss_a" type="Sprite2D" parent="RoomAssets/Node2D3/Bushes3" unique_id=1313596780]
-z_index = 5
-position = Vector2(714.58057, -163.32721)
-rotation = -0.3368486
-scale = Vector2(0.9999998, 0.9999998)
-texture = ExtResource("4_tl0f5")
-region_enabled = true
-region_rect = Rect2(328, 96, 40, 36)
-
 [node name="Moss2" type="Node2D" parent="RoomAssets/Node2D3" unique_id=324198659]
 modulate = Color(0.3133042, 0.36396736, 0.3133042, 1)
 z_index = 3
@@ -3490,12 +3312,28 @@ position = Vector2(992, 152)
 [node name="TheAbonded" parent="." unique_id=1000518408 instance=ExtResource("9_b3myp")]
 position = Vector2(1040, -24)
 
+[node name="CameraZone4" parent="." unique_id=1470842464 instance=ExtResource("15_hxkcp")]
+z_index = 2
+position = Vector2(383, 16.999996)
+rotation = -0.020866929
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 130
+limit_left = -600
+limit_right = 3000
+limit_top = -12000
+limit_bottom = 1000
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraZone4" unique_id=1101830724]
+position = Vector2(-16.394638, 66.672424)
+shape = SubResource("RectangleShape2D_nu8kr")
+
 [node name="CoreFragment2" parent="." unique_id=652455845 instance=ExtResource("15_r65l3")]
 position = Vector2(1720, -936)
 collision_layer = 4
 collision_mask = 2
 
 [node name="Killzone" parent="." unique_id=635826279 instance=ExtResource("16_r65l3")]
+position = Vector2(40, -9)
 collision_layer = 16
 collision_mask = 2
 
@@ -3504,7 +3342,7 @@ position = Vector2(1152, -344)
 shape = SubResource("RectangleShape2D_v17rn")
 
 [node name="Killzone2" parent="." unique_id=322640514 instance=ExtResource("16_r65l3")]
-position = Vector2(496, -240)
+position = Vector2(478, -275)
 collision_layer = 16
 collision_mask = 2
 
@@ -3513,7 +3351,7 @@ position = Vector2(1240, -320)
 shape = SubResource("RectangleShape2D_v17rn")
 
 [node name="Killzone3" parent="." unique_id=637689598 instance=ExtResource("16_r65l3")]
-position = Vector2(-952, 632)
+position = Vector2(-944, 655)
 collision_layer = 16
 collision_mask = 2
 
@@ -3529,3 +3367,5 @@ position = Vector2(344, 144)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1741531285]
 stream = ExtResource("20_hxkcp")
 autoplay = true
+
+[connection signal="body_entered" from="CameraZone4" to="CameraZone4" method="_on_body_entered"]

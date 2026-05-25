@@ -1,7 +1,8 @@
-extends Node2D
+extends StaticBody2D
 
-@export var next_scene: String = "res://scenes/area_2.tscn"
-@onready var interaction_area: InteractiveArea = $InteractiveArea  # <-- matches your node name
+@export var next_scene: String = "res://Stages/Cave/Cave.tscn"
+@onready var interaction_area: InteractiveArea = $InteractiveArea  
+@onready var door_hitbox = $CollisionPolygon2D
 
 func _ready() -> void:
 	Global.start_quest("escape")
@@ -14,7 +15,8 @@ func _on_interact():
 		Global.advance_quest("escape")
 		interaction_area.set_deferred("monitoring", false)
 		InteractiveManager.unregister_area(interaction_area)
-		get_tree().change_scene_to_file(next_scene)
+		door_hitbox.disabled = true
+		#get_tree().change_scene_to_file(next_scene)
 	else:
 		if Global.is_active("escape") and Global.quests["escape"]["step"] == 0:
 			Global.advance_quest("escape")

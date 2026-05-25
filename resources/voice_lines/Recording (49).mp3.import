@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://4q53vsicrxp3"
-path="res://.godot/imported/Recording (49).mp3-563e600279e35eb84137f24e012e9e9f.mp3str"
+path="res://.godot/imported/Recording (49).mp3-5de28524b4a5e0df65ef410e892fd4f2.mp3str"
 
 [deps]
 
-source_file="res://Resources/voice_lines/Recording (49).mp3"
-dest_files=["res://.godot/imported/Recording (49).mp3-563e600279e35eb84137f24e012e9e9f.mp3str"]
+source_file="res://resources/voice_lines/Recording (49).mp3"
+dest_files=["res://.godot/imported/Recording (49).mp3-5de28524b4a5e0df65ef410e892fd4f2.mp3str"]
 
 [params]
 

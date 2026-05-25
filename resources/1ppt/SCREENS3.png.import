@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmqxfc8tvnt21"
-path="res://.godot/imported/SCREENS3.png-31dc838f7acc008526d038dc8903b26d.ctex"
+path="res://.godot/imported/SCREENS3.png-e7670fba52c6f89edfcafe5934c59557.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/1ppt/SCREENS3.png"
-dest_files=["res://.godot/imported/SCREENS3.png-31dc838f7acc008526d038dc8903b26d.ctex"]
+source_file="res://resources/1ppt/SCREENS3.png"
+dest_files=["res://.godot/imported/SCREENS3.png-e7670fba52c6f89edfcafe5934c59557.ctex"]
 
 [params]
 

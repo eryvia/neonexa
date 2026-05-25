@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bw5ic2onefc44"
-path="res://.godot/imported/soul_collect.wav-9fe104248333ba86ed27ed3486f9d58e.sample"
+path="res://.godot/imported/soul_collect.wav-dcb383ad6ee81ab9072cef20b77e91f5.sample"
 
 [deps]
 
-source_file="res://Resources/soudn_effects/soul_collect.wav"
-dest_files=["res://.godot/imported/soul_collect.wav-9fe104248333ba86ed27ed3486f9d58e.sample"]
+source_file="res://resources/soudn_effects/soul_collect.wav"
+dest_files=["res://.godot/imported/soul_collect.wav-dcb383ad6ee81ab9072cef20b77e91f5.sample"]
 
 [params]
 

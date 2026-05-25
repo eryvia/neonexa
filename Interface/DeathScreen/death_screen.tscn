@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bptiq5u0gd20a"]
 
 [ext_resource type="Script" uid="uid://bkuywi02rxdhh" path="res://Interface/DeathScreen/death_screen.gd" id="1_s7y1s"]
-[ext_resource type="AudioStream" uid="uid://cfopkm5ggpk1t" path="res://Resources/music/Song2.wav" id="2_63f8t"]
+[ext_resource type="AudioStream" uid="uid://cfopkm5ggpk1t" path="res://resources/music/Song2.wav" id="2_63f8t"]
 
 [node name="DeathScreen" type="CanvasLayer" unique_id=16858742]
 process_mode = 3

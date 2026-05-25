@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cabm7w8jc2qqd"]
+
+[ext_resource type="Script" uid="uid://cotp7t54uvk0v" path="res://Entities/Father/gold_king.gd" id="1_62dum"]
+[ext_resource type="Script" uid="uid://m7puhclwhdjx" path="res://Utilities/Recepies/interactive_area.gd" id="1_hyhq0"]
+[ext_resource type="Texture2D" uid="uid://ep3lwplirsjq" path="res://Entities/Father/Father-ase.png" id="2_62dum"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyhq0"]
+size = Vector2(126, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnnx5"]
+atlas = ExtResource("2_62dum")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5vgd"]
+atlas = ExtResource("2_62dum")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_17hle"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnnx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5vgd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GoldenKing" type="Node2D" unique_id=1514080553]
+script = ExtResource("1_62dum")
+
+[node name="InteractiveArea" type="Area2D" parent="." unique_id=1813477087]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_hyhq0")
+metadata/_custom_type_script = "uid://m7puhclwhdjx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveArea" unique_id=993932900]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_hyhq0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=71981162]
+sprite_frames = SubResource("SpriteFrames_17hle")
+autoplay = "default"
+frame_progress = 0.53226197

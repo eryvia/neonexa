@@ -6,6 +6,9 @@ signal quest_completed(id)
 signal inventory_changed
 signal toast(text)
 
+var respawn_position: Vector2 = Vector2.ZERO
+var respawn_scene: String = ""
+
 const GAME_SCENES: Dictionary = {
 	"player": "uid://brles2brqiwmx",
 	"sandbox": "uid://c80maj2vdho5i",
@@ -31,9 +34,14 @@ var quest_db := {
 			"Open the Gate",
 		],
 	},
+	"the_core": {
+	"title": "The Dying Core",
+	"steps": ["Reach the core chamber"],
+	},
 }
 
 var souls = 0
+var fragments = 0
 var player: Node2D
 
 var hp: int = 5:

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://g4hp14l818re"
-path="res://.godot/imported/flutie8211-garage-door-opening-394326.mp3-ef472c7b4a898912a726c7c3819d828f.mp3str"
+path="res://.godot/imported/flutie8211-garage-door-opening-394326.mp3-3d5c26ff4480cb8b482b87c91b59bc32.mp3str"
 
 [deps]
 
-source_file="res://Resources/flutie8211-garage-door-opening-394326.mp3"
-dest_files=["res://.godot/imported/flutie8211-garage-door-opening-394326.mp3-ef472c7b4a898912a726c7c3819d828f.mp3str"]
+source_file="res://resources/flutie8211-garage-door-opening-394326.mp3"
+dest_files=["res://.godot/imported/flutie8211-garage-door-opening-394326.mp3-3d5c26ff4480cb8b482b87c91b59bc32.mp3str"]
 
 [params]
 

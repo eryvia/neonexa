@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bta2107hphbam"]
+
+[ext_resource type="Script" uid="uid://b11xicl1bmnk7" path="res://Utilities/Recepies/Bench/bench.gd" id="1_48y54"]
+[ext_resource type="Script" uid="uid://m7puhclwhdjx" path="res://Utilities/Recepies/interactive_area.gd" id="2_xhomd"]
+[ext_resource type="Texture2D" uid="uid://40r7bi06bpiu" path="res://Stages/Verdant Veins/VerdantVeins-assets.png" id="3_c54xd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c54xd"]
+size = Vector2(86, 41)
+
+[node name="Bench" type="Node2D" unique_id=528546306]
+script = ExtResource("1_48y54")
+
+[node name="InteractiveArea" type="Area2D" parent="." unique_id=1362567781]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_xhomd")
+metadata/_custom_type_script = "uid://m7puhclwhdjx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveArea" unique_id=779248694]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_c54xd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=457422156]
+position = Vector2(0, -1)
+texture = ExtResource("3_c54xd")
+region_enabled = true
+region_rect = Rect2(538.02, 355.4102, 43.441223, 44.820496)

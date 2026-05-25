@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dyrrrujran0on"
-path="res://.godot/imported/Moonlit Dread.mp3-3b278e76a7d17ae0ca3fa96b0fe378d5.mp3str"
+path="res://.godot/imported/Moonlit Dread.mp3-590f4471fe303827b8a6ea58c9e7f7a5.mp3str"
 
 [deps]
 
-source_file="res://Resources/music/Moonlit Dread.mp3"
-dest_files=["res://.godot/imported/Moonlit Dread.mp3-3b278e76a7d17ae0ca3fa96b0fe378d5.mp3str"]
+source_file="res://resources/music/Moonlit Dread.mp3"
+dest_files=["res://.godot/imported/Moonlit Dread.mp3-590f4471fe303827b8a6ea58c9e7f7a5.mp3str"]
 
 [params]
 

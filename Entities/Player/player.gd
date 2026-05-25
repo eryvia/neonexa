@@ -68,10 +68,14 @@ var _grounded_time := 0.0
 const SAFE_GROUND_TIME := 0.2
 
 func _ready():
+	var spawn = get_tree().get_first_node_in_group("spawn_point")
+	if spawn:
+		global_position = spawn.globadadl_position
 	Global.player = self
 	#$MainCamera.setup(self)
 	state_machine.start()
 	disable_attack_hitbox()
+	
 	"""
 	double_jump_animation.visible = false
 	double_jump_animation.animation_finished.connect(
@@ -135,7 +139,6 @@ func consume_coyote_or_double() -> bool:
 		return true
 	return false
 
-
 func consume_jump_buffer() -> bool:
 	if jump_buffer_timer > 0.0:
 		jump_buffer_timer = 0.0
@@ -179,14 +182,12 @@ func respawn():
 	var flash = _create_flash()
 	var tween = create_tween()
 
-	# fade to black
 	tween.tween_property(flash, "color:a", 1.0, 0.3)
 	await tween.finished
 
 	global_position = last_safe_position
 	velocity = Vector2.ZERO
 
-	# fade back in
 	tween = create_tween()
 	tween.tween_property(flash, "color:a", 0.0, 0.4)
 	await tween.finished

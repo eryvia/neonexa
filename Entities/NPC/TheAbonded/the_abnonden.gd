@@ -6,10 +6,12 @@ const lines: Array[String] = [
 	"...",
 	"You cant talk... seems sad for a soul like yours",
 	"...!",
-	"you... you carry the kings brand, in a place like this..",
-	"you were like abonded",
+	"you... you carry the kings brand",
+	"you really were abonded",
 	"like me, heh?",
-	"tell you what, how about getting my legs, you will find them, with your streght",
+	"tell you what",
+	"if you can get me my legs",
+	"I shall reward you kindly."
 ]
 func _ready():
 	interaction_area.interact = _on_interact
@@ -20,3 +22,4 @@ func _on_interact():
 		animS.flip_h = player.global_position.x > global_position.x
 	while DialogueManager.is_dialog_active:
 		await get_tree().process_frame
+	
