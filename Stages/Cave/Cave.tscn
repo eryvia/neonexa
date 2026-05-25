@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://da73y8rsf5fr8" path="res://Entities/EnviromentEntities/Ores/ore.tscn" id="6_uxndt"]
 [ext_resource type="Texture2D" uid="uid://cl8uqxsw32ghu" path="res://Stages/OldIntakeSector/Art/Background/OldIntakeSectorBackground5.png" id="7_v5ync"]
 [ext_resource type="PackedScene" uid="uid://bevgiy2mb7bsr" path="res://Utilities/Recepies/killzone.tscn" id="8_wtjjr"]
+[ext_resource type="PackedScene" uid="uid://befb043cxirkn" path="res://Stages/Verdant Veins/recepies/large_platform.tscn" id="9_d0fi8"]
 [ext_resource type="PackedScene" uid="uid://ceupbdcdj88jg" path="res://Utilities/transport.tscn" id="10_mme1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xl843"]
@@ -403,12 +404,13 @@ tile_map_data = PackedByteArray("AAD//wMAAAAhAAsAAAAAAAMAAAAhAAsAAAABAAMAAAAhAAs
 tile_set = SubResource("TileSet_3bpki")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2115075018]
+position = Vector2(1105, -230)
 stream = ExtResource("5_6q0lp")
-volume_db = -8.365
+volume_db = -16.976
 pitch_scale = 0.8
 autoplay = true
-max_distance = 1135.0
-attenuation = 0.5176344
+max_distance = 4096.0
+attenuation = 1.1487029
 
 [node name="Ore" parent="." unique_id=353248022 instance=ExtResource("6_uxndt")]
 position = Vector2(427, -11)
@@ -432,7 +434,6 @@ shape = SubResource("RectangleShape2D_jm4l1")
 position = Vector2(211, 37)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=216211060]
-visible = false
 color = Color(0.24780053, 0.24780053, 0.3491902, 1)
 
 [node name="Killzone2" parent="." unique_id=1340589911 instance=ExtResource("8_wtjjr")]
@@ -450,3 +451,6 @@ target_door_id = "from_cave"
 
 [node name="SpawnPoint" type="Marker2D" parent="Door" unique_id=395607573]
 position = Vector2(-77, 54)
+
+[node name="LargePlatform" parent="." unique_id=1973796628 instance=ExtResource("9_d0fi8")]
+position = Vector2(1618, -195)

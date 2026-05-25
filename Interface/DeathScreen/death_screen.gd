@@ -13,7 +13,6 @@ func _on_respawn():
 	Global.hp = 5
 	print(Global.hp)
 	Engine.time_scale = 1.0
-	queue_free()
 	get_tree().reload_current_scene()
 	
 func _on_main_menu():

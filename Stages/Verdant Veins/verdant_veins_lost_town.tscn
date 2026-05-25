@@ -11,13 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://bu46yt4ringa7" path="res://Stages/Verdant Veins/FinalArt-Background/Verdant_Veins_Act13.png" id="6_v17rn"]
 [ext_resource type="PackedScene" uid="uid://tow0sownclnj" path="res://Stages/Verdant Veins/recepies/stone_leafy_platoform.tscn" id="6_xx20k"]
 [ext_resource type="PackedScene" uid="uid://dgc73lamvcs3k" path="res://Stages/Verdant Veins/recepies/small_platform.tscn" id="7_kg3q7"]
-[ext_resource type="PackedScene" uid="uid://ftyoaqgto7qi" path="res://Utilities/Recepies/camera_zone.tscn" id="8_c0dcd"]
 [ext_resource type="PackedScene" uid="uid://b1h3jgrxl70r0" path="res://Entities/NPC/TheAbonded/TheAbnonden.tscn" id="9_b3myp"]
 [ext_resource type="PackedScene" uid="uid://kflg6ykhuav0" path="res://Stages/Verdant Veins/FinalArt-Background/verdant_veins_parallax_bg.tscn" id="10_x5io5"]
 [ext_resource type="PackedScene" uid="uid://dlyb0j21x4gao" path="res://Stages/Verdant Veins/recepies/bridge.tscn" id="12_ru0ud"]
 [ext_resource type="PackedScene" uid="uid://cv02pn5w0xgxk" path="res://Stages/Verdant Veins/core_fragments.tscn" id="15_r65l3"]
 [ext_resource type="PackedScene" uid="uid://bevgiy2mb7bsr" path="res://Utilities/Recepies/killzone.tscn" id="16_r65l3"]
 [ext_resource type="PackedScene" uid="uid://cyvixke6d5ic2" path="res://Entities/SoulCurrency/soul.tscn" id="18_v3py1"]
+[ext_resource type="PackedScene" uid="uid://coiu4jdtyukx6" path="res://Common/Visuals_Shaders/post_processing.tscn" id="19_ug452"]
+[ext_resource type="AudioStream" uid="uid://hkhkkr1iotfm" path="res://Resources/music/Song6.wav" id="20_hxkcp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e4n3u"]
 texture = ExtResource("1_kxl38")
@@ -983,9 +984,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_e4n3u")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3myp"]
-size = Vector2(63.5, 177)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v17rn"]
 size = Vector2(640.5, 74)
 
@@ -1069,6 +1067,9 @@ position = Vector2(96, 144)
 [node name="LargePlatform5" parent="RoomAssets" unique_id=1973796628 instance=ExtResource("3_afmte")]
 position = Vector2(976, -416)
 
+[node name="LargePlatform5" parent="RoomAssets/LargePlatform5" unique_id=1550373121 instance=ExtResource("3_afmte")]
+position = Vector2(-64, 536)
+
 [node name="LargePlatform3" parent="RoomAssets" unique_id=1646425725 instance=ExtResource("3_afmte")]
 position = Vector2(-72, -344)
 
@@ -1108,6 +1109,9 @@ position = Vector2(64, -624)
 [node name="mid_platform2" parent="RoomAssets" unique_id=2011457054 instance=ExtResource("5_xx20k")]
 position = Vector2(-32, -504)
 
+[node name="mid_platform2" parent="RoomAssets/mid_platform2" unique_id=796820063 instance=ExtResource("5_xx20k")]
+position = Vector2(1000, 592)
+
 [node name="mid_platform" parent="RoomAssets" unique_id=19441226 instance=ExtResource("5_xx20k")]
 position = Vector2(184, 176)
 
@@ -1138,6 +1142,12 @@ region_rect = Rect2(192, 30, 40, 36)
 [node name="small_platform" parent="RoomAssets" unique_id=556629291 instance=ExtResource("7_kg3q7")]
 position = Vector2(632, 144)
 
+[node name="small_platform" parent="RoomAssets/small_platform" unique_id=1433068476 instance=ExtResource("7_kg3q7")]
+position = Vector2(8, -240)
+
+[node name="small_platform" parent="RoomAssets/small_platform/small_platform" unique_id=1983300951 instance=ExtResource("7_kg3q7")]
+position = Vector2(-728, -176)
+
 [node name="LargePlatform2" parent="RoomAssets" unique_id=1942456245 instance=ExtResource("3_afmte")]
 position = Vector2(600, 64)
 
@@ -1148,8 +1158,11 @@ position = Vector2(352, -680)
 position = Vector2(736, -496)
 scale = Vector2(-1, 1)
 
+[node name="small_platform5" parent="RoomAssets" unique_id=903915009 instance=ExtResource("7_kg3q7")]
+position = Vector2(1160, -424)
+
 [node name="small_platform2" parent="RoomAssets" unique_id=553523462 instance=ExtResource("7_kg3q7")]
-position = Vector2(1144, -424)
+position = Vector2(1128, -424)
 
 [node name="LargePlatform6" parent="RoomAssets" unique_id=327715126 instance=ExtResource("3_afmte")]
 position = Vector2(1312, -416)
@@ -1158,8 +1171,17 @@ scale = Vector2(-1, 1)
 [node name="small_platform4" parent="RoomAssets" unique_id=435055147 instance=ExtResource("7_kg3q7")]
 position = Vector2(1320, -856)
 
+[node name="small_platform6" parent="RoomAssets" unique_id=146929681 instance=ExtResource("7_kg3q7")]
+position = Vector2(1304, -624)
+
+[node name="small_platform6" parent="RoomAssets/small_platform6" unique_id=701373882 instance=ExtResource("7_kg3q7")]
+position = Vector2(-40, -96)
+
+[node name="small_platform6" parent="RoomAssets/small_platform6/small_platform6" unique_id=61583499 instance=ExtResource("7_kg3q7")]
+position = Vector2(32, -64)
+
 [node name="small_platform3" parent="RoomAssets" unique_id=1267041835 instance=ExtResource("7_kg3q7")]
-position = Vector2(1264, -672)
+position = Vector2(1264, -536)
 
 [node name="Bushes" type="Node2D" parent="RoomAssets" unique_id=1568520724]
 position = Vector2(-576, 288)
@@ -3458,33 +3480,9 @@ texture = ExtResource("4_tl0f5")
 region_enabled = true
 region_rect = Rect2(372, 90, 66, 38)
 
-[node name="CameraZone" parent="." unique_id=1470842464 instance=ExtResource("8_c0dcd")]
-collision_layer = 130
-limit_left = -192
-limit_bottom = 152
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraZone" unique_id=223063637]
-position = Vector2(424, -280)
-shape = SubResource("RectangleShape2D_b3myp")
-
-[node name="CameraZone2" parent="." unique_id=801645950 instance=ExtResource("8_c0dcd")]
-position = Vector2(96, 40)
-collision_layer = 130
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraZone2" unique_id=1449003767]
-position = Vector2(423.75, -280)
-shape = SubResource("RectangleShape2D_b3myp")
-
-[node name="CameraZone3" parent="." unique_id=970860717 instance=ExtResource("8_c0dcd")]
-position = Vector2(-496, 272)
-collision_layer = 130
-limit_left = -160
-limit_bottom = -320
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraZone3" unique_id=2043079646]
-z_index = 10
-position = Vector2(424, -264)
-shape = SubResource("RectangleShape2D_b3myp")
+[node name="LargePlatform7" parent="RoomAssets" unique_id=1037816349 instance=ExtResource("3_afmte")]
+position = Vector2(720, 224)
+scale = Vector2(-1, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=732728863]
 position = Vector2(992, 152)
@@ -3498,20 +3496,26 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="Killzone" parent="." unique_id=635826279 instance=ExtResource("16_r65l3")]
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=255217465]
-position = Vector2(1152, -368)
+position = Vector2(1152, -344)
 shape = SubResource("RectangleShape2D_v17rn")
 
 [node name="Killzone2" parent="." unique_id=322640514 instance=ExtResource("16_r65l3")]
 position = Vector2(496, -240)
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone2" unique_id=1247432476]
-position = Vector2(1240.25, -368)
+position = Vector2(1240, -320)
 shape = SubResource("RectangleShape2D_v17rn")
 
 [node name="Killzone3" parent="." unique_id=637689598 instance=ExtResource("16_r65l3")]
 position = Vector2(-952, 632)
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone3" unique_id=53499759]
 position = Vector2(1327.5, -368)
@@ -3519,3 +3523,9 @@ shape = SubResource("RectangleShape2D_v17rn")
 
 [node name="Soul" parent="." unique_id=97272377 instance=ExtResource("18_v3py1")]
 position = Vector2(344, 144)
+
+[node name="PostProcessing" parent="." unique_id=1925452141 instance=ExtResource("19_ug452")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1741531285]
+stream = ExtResource("20_hxkcp")
+autoplay = true

@@ -72,10 +72,12 @@ func _ready():
 	#$MainCamera.setup(self)
 	state_machine.start()
 	disable_attack_hitbox()
+	"""
 	double_jump_animation.visible = false
 	double_jump_animation.animation_finished.connect(
 		func(): double_jump_animation.visible = false
 	)
+	"""
 
 func _physics_process(delta):
 	tick_timers(delta)
