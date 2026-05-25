@@ -5,11 +5,14 @@ class_name Door
 @export var target_scene: String = ""
 @export var target_door_id: String = ""
 
-@onready var _spawn_point: Marker2D = $SpawnPoint
+@onready var _spawn_point: Marker2D 
 
 var _armed: bool = true
 
 func _ready():
+	for child in get_children():
+		if child is Marker2D:
+			_spawn_point = child
 	add_to_group("doors")
 	body_exited.connect(_on_body_exited)
 

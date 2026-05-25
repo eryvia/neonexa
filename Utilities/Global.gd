@@ -13,7 +13,7 @@ const GAME_SCENES: Dictionary = {
 	"Cave": "uid://c04it1lgwtnka",
 	"PauseMenu": "uid://cadg2taeq3c3a",
 	"DeadScreen": "uid://bptiq5u0gd20a",
-	
+	"verdant_veins": "uid://c0x3l00ch074y"
 }
 
 var quest_db := {
@@ -28,7 +28,7 @@ var quest_db := {
 		"title": "A Key of Old Parts",
 		"steps": [
 			"Gather 3 core fragments",
-			"Bring the fragments to the Keeper",
+			"Open the Gate",
 		],
 	},
 }

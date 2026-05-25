@@ -16,5 +16,5 @@ func _on_body_entered(body: Node2D):
 	# Find camera in scene root instead of inside player
 	var cam = get_tree().get_first_node_in_group("main_camera")
 	if cam and cam.has_method("enter_zone"):
-		print(cam)
+		print("hit")
 		cam.enter_zone(limit_left, limit_right, limit_top, limit_bottom)

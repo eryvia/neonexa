@@ -4,6 +4,13 @@ class_name JumpState
 var step := 0
 
 func enter() -> void:
+	var is_air_jump = not player.is_on_floor() and player.coyote_timer <= 0.0
+	if is_air_jump:
+		var dj = player.double_jump_animation
+		dj.visible = true
+		dj.frame = 0
+		dj.play("double_jump")
+		
 	player.player_animation.play("jump")
 	player.velocity.y = player.jump_velocity
 	player.current_jumps -= 1

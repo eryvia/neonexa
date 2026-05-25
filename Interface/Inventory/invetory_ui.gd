@@ -28,8 +28,11 @@ func _refresh(_a = null) -> void:
 		if Global.is_done(id):
 			l.text = "✓ " + Global.quest_db[id]["title"]
 			l.modulate = Color(0.5, 0.5, 0.5)
+			l.add_theme_font_size_override("font_size", 6)
+			#l.size = 8
 		else:
 			l.text = "%s\n   → %s" % [Global.quest_db[id]["title"], Global.current_step_text(id)]
+			l.add_theme_font_size_override("font_size", 6)
 		quest_list.add_child(l)
 
 	for c in item_list.get_children(): c.queue_free()
@@ -39,4 +42,5 @@ func _refresh(_a = null) -> void:
 		for item_id in Global.items:
 			var l := Label.new()
 			l.text = "%s  ×%d" % [item_id.capitalize().replace("_", " "), Global.items[item_id]]
+			l.add_theme_font_size_override("font_size", 6)
 			item_list.add_child(l)

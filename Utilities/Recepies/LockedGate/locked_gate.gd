@@ -4,6 +4,7 @@ extends Node2D
 @onready var interaction_area: InteractiveArea = $InteractiveArea  # <-- matches your node name
 
 func _ready() -> void:
+	Global.start_quest("escape")
 	interaction_area.action_name = "open gate"
 	interaction_area.interact = _on_interact
 

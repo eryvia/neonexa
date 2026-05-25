@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://38kmbjal5mgr" path="res://Interface/Inventory/invetory_ui.gd" id="1_53pr6"]
 [ext_resource type="Script" uid="uid://badgbk0p7q5ny" path="res://Interface/Inventory/label.gd" id="3_j8662"]
 [ext_resource type="Texture2D" uid="uid://dncte73u1ibas" path="res://Interface/GameplayUI/InventoryUI1.png" id="3_xmwwg"]
+[ext_resource type="Texture2D" uid="uid://40r7bi06bpiu" path="res://Stages/Verdant Veins/VerdantVeins-assets.png" id="4_xmwwg"]
 
 [node name="InvetoryUI" type="CanvasLayer" unique_id=362139748]
 script = ExtResource("1_53pr6")
@@ -17,7 +18,6 @@ theme_override_font_sizes/font_size = 8
 script = ExtResource("3_j8662")
 
 [node name="Panel" type="Panel" parent="." unique_id=1723823270]
-visible = false
 anchors_preset = -1
 anchor_left = 0.057000004
 anchor_top = 0.08800001
@@ -55,3 +55,18 @@ offset_left = -0.11201477
 offset_top = -0.0720005
 offset_right = 0.035980225
 offset_bottom = 0.08099365
+
+[node name="CoreFrag" type="Sprite2D" parent="." unique_id=922872037]
+visible = false
+position = Vector2(223, 49)
+texture = ExtResource("4_xmwwg")
+region_enabled = true
+region_rect = Rect2(160, 365, 24, 25)
+
+[node name="Key" type="Sprite2D" parent="." unique_id=1355873935]
+visible = false
+position = Vector2(217.00002, 49)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_xmwwg")
+region_enabled = true
+region_rect = Rect2(144, 315, 56, 50)

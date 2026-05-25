@@ -8,7 +8,7 @@ const PLATFORM_LAYER := 4
 @export var walk_velocity := 150.0
 
 @export var jump_velocity := -370.0
-@export var max_jumps := 1
+@export var max_jumps := 2
 var current_jumps := max_jumps
 @export var jump_steps_max := 5
 @export var jump_release_multiplier := 0.0
@@ -49,6 +49,7 @@ var is_invincible = false
 #@onready var player_attack_anim = $Attack_Projectile/PlayerAttackAnimation
 @onready var state_machine = $StateMachine
 @onready var player_animation = $AnimatedSprite2D
+@onready var double_jump_animation = $DoubleJump
 @onready var gm = $GameplayUI
 @onready var dash_anim = $DashImpactAnim
 @onready var lending_particles = $LandingParticles
@@ -59,11 +60,22 @@ var is_invincible = false
 @onready var left_inner = $RayCasts/Left_Inner
 @onready var left_outer = $RayCasts/Left_Outer
 
+#CheckSafePosition
+@onready var foot_left: RayCast2D = $CheckOfSafePosition/FootLeft
+@onready var foot_right: RayCast2D = $CheckOfSafePosition/FootRight
+
+var _grounded_time := 0.0
+const SAFE_GROUND_TIME := 0.2
 
 func _ready():
 	Global.player = self
 	#$MainCamera.setup(self)
+	state_machine.start()
 	disable_attack_hitbox()
+	double_jump_animation.visible = false
+	double_jump_animation.animation_finished.connect(
+		func(): double_jump_animation.visible = false
+	)
 
 func _physics_process(delta):
 	tick_timers(delta)
@@ -71,7 +83,18 @@ func _physics_process(delta):
 	if is_on_floor() and Input.is_action_just_pressed("move_down") \
 	   and Input.is_action_just_pressed("jump"):
 		drop_through()
+	_update_safe_position(delta)
+
+
+func _update_safe_position(delta: float) -> void:
 	if is_on_floor():
+		_grounded_time += delta
+	else:
+		_grounded_time = 0.0
+		return
+
+	var solid_footing := foot_left.is_colliding() and foot_right.is_colliding()
+	if solid_footing and _grounded_time >= SAFE_GROUND_TIME:
 		last_safe_position = global_position
 
 func _input(event):

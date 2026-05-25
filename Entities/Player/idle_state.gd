@@ -2,7 +2,7 @@ extends State
 class_name IdleState
 
 func enter() -> void:
-	#player.player_animation.play("idle")
+	player.player_animation.play("idle")
 	pass
 
 func physics_update(delta: float) -> void:

@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://ci7i3hjio2pak" path="res://Utilities/Recepies/camera_zone.gd" id="1_wh7l8"]
 
 [node name="CameraZone" type="Area2D" unique_id=1470842464]
+collision_layer = 128
+collision_mask = 2
 script = ExtResource("1_wh7l8")
-limit_left = null
-limit_right = null
-limit_top = null
-limit_bottom = null

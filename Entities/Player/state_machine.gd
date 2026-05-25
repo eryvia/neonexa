@@ -19,13 +19,20 @@ func _ready() -> void:
 	else: 
 		for state in states.values():
 			state.parent = parent
-			
+	
+	"""
+	if initial_state:
+		initial_state.enter()
+		current_state = initial_state
+	"""
+	print("registered states: ", states.keys())
+	
+	
+func start() -> void:
 	if initial_state:
 		initial_state.enter()
 		current_state = initial_state
 		
-	print("registered states: ", states.keys())
-	
 func _process(delta: float) -> void:
 	if current_state:
 		current_state.update(delta)

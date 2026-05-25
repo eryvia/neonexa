@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b1h3jgrxl70r0"]
+
+[ext_resource type="PackedScene" uid="uid://bcrmwjtcqqpn2" path="res://Utilities/Recepies/InteractiveArea.tscn" id="1_jwe85"]
+[ext_resource type="Script" uid="uid://k4fj3um3e7i7" path="res://Entities/NPC/TheAbonded/the_abnonden.gd" id="1_q2jlq"]
+[ext_resource type="Texture2D" uid="uid://ccpj5oe0ennij" path="res://Entities/NPC/TheAbonded/TheAbonden-ase.png" id="3_ixcyc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2jlq"]
+size = Vector2(124, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if28s"]
+atlas = ExtResource("3_ixcyc")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51dv6"]
+atlas = ExtResource("3_ixcyc")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi7bv"]
+atlas = ExtResource("3_ixcyc")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pajo"]
+atlas = ExtResource("3_ixcyc")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukwof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if28s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51dv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi7bv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pajo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="TheAbonded" type="Node2D" unique_id=1000518408]
+modulate = Color(0.5449209, 0.5449209, 0.5449209, 0.90900004)
+script = ExtResource("1_q2jlq")
+
+[node name="InteractiveArea" parent="." unique_id=2080651723 instance=ExtResource("1_jwe85")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveArea" unique_id=1178623924]
+position = Vector2(23, -29)
+shape = SubResource("RectangleShape2D_q2jlq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1300258884]
+position = Vector2(33, -17)
+sprite_frames = SubResource("SpriteFrames_ukwof")
+autoplay = "default"
+frame_progress = 0.7931042
